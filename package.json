@@ -1,0 +1,17 @@
+{
+	"name": "atlas-relics-wordpress",
+	"version": "0.1.0",
+	"private": true,
+	"description": "Atlas Relics WordPress & WooCommerce ecosystem — local dev environment and tooling.",
+	"scripts": {
+		"env:start": "wp-env start",
+		"env:stop": "wp-env stop",
+		"env:destroy": "wp-env destroy",
+		"env:cli": "wp-env run cli wp",
+		"env:logs": "wp-env logs",
+		"lint:php": "composer lint"
+	},
+	"devDependencies": {
+		"@wordpress/env": "^10.0.0"
+	}
+}

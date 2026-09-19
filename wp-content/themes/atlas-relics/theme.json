@@ -1,0 +1,224 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Atlas Relics",
+	"settings": {
+		"appearanceTools": true,
+		"useRootPaddingAwareAlignments": true,
+		"layout": {
+			"contentSize": "720px",
+			"wideSize": "1200px"
+		},
+		"color": {
+			"custom": false,
+			"customDuotone": false,
+			"customGradient": false,
+			"defaultPalette": false,
+			"defaultGradients": false,
+			"palette": [
+				{ "slug": "navy-900", "name": "Navy", "color": "#0B1B33" },
+				{ "slug": "navy-700", "name": "Navy Light", "color": "#16294A" },
+				{ "slug": "ivory-50", "name": "Ivory", "color": "#F7F3E9" },
+				{ "slug": "ivory-100", "name": "Ivory Deep", "color": "#EFE8D6" },
+				{ "slug": "gold-500", "name": "Antique Gold", "color": "#C6A15C" },
+				{ "slug": "gold-600", "name": "Antique Gold Dark", "color": "#AD8748" },
+				{ "slug": "charcoal-900", "name": "Charcoal", "color": "#1C1C1C" },
+				{ "slug": "white", "name": "White", "color": "#FFFFFF" }
+			],
+			"gradients": [
+				{
+					"slug": "navy-to-charcoal",
+					"name": "Navy to Charcoal",
+					"gradient": "linear-gradient(160deg, #0B1B33 0%, #1C1C1C 100%)"
+				},
+				{
+					"slug": "ivory-to-gold",
+					"name": "Ivory to Antique Gold",
+					"gradient": "linear-gradient(160deg, #F7F3E9 0%, #C6A15C 100%)"
+				}
+			]
+		},
+		"typography": {
+			"customFontSize": false,
+			"fluid": true,
+			"lineHeight": true,
+			"fontFamilies": [
+				{
+					"slug": "heading",
+					"name": "Heading (Serif)",
+					"fontFamily": "'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, 'Times New Roman', serif"
+				},
+				{
+					"slug": "body",
+					"name": "Body (Sans)",
+					"fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+				}
+			],
+			"fontSizes": [
+				{ "slug": "small", "name": "Small", "size": "0.9rem", "fluid": { "min": "0.85rem", "max": "0.95rem" } },
+				{ "slug": "medium", "name": "Medium", "size": "1.125rem", "fluid": { "min": "1rem", "max": "1.2rem" } },
+				{ "slug": "large", "name": "Large", "size": "1.5rem", "fluid": { "min": "1.3rem", "max": "1.75rem" } },
+				{ "slug": "x-large", "name": "Extra Large", "size": "2.25rem", "fluid": { "min": "1.8rem", "max": "2.75rem" } },
+				{ "slug": "xx-large", "name": "XX Large", "size": "3.25rem", "fluid": { "min": "2.4rem", "max": "4rem" } }
+			]
+		},
+		"spacing": {
+			"customMargin": true,
+			"customPadding": true,
+			"units": [ "px", "em", "rem", "%", "vh", "vw" ],
+			"spacingScale": {
+				"operator": "*",
+				"increment": 1.5,
+				"steps": 7,
+				"mediumStep": 1.5,
+				"unit": "rem"
+			}
+		},
+		"border": {
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true
+		},
+		"blocks": {
+			"core/button": {
+				"color": {
+					"palette": [
+						{ "slug": "gold-500", "name": "Antique Gold", "color": "#C6A15C" },
+						{ "slug": "navy-900", "name": "Navy", "color": "#0B1B33" },
+						{ "slug": "ivory-50", "name": "Ivory", "color": "#F7F3E9" }
+					]
+				}
+			}
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "var(--wp--preset--color--ivory-50)",
+			"text": "var(--wp--preset--color--charcoal-900)"
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--body)",
+			"fontSize": "var(--wp--preset--font-size--medium)",
+			"lineHeight": "1.65"
+		},
+		"spacing": {
+			"blockGap": "1.5rem"
+		},
+		"elements": {
+			"heading": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--heading)",
+					"fontWeight": "500",
+					"lineHeight": "1.2",
+					"letterSpacing": "0.01em"
+				},
+				"color": {
+					"text": "var(--wp--preset--color--navy-900)"
+				}
+			},
+			"h1": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--xx-large)"
+				}
+			},
+			"h2": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--x-large)"
+				}
+			},
+			"h3": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--large)"
+				}
+			},
+			"link": {
+				"color": {
+					"text": "var(--wp--preset--color--gold-600)"
+				},
+				":hover": {
+					"color": {
+						"text": "var(--wp--preset--color--navy-900)"
+					}
+				}
+			},
+			"button": {
+				"color": {
+					"background": "var(--wp--preset--color--gold-500)",
+					"text": "var(--wp--preset--color--navy-900)"
+				},
+				"border": {
+					"radius": "2px"
+				},
+				"spacing": {
+					"padding": {
+						"top": "0.85rem",
+						"bottom": "0.85rem",
+						"left": "2rem",
+						"right": "2rem"
+					}
+				},
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--body)",
+					"fontSize": "var(--wp--preset--font-size--small)",
+					"fontWeight": "600",
+					"letterSpacing": "0.08em",
+					"textTransform": "uppercase"
+				},
+				":hover": {
+					"color": {
+						"background": "var(--wp--preset--color--gold-600)",
+						"text": "var(--wp--preset--color--navy-900)"
+					}
+				}
+			},
+			"caption": {
+				"color": {
+					"text": "var(--wp--preset--color--navy-700)"
+				},
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--small)"
+				}
+			}
+		},
+		"blocks": {
+			"core/site-title": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--heading)",
+					"fontSize": "var(--wp--preset--font-size--large)",
+					"fontWeight": "600",
+					"letterSpacing": "0.04em"
+				},
+				"color": {
+					"text": "var(--wp--preset--color--ivory-50)"
+				}
+			},
+			"core/navigation": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--small)",
+					"letterSpacing": "0.04em",
+					"textTransform": "uppercase"
+				},
+				"color": {
+					"text": "var(--wp--preset--color--ivory-50)"
+				}
+			},
+			"core/separator": {
+				"color": {
+					"text": "var(--wp--preset--color--gold-500)"
+				}
+			}
+		}
+	},
+	"templateParts": [
+		{ "name": "header", "title": "Header", "area": "header" },
+		{ "name": "footer", "title": "Footer", "area": "footer" }
+	],
+	"customTemplates": [
+		{
+			"name": "page-no-title",
+			"title": "Page (No Title)",
+			"postTypes": [ "page" ]
+		}
+	]
+}

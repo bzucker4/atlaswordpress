@@ -1,0 +1,24 @@
+/*
+Theme Name: Atlas Relics
+Theme URI: https://atlasrelics.com
+Author: Atlas Relics
+Author URI: https://atlasrelics.com
+Description: The native WordPress block theme for Atlas Relics — a premium navy, ivory, and antique-gold design system built for reflection, guided journeys, and considered commerce.
+Requires at least: 6.5
+Tested up to: 6.6
+Requires PHP: 8.1
+Version: 0.1.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: atlas-relics
+Tags: block-theme, full-site-editing, custom-colors, custom-logo, custom-menu, editor-style, featured-images, translation-ready
+
+Atlas Relics is a full-site-editing (FSE) block theme. All design tokens live in theme.json;
+this stylesheet only carries the required theme header and print/no-JS fallbacks.
+*/
+
+/* Fallback layout for environments where block styles fail to load (e.g. print). */
+body {
+	background-color: #f7f3e9;
+	color: #1c1c1c;
+}

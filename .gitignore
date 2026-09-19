@@ -1,0 +1,34 @@
+# Dependencies
+/node_modules/
+/vendor/
+
+# WordPress core (managed by wp-env, not committed)
+/wp-admin/
+/wp-includes/
+/wp-*.php
+!/wp-content/
+/xmlrpc.php
+/index.php
+!/wp-content/themes/atlas-relics/index.php
+
+# Uploads and generated content
+/wp-content/uploads/
+/wp-content/upgrade/
+/wp-content/cache/
+
+# Local environment
+.wp-env.override.json
+wp-cli.local.yml
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Env / secrets
+.env
+.env.*
+!.env.example
