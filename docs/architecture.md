@@ -13,10 +13,11 @@ future theme redesign.
   contains **no business logic** — no order handling, no third-party API calls, no custom data
   models.
 - **`wp-content/plugins/atlas-relics-core`** — the companion plugin. Owns security hardening
-  (Phase 1), and will own custom post types/taxonomies, WooCommerce hooks, Beacons import,
-  MailerLite/Tally integration, fulfillment automation, and the admin operations dashboard as
-  later phases add them. Content types the storefront needs (products beyond WooCommerce's own,
-  reflection responses, fulfillment records) belong here so they survive a theme change.
+  (Phase 1); WooCommerce bundle logic, the Beacons importer, MailerLite/newsletter handling, SEO
+  output, and default-page/navigation scaffolding (Phase 2); and will own Tally integration,
+  fulfillment automation, and the admin operations dashboard in Phase 3. Content types the
+  storefront needs (products beyond WooCommerce's own, reflection responses, fulfillment records)
+  belong here so they survive a theme change.
 
 If a later phase needs the theme to react to plugin state (e.g. show an "order shipped" banner),
 prefer the plugin firing a documented action/filter (see `atlas_relics_core_registered_content_types`
@@ -30,20 +31,38 @@ The theme is a full-site-editing (FSE) block theme rather than a classic PHP-tem
 - Design tokens (`theme.json`) are the single source of truth for color/type/spacing, enforced in
   the editor UI itself (`custom: false` limits the color picker to brand tokens) rather than by
   convention alone.
-- Phase 2's content-heavy pages (Conscious Mirror, Caves, Journal, About) can be built and edited
-  as block patterns without new PHP templates for every page.
+- Phase 2's content-heavy pages (Conscious Mirror, Caves, Journal, About) are built as block
+  patterns and inserted into their page via a single `core/pattern` reference block, so page
+  content and pattern markup never drift apart into two copies.
 - WooCommerce's own block-based templates (Cart, Checkout, product blocks) integrate directly with
   an FSE theme's template system rather than requiring classic `woocommerce.php` overrides.
+
+### Why Cart and Checkout aren't forked theme templates
+
+The theme ships `templates/single-product.html` and `templates/archive-product.html` (simple,
+stable WooCommerce blocks), but deliberately does **not** ship `cart.html` or `checkout.html`.
+WooCommerce registers its own default block templates for Cart and Checkout, and a block theme
+inherits them automatically unless it provides its own. Those two templates' inner-block structure
+is genuinely complex and changes between WooCommerce releases; hand-authoring and maintaining a
+forked copy risks silently breaking checkout on a WooCommerce update. Instead,
+`assets/css/woocommerce.css` re-themes WooCommerce's own default Cart/Checkout markup (and the
+classic My Account/notice templates) via CSS selectors — full visual integration with the design
+system, none of the fork-maintenance risk. Revisit only if the storefront needs cart/checkout
+*layout* changes that CSS can't express.
 
 ## Directory structure
 
 ```
 wp-content/themes/atlas-relics/
   theme.json            Design system: color, type, spacing, layout, element styles
-  functions.php          Theme support, nav menus, asset enqueue, pattern category
-  templates/              front-page, page, page-no-title, single, archive, search, 404, index
+  functions.php          Theme support, nav menus, asset enqueue, pattern category, perf tweaks
+  templates/              front-page, page, page-no-title, single, archive, search, 404, index,
+                           single-product, archive-product
   parts/                  header, footer
-  patterns/               PHP-registered block patterns (e.g. hero)
+  patterns/               PHP-registered block patterns: hero, newsletter-signup (+ segment
+                           variants), start-here, conscious-mirror, caves, relics, pattern-map,
+                           about
+  assets/css/              accessibility.css, forms.css, woocommerce.css
 
 wp-content/plugins/atlas-relics-core/
   atlas-relics-core.php   Plugin bootstrap: constants, requires, activation/deactivation hooks
@@ -51,6 +70,14 @@ wp-content/plugins/atlas-relics-core/
     class-atlas-relics-core.php   Singleton that wires up feature classes
     class-security.php            Phase 1 security hardening
     class-setup.php               Scaffolding for future content types
+    class-pages.php               Creates journey pages + nav menus on activation (Phase 2)
+    class-settings.php            Settings → Atlas Relics (API keys, group IDs)
+    class-seo.php                 Meta description / canonical / Open Graph output
+    class-mailerlite.php          MailerLite Connect API wrapper
+    class-newsletter.php          AJAX handler behind the newsletter signup forms
+    class-bundles.php             Bundle products + restrained upsell/related display
+    class-beacons-importer.php    Tools → Beacons Import CSV importer
+  assets/js/newsletter.js  Newsletter form submit handler
   uninstall.php            Cleanup on uninstall
 ```
 
@@ -62,14 +89,21 @@ straight from the repo, so there is no separate "install the plugin" step for lo
 WordPress core itself is **not** vendored into the repo — `wp-env` downloads it into a Docker
 volume, keeping the repo limited to code this project owns.
 
-## Extension points for later phases
+## Phase 2 additions
 
-- **Phase 2 (WooCommerce)**: WooCommerce will be added as a required plugin dependency (declared
-  in `atlas-relics-core.php`'s header once WooCommerce-specific code lands) rather than bundled;
-  the theme already ships template-part slots (`header`/`footer`) WooCommerce's blocks can render
-  inside without modification.
-- **Phase 2 (MailerLite)**: newsletter forms will call out via a thin wrapper class inside
-  `atlas-relics-core`, keeping API keys and HTTP calls out of the theme.
-- **Phase 3 (Tally, automation, dashboard)**: new `includes/class-*.php` files registered from
-  `Atlas_Relics_Core::__construct()`, following the same one-class-per-concern pattern as
-  `class-security.php` and `class-setup.php`.
+- **WooCommerce** is declared via `Requires Plugins: woocommerce` in `atlas-relics-core.php`'s
+  header, so the plugin cannot activate until WooCommerce is already active — every
+  WooCommerce-dependent class (`class-bundles.php`, `class-beacons-importer.php`) is still guarded
+  with `class_exists( 'WooCommerce' )` in `Atlas_Relics_Core::__construct()` so a later WooCommerce
+  *deactivation* degrades gracefully instead of a fatal error.
+- **MailerLite** is a thin wrapper (`class-mailerlite.php`) called only by `class-newsletter.php`'s
+  AJAX handler — no other class makes an HTTP call or touches the API key directly.
+- **Default pages and navigation** (`class-pages.php`) run once, from the plugin's activation hook,
+  and are idempotent: re-activating (or redeploying) never duplicates pages or overwrites a menu
+  an admin has since customized.
+
+## Extension points for Phase 3
+
+New `includes/class-*.php` files registered from `Atlas_Relics_Core::__construct()`, following the
+same one-class-per-concern pattern as every class above, cover Tally integration, fulfillment
+automation, and the admin operations dashboard.

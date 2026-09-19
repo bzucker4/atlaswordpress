@@ -31,16 +31,44 @@ automated lint check that does exist.
 - [ ] Responsive check at mobile (375px), tablet (768px), and desktop (1280px+) widths for the
       front page, a standard page, and the header/footer nav (including the mobile nav overlay).
 
-## Phase 2 — Storefront checklist (for when that phase starts)
+## Phase 2 — Storefront checklist
 
-- [ ] WooCommerce shop, single product, cart, and checkout blocks render using the design system
-      (no unstyled WooCommerce defaults leaking through).
+Requires WooCommerce active before `atlas-relics-core` can activate, since Phase 2 added
+`Requires Plugins: woocommerce`. `.wp-env.json` already lists WooCommerce as a mapped plugin, so
+`npm run env:start` installs it automatically.
+
+- [ ] WooCommerce activates cleanly on `npm run env:start` (or
+      `npm run env:cli -- plugin activate woocommerce` if it didn't auto-activate).
+- [ ] Plugin activation creates all seven pages (Home, Start Here, Conscious Mirror, Caves,
+      Relics, Pattern Map, Journal, About) exactly once — deactivate/reactivate and confirm no
+      duplicates appear (Pages list).
+- [ ] Reading settings show a static front page after activation, with Journal as the posts page —
+      but only on a fresh site; re-run activation on a site with custom Reading settings and
+      confirm they're left untouched.
+- [ ] Primary and Footer navigation menus are created and assigned automatically; every link
+      resolves (no 404s), including the Shop link once WooCommerce's default pages exist.
+- [ ] `templates/single-product.html` and `archive-product.html` render without an "unrecognized
+      block" notice in the Site Editor — WooCommerce block names can shift between versions, so
+      verify against the WooCommerce version actually installed and adjust the template if needed.
+- [ ] WooCommerce's own Cart and Checkout block templates (not forked by this theme — see
+      `docs/architecture.md`) pick up the navy/ivory/gold theming from `assets/css/woocommerce.css`
+      with no unstyled default WooCommerce elements visible.
 - [ ] A full test purchase (test payment gateway) succeeds end-to-end, including a downloadable
       product delivering its file.
-- [ ] Bundles and related/upsell products display correctly and do not affect cart totals
-      incorrectly.
-- [ ] Beacons importer runs against sample/test export data without data loss or duplication.
-- [ ] MailerLite signup forms submit successfully and land subscribers in the correct group/segment.
+- [ ] Bundles: mark a product as a bundle (product edit screen → "Atlas Relics Bundle" box), add it
+      to the cart, and confirm the component products appear in the cart at $0, are removed
+      together when the bundle line is removed, and each component's stock is decremented after a
+      completed order.
+- [ ] Related/upsell products on a product page are capped at 3/2 respectively, not a long list.
+- [ ] Beacons importer (Tools → Beacons Import): import the sample CSV, confirm products are
+      created as **drafts**; re-import the same file and confirm it updates rather than duplicates
+      (matched by SKU).
+- [ ] MailerLite: fill in an API key and group IDs under Settings → Atlas Relics, submit each of
+      the three newsletter forms (homepage/footer, Start Here, Conscious Mirror), and confirm each
+      subscriber lands in the correct MailerLite group.
+- [ ] `<meta name="description">`, canonical link, and Open Graph tags appear in page source on a
+      page, a post, and a product.
+- [ ] Skip-to-content link is reachable and functional via keyboard (Tab from page load).
 - [ ] Core Web Vitals (LCP, CLS, INP) pass "Good" thresholds on the homepage and a product page.
 - [ ] Automated accessibility scan (e.g. axe) has zero critical/serious issues on customer-facing
       pages.

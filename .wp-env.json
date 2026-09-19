@@ -2,6 +2,7 @@
 	"core": null,
 	"phpVersion": "8.1",
 	"plugins": [
+		"https://downloads.wordpress.org/plugin/woocommerce.zip",
 		"./wp-content/plugins/atlas-relics-core"
 	],
 	"themes": [

@@ -4,6 +4,11 @@ Atlas Relics is a WordPress + WooCommerce ecosystem built at `atlasrelics.com`. 
 as one clean, private codebase in three sequential phases — each completed, tested, and merged
 before the next begins — rather than as one large simultaneous build.
 
+**Status:** Phase 1 (Foundation) and Phase 2 (Storefront) are implemented in code. Both still need
+a full manual QA pass against the checklists in [docs/testing.md](testing.md) — see that file for
+what to verify — before either is considered "completed, tested, and merged." Phase 3 has not
+started.
+
 ## Phase 1 — Foundation
 
 Builds the underlying WordPress system and brand framework:

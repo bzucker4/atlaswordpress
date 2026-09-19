@@ -1,7 +1,7 @@
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
-<!-- wp:group {"tagName":"main"} -->
-<main class="wp-block-group">
+<!-- wp:group {"tagName":"main","anchor":"main-content"} -->
+<main class="wp-block-group" id="main-content">
 	<!-- wp:group {"tagName":"section","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"backgroundColor":"navy-900","textColor":"ivory-50"} -->
 	<section class="wp-block-group has-ivory-50-color has-navy-900-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
 		<!-- wp:group {"layout":{"type":"constrained","contentSize":"720px"}} -->
@@ -21,11 +21,11 @@
 			<!-- wp:buttons -->
 			<div class="wp-block-buttons">
 				<!-- wp:button {"backgroundColor":"gold-500","textColor":"navy-900"} -->
-				<div class="wp-block-button"><a class="wp-block-button__link has-navy-900-color has-gold-500-background-color has-text-color has-background wp-element-button">Start Here</a></div>
+				<div class="wp-block-button"><a class="wp-block-button__link has-navy-900-color has-gold-500-background-color has-text-color has-background wp-element-button" href="/start-here/">Start Here</a></div>
 				<!-- /wp:button -->
 
 				<!-- wp:button {"className":"is-style-outline","textColor":"ivory-50"} -->
-				<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-ivory-50-color has-text-color wp-element-button">Try the Conscious Mirror</a></div>
+				<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-ivory-50-color has-text-color wp-element-button" href="/conscious-mirror/">Try the Conscious Mirror</a></div>
 				<!-- /wp:button -->
 			</div>
 			<!-- /wp:buttons -->
@@ -45,7 +45,7 @@
 			<!-- wp:column -->
 			<div class="wp-block-column">
 				<!-- wp:heading {"level":3,"fontSize":"medium"} -->
-				<h3 class="wp-block-heading has-medium-font-size">Conscious Mirror</h3>
+				<h3 class="wp-block-heading has-medium-font-size"><a href="/conscious-mirror/">Conscious Mirror</a></h3>
 				<!-- /wp:heading -->
 				<!-- wp:paragraph -->
 				<p>A free reflection to meet the moment you're in.</p>
@@ -67,7 +67,7 @@
 			<!-- wp:column -->
 			<div class="wp-block-column">
 				<!-- wp:heading {"level":3,"fontSize":"medium"} -->
-				<h3 class="wp-block-heading has-medium-font-size">Caves &amp; Relics</h3>
+				<h3 class="wp-block-heading has-medium-font-size"><a href="/caves/">Caves</a> &amp; <a href="/relics/">Relics</a></h3>
 				<!-- /wp:heading -->
 				<!-- wp:paragraph -->
 				<p>Guides and objects for those ready to go deeper.</p>
@@ -76,6 +76,12 @@
 			<!-- /wp:column -->
 		</div>
 		<!-- /wp:columns -->
+
+		<!-- wp:group {"layout":{"type":"constrained","contentSize":"480px"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|50"}}}} -->
+		<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--50)">
+			<!-- wp:pattern {"slug":"atlas-relics/newsletter-signup"} /-->
+		</div>
+		<!-- /wp:group -->
 	</section>
 	<!-- /wp:group -->
 </main>

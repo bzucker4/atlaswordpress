@@ -1,0 +1,43 @@
+/*
+ * Accessibility helpers that theme.json cannot express: skip link and a
+ * consistent focus-visible ring. Kept in one small file instead of inline
+ * styles so it can be audited and linted on its own.
+ */
+
+.skip-link {
+	position: absolute;
+	top: -100px;
+	left: 0;
+	z-index: 100000;
+	padding: 0.85rem 1.5rem;
+	background-color: #0b1b33;
+	color: #f7f3e9;
+	text-decoration: none;
+	font-size: 0.9rem;
+}
+
+.skip-link:focus {
+	top: 0;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.wp-element-button:focus-visible,
+[tabindex]:focus-visible {
+	outline: 2px solid #c6a15c;
+	outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}

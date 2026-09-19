@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'ATLAS_RELICS_VERSION', '0.1.0' );
+define( 'ATLAS_RELICS_VERSION', '0.2.0' );
 
 /**
  * Register theme support and navigation menus.
@@ -34,6 +34,11 @@ function atlas_relics_setup() {
 
 	add_image_size( 'atlas-relics-card', 640, 480, true );
 	add_image_size( 'atlas-relics-hero', 1600, 900, true );
+
+	add_theme_support( 'woocommerce' );
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
 }
 add_action( 'after_setup_theme', 'atlas_relics_setup' );
 
@@ -58,5 +63,43 @@ function atlas_relics_enqueue_assets() {
 		array(),
 		ATLAS_RELICS_VERSION
 	);
+
+	wp_enqueue_style(
+		'atlas-relics-accessibility',
+		get_theme_file_uri( 'assets/css/accessibility.css' ),
+		array( 'atlas-relics-style' ),
+		ATLAS_RELICS_VERSION
+	);
+
+	wp_enqueue_style(
+		'atlas-relics-forms',
+		get_theme_file_uri( 'assets/css/forms.css' ),
+		array( 'atlas-relics-style' ),
+		ATLAS_RELICS_VERSION
+	);
+
+	if ( class_exists( 'WooCommerce' ) ) {
+		wp_enqueue_style(
+			'atlas-relics-woocommerce',
+			get_theme_file_uri( 'assets/css/woocommerce.css' ),
+			array( 'atlas-relics-style' ),
+			ATLAS_RELICS_VERSION
+		);
+	}
 }
 add_action( 'wp_enqueue_scripts', 'atlas_relics_enqueue_assets' );
+
+/**
+ * Drop the emoji-detection script/style and its DNS prefetch. Nobody on
+ * this site is typing emoji into content that needs the fallback-image
+ * polyfill, so this is a small, safe request-count reduction on every
+ * page load.
+ */
+function atlas_relics_disable_emoji_scripts() {
+	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+	remove_action( 'wp_print_styles', 'print_emoji_styles' );
+	remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+	remove_action( 'admin_print_styles', 'print_emoji_styles' );
+	remove_filter( 'wp_resource_hints', 'wp_emoji_resource_hints' );
+}
+add_action( 'init', 'atlas_relics_disable_emoji_scripts' );

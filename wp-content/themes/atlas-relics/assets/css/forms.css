@@ -1,0 +1,43 @@
+/*
+ * Layout for non-block, hand-authored form markup (currently just the
+ * newsletter signup pattern's <form>, built with core/html since WordPress
+ * has no core "form" block). Design tokens are duplicated as literal
+ * values here because plain CSS can't read theme.json presets directly;
+ * keep these in sync with theme.json if the palette changes.
+ */
+
+.screen-reader-text {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	white-space: nowrap;
+}
+
+.atlas-relics-newsletter-form {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	align-items: center;
+	max-width: 28rem;
+}
+
+.atlas-relics-newsletter-form input[type="email"] {
+	flex: 1 1 12rem;
+	padding: 0.65rem 0.85rem;
+	border: 1px solid #efe8d6;
+	border-radius: 2px;
+	font-size: 1rem;
+}
+
+.atlas-relics-newsletter-form button {
+	flex-shrink: 0;
+	cursor: pointer;
+}
+
+.atlas-relics-newsletter-form .atlas-relics-newsletter-message {
+	flex-basis: 100%;
+	margin: 0;
+	font-size: 0.9rem;
+}

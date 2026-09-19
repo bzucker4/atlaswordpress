@@ -6,12 +6,11 @@ begins.
 
 ## Phase roadmap
 
-- **Phase 1 — Foundation** *(this phase)*: native block theme, companion plugin, design system,
-  base templates, local dev environment, and documentation/rules. No live store or third-party
-  services yet.
-- **Phase 2 — Storefront**: homepage, journey pages, WooCommerce shop/cart/checkout/accounts,
-  bundles, Beacons import tooling, MailerLite forms, SEO/accessibility/performance work. Uses
-  test products and sanitized data only.
+- **Phase 1 — Foundation** *(done)*: native block theme, companion plugin, design system, base
+  templates, local dev environment, and documentation/rules. No live store or third-party services.
+- **Phase 2 — Storefront** *(this phase)*: homepage, journey pages, WooCommerce shop/cart/checkout,
+  bundles, Beacons import tooling, MailerLite forms, SEO/accessibility/performance work. Uses test
+  products and sanitized data only — see the Status note in [docs/product.md](docs/product.md).
 - **Phase 3 — Migration & automation**: real product/customer/order migration, MailerLite and
   Tally integrations, fulfillment automation, admin operations dashboard, analytics, and
   launch/rollback planning. Real data is imported only after a successful dry run and approval.
@@ -30,8 +29,20 @@ See [docs/product.md](docs/product.md) for the full product vision and ecosystem
 | Documentation | `docs/` |
 | Security & coding rules | [docs/security.md](docs/security.md), [docs/coding-standards.md](docs/coding-standards.md) |
 
-Phase 1 establishes structure only — no live storefront, no third-party service connections, and
-no real customer data.
+## What's in Phase 2
+
+| Deliverable | Location |
+| --- | --- |
+| Homepage + journey pages (Start Here, Conscious Mirror, Caves, Relics, Pattern Map, Journal, About) | `wp-content/themes/atlas-relics/patterns`, created automatically by `class-pages.php` |
+| WooCommerce theme support + single-product/archive-product templates | `functions.php`, `templates/single-product.html`, `templates/archive-product.html` |
+| Cart/Checkout/My Account theming | `assets/css/woocommerce.css` (see `docs/architecture.md` for why these aren't forked templates) |
+| Bundles + restrained upsells/related products | `class-bundles.php` |
+| Beacons CSV importer | Tools → Beacons Import, `class-beacons-importer.php`, [docs/integrations.md](docs/integrations.md) |
+| MailerLite newsletter + segmentation | Settings → Atlas Relics, `class-mailerlite.php`, `class-newsletter.php`, [docs/integrations.md](docs/integrations.md) |
+| SEO meta/OG tags, accessibility (skip link, focus states), perf (no emoji scripts) | `class-seo.php`, `assets/css/accessibility.css` |
+
+Phase 2 uses test products and sanitized information — no real customers or historical orders are
+imported (that's Phase 3).
 
 ## Local development
 
@@ -53,8 +64,9 @@ npm run env:start
 ```
 
 This launches WordPress at `http://localhost:8888` (admin at `/wp-admin`, default
-credentials `admin` / `password`) with the Atlas Relics theme and Atlas Relics Core plugin
-mounted from this repo, plus a matching test-site instance on `http://localhost:8889`.
+credentials `admin` / `password`) with WooCommerce, the Atlas Relics theme, and the Atlas Relics
+Core plugin mounted/installed from `.wp-env.json`, plus a matching test-site instance on
+`http://localhost:8889`.
 
 ### Common commands
 
@@ -66,21 +78,28 @@ npm run env:cli       # run a wp-cli command, e.g. npm run env:cli -- theme list
 npm run lint:php      # run PHP_CodeSniffer against the WordPress Coding Standards
 ```
 
-On first boot, activate the theme and plugin (wp-env does not auto-activate a plugin bundled
-under `wp-content/plugins`):
+On first boot, activate the theme and plugins in this order — WooCommerce first, since
+Atlas Relics Core declares it as a required dependency (wp-env does not auto-activate a plugin
+bundled under `wp-content/plugins`):
 
 ```bash
 npm run env:cli -- theme activate atlas-relics
+npm run env:cli -- plugin activate woocommerce
 npm run env:cli -- plugin activate atlas-relics-core
 ```
+
+Activating `atlas-relics-core` creates the Phase 2 journey pages and navigation menus
+automatically (see [docs/architecture.md](docs/architecture.md)). To finish wiring up the
+storefront, add a MailerLite API key and group IDs under **Settings → Atlas Relics** — see
+[docs/integrations.md](docs/integrations.md).
 
 ## Repository layout
 
 ```
-docs/                                Product, brand, architecture, testing, security docs
+docs/                                Product, brand, architecture, testing, security, integrations
 wp-content/themes/atlas-relics/      Native WordPress block theme
-wp-content/plugins/atlas-relics-core/ Companion plugin (fulfillment, security, setup)
-.wp-env.json                         Local dev environment definition
+wp-content/plugins/atlas-relics-core/ Companion plugin (security, storefront, fulfillment)
+.wp-env.json                         Local dev environment definition (includes WooCommerce)
 phpcs.xml.dist                       WordPress Coding Standards ruleset
 ```
 

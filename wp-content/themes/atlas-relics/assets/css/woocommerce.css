@@ -1,0 +1,132 @@
+/*
+ * Theme WooCommerce's own generated markup (classic shortcodes: My Account,
+ * notices; and the Cart/Checkout blocks) with the Atlas Relics design
+ * tokens. Deliberately CSS-only, not forked block templates: WooCommerce
+ * ships and maintains its own default block templates for Cart and
+ * Checkout, and their inner-block structure changes between WooCommerce
+ * releases. Re-theming via CSS selectors here means an upstream WooCommerce
+ * update can't silently break checkout the way a stale forked template
+ * could.
+ */
+
+/* Notices */
+.woocommerce-message,
+.woocommerce-info,
+.woocommerce-error,
+.woocommerce-notice {
+	border-top-color: #c6a15c;
+	background-color: #f7f3e9;
+	color: #1c1c1c;
+}
+
+.woocommerce-message::before,
+.woocommerce-info::before {
+	color: #c6a15c;
+}
+
+/* Buttons (classic templates: My Account, order-pay, coupon form) */
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce #respond input#submit,
+.wc-block-components-button {
+	background-color: #c6a15c;
+	color: #0b1b33;
+	border-radius: 2px;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	font-weight: 600;
+	border: none;
+}
+
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover,
+.woocommerce #respond input#submit:hover,
+.wc-block-components-button:hover {
+	background-color: #ad8748;
+	color: #0b1b33;
+}
+
+.woocommerce a.button.alt,
+.wc-block-cart__submit-button,
+.wc-block-components-checkout-place-order-button {
+	background-color: #0b1b33;
+	color: #f7f3e9;
+}
+
+.woocommerce a.button.alt:hover,
+.wc-block-cart__submit-button:hover,
+.wc-block-components-checkout-place-order-button:hover {
+	background-color: #16294a;
+	color: #f7f3e9;
+}
+
+/* Price emphasis */
+.woocommerce .price,
+.wc-block-components-product-price,
+.wc-block-components-totals-item__value {
+	color: #ad8748;
+}
+
+/* Cart & Checkout blocks */
+.wc-block-cart,
+.wc-block-checkout {
+	color: #1c1c1c;
+}
+
+.wc-block-components-panel,
+.wc-block-components-totals-wrapper,
+.wc-block-cart-items,
+.wc-block-components-order-summary {
+	border-color: #efe8d6;
+}
+
+.wc-block-components-totals-footer-item,
+.wc-block-components-totals-item {
+	border-top-color: #efe8d6;
+}
+
+.wc-block-components-radio-control__option[aria-checked="true"],
+.wc-block-components-checkbox input[type="checkbox"]:checked {
+	border-color: #c6a15c;
+	background-color: #c6a15c;
+}
+
+/* My Account */
+.woocommerce-MyAccount-navigation ul {
+	border-color: #efe8d6;
+}
+
+.woocommerce-MyAccount-navigation-link.is-active a {
+	color: #ad8748;
+	font-weight: 600;
+}
+
+table.shop_table th {
+	background-color: #0b1b33;
+	color: #f7f3e9;
+}
+
+table.shop_table tr:nth-child(even) td {
+	background-color: #f7f3e9;
+}
+
+/* Product loop badges */
+.woocommerce span.onsale {
+	background-color: #c6a15c;
+	color: #0b1b33;
+}
+
+/* Bundles */
+.atlas-relics-bundle-contents {
+	margin-top: 1.5rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid #efe8d6;
+}
+
+.atlas-relics-bundle-included-label {
+	color: #16294a;
+	font-size: 0.85em;
+	font-style: italic;
+}

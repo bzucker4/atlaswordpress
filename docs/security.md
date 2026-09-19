@@ -53,6 +53,15 @@ items below; later phases must extend, not bypass, this baseline.
 - **Phase 2 (payments, downloads, accounts)**: use WooCommerce's own payment-gateway
   infrastructure rather than custom payment handling; never store raw card data. Downloadable
   file URLs must be non-guessable and access-checked, not `wp-content/uploads` direct links.
+- **Phase 2 (what's already implemented)**: the newsletter AJAX endpoint
+  (`class-newsletter.php`) verifies a nonce via `check_ajax_referer()` and validates the email with
+  `is_email()` before ever calling MailerLite; the MailerLite API key is stored in the options
+  table via the Settings API (`class-settings.php`), never in code. The Beacons importer
+  (`class-beacons-importer.php`) requires `manage_woocommerce`, verifies a nonce, and imports every
+  product as a **draft** — nothing it creates goes live without a human reviewing it first. The
+  bundle meta box (`class-bundles.php`) verifies a nonce and `edit_product` capability before
+  saving, and validates every component product ID actually resolves to a `product` post before
+  storing it.
 - **Phase 3 (real customer data, migration)**: real customer/order data is only imported after a
   dry run and explicit approval (see `docs/testing.md`). Exported migration files containing PII
   are never committed to the repository and are deleted from any local/staging environment once

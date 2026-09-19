@@ -12,9 +12,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Singleton that wires up the plugin's feature classes.
  *
- * Phase 1 only wires security hardening and setup scaffolding. Fulfillment
- * automation, order/reminder workflows, and the admin operations dashboard
- * are added in later phases as their own classes registered here.
+ * Fulfillment automation, order/reminder workflows, and the admin
+ * operations dashboard are added in Phase 3 as their own classes
+ * registered here, following the same pattern.
  */
 final class Atlas_Relics_Core {
 
@@ -45,13 +45,27 @@ final class Atlas_Relics_Core {
 
 		new Atlas_Relics_Core_Security();
 		new Atlas_Relics_Core_Setup();
+		new Atlas_Relics_Core_Settings();
+		new Atlas_Relics_Core_SEO();
+		new Atlas_Relics_Core_Newsletter();
+
+		// Everything below genuinely depends on WooCommerce being active
+		// (product objects, cart, order data) rather than merely declaring
+		// it in "Requires Plugins" — keep the guard so a WooCommerce
+		// deactivation degrades gracefully instead of fataling.
+		if ( class_exists( 'WooCommerce' ) ) {
+			new Atlas_Relics_Core_Bundles();
+			new Atlas_Relics_Core_Beacons_Importer();
+		}
 	}
 
 	/**
-	 * Activation callback: record the installed version.
+	 * Activation callback: record the installed version and scaffold the
+	 * Phase 2 journey pages and navigation.
 	 */
 	public static function activate() {
 		add_option( 'atlas_relics_core_version', ATLAS_RELICS_CORE_VERSION );
+		Atlas_Relics_Core_Pages::create_default_content();
 		flush_rewrite_rules();
 	}
 
