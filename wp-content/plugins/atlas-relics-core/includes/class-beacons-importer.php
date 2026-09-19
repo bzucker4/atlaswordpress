@@ -15,8 +15,16 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Every imported product lands as a **draft** — this tool moves inventory
  * data into WooCommerce's shape, it does not decide what goes live.
  * Matches existing products by SKU so re-running an import updates rather
- * than duplicates. Phase 2 uses this against test/sanitized exports only;
- * the real Beacons catalog moves over in Phase 3 (see docs/product.md).
+ * than duplicates.
+ *
+ * With "Transfer files to this site" checked, each `download_url` is
+ * fetched once and moved into WooCommerce's own protected uploads
+ * directory rather than left pointing at Beacons' hosting — see
+ * `transfer_download_file()`. This matters for Phase 3's "secure download
+ * files" goal: WooCommerce token-gates delivery either way, but a locally
+ * stored file doesn't depend on Beacons' hosting staying up, and isn't
+ * exposed as a bare external URL if the site's File Download Method is
+ * ever switched to "Redirect only".
  */
 class Atlas_Relics_Core_Beacons_Importer {
 
@@ -98,6 +106,15 @@ class Atlas_Relics_Core_Beacons_Importer {
 						<th scope="row"><label for="beacons_csv"><?php echo esc_html__( 'CSV file', 'atlas-relics-core' ); ?></label></th>
 						<td><input type="file" name="beacons_csv" id="beacons_csv" accept=".csv,text/csv" required /></td>
 					</tr>
+					<tr>
+						<th scope="row"><?php echo esc_html__( 'Download files', 'atlas-relics-core' ); ?></th>
+						<td>
+							<label>
+								<input type="checkbox" name="transfer_files" value="yes" checked />
+								<?php echo esc_html__( 'Transfer files to this site instead of linking to download_url directly', 'atlas-relics-core' ); ?>
+							</label>
+						</td>
+					</tr>
 				</table>
 				<?php submit_button( __( 'Import products', 'atlas-relics-core' ) ); ?>
 			</form>
@@ -159,8 +176,9 @@ class Atlas_Relics_Core_Beacons_Importer {
 		}
 
 		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash -- tmp_name is a server-generated path, not user input.
-		$tmp_path = $_FILES['beacons_csv']['tmp_name'];
-		$results  = array(
+		$tmp_path      = $_FILES['beacons_csv']['tmp_name'];
+		$transfer_files = ! empty( $_POST['transfer_files'] );
+		$results       = array(
 			'created' => 0,
 			'updated' => 0,
 			'skipped' => 0,
@@ -190,7 +208,7 @@ class Atlas_Relics_Core_Beacons_Importer {
 			}
 
 			$data = array_combine( $header, $row );
-			$this->import_row( $data, $row_number, $results );
+			$this->import_row( $data, $row_number, $results, $transfer_files );
 		}
 
 		fclose( $handle );
@@ -201,11 +219,12 @@ class Atlas_Relics_Core_Beacons_Importer {
 	/**
 	 * Import (create or update) a single CSV row.
 	 *
-	 * @param array $data       Row keyed by header column.
-	 * @param int   $row_number CSV row number, for error messages.
-	 * @param array $results    Results accumulator, passed by reference.
+	 * @param array $data           Row keyed by header column.
+	 * @param int   $row_number     CSV row number, for error messages.
+	 * @param array $results        Results accumulator, passed by reference.
+	 * @param bool  $transfer_files Whether to sideload download_url into local storage.
 	 */
-	private function import_row( $data, $row_number, array &$results ) {
+	private function import_row( $data, $row_number, array &$results, $transfer_files = false ) {
 		$title = isset( $data['title'] ) ? sanitize_text_field( $data['title'] ) : '';
 		$sku   = isset( $data['sku'] ) ? sanitize_text_field( $data['sku'] ) : '';
 
@@ -238,6 +257,10 @@ class Atlas_Relics_Core_Beacons_Importer {
 		$download_url = isset( $data['download_url'] ) ? esc_url_raw( trim( $data['download_url'] ) ) : '';
 
 		if ( '' !== $download_url ) {
+			if ( $transfer_files ) {
+				$download_url = $this->transfer_download_file( $download_url, $title, $row_number, $results );
+			}
+
 			$product->set_virtual( true );
 			$product->set_downloadable( true );
 			$product->set_downloads(
@@ -288,6 +311,52 @@ class Atlas_Relics_Core_Beacons_Importer {
 		if ( ! is_wp_error( $attachment_id ) ) {
 			set_post_thumbnail( $product_id, $attachment_id );
 		}
+	}
+
+	/**
+	 * Fetch a remote download file once and move it into WooCommerce's own
+	 * protected uploads directory, returning the local URL to use instead.
+	 * Falls back to the original remote URL (rather than failing the whole
+	 * row) if the fetch or move doesn't succeed.
+	 *
+	 * @param string $download_url Remote file URL.
+	 * @param string $title        Product title, used as a filename fallback.
+	 * @param int    $row_number   CSV row number, for error messages.
+	 * @param array  $results      Results accumulator, passed by reference.
+	 * @return string
+	 */
+	private function transfer_download_file( $download_url, $title, $row_number, array &$results ) {
+		require_once ABSPATH . 'wp-admin/includes/file.php';
+
+		$tmp_file = download_url( $download_url );
+
+		if ( is_wp_error( $tmp_file ) ) {
+			/* translators: 1: CSV row number, 2: error message */
+			$results['errors'][] = sprintf( __( 'Row %1$d: could not fetch download_url, kept the original link (%2$s).', 'atlas-relics-core' ), $row_number, $tmp_file->get_error_message() );
+			return $download_url;
+		}
+
+		$dir = trailingslashit( wp_upload_dir()['basedir'] ) . 'woocommerce_uploads/';
+
+		if ( ! file_exists( $dir ) ) {
+			wp_mkdir_p( $dir );
+		}
+
+		$source_name = wp_basename( (string) wp_parse_url( $download_url, PHP_URL_PATH ) );
+		$filename    = wp_unique_filename( $dir, sanitize_file_name( $source_name ?: $title ) );
+		$destination = $dir . $filename;
+
+		// phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_rename
+		$moved = rename( $tmp_file, $destination );
+
+		if ( ! $moved ) {
+			wp_delete_file( $tmp_file );
+			/* translators: %d: CSV row number */
+			$results['errors'][] = sprintf( __( 'Row %d: could not move the downloaded file, kept the original link.', 'atlas-relics-core' ), $row_number );
+			return $download_url;
+		}
+
+		return trailingslashit( wp_upload_dir()['baseurl'] ) . 'woocommerce_uploads/' . $filename;
 	}
 
 	/**

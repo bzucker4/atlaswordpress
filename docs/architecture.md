@@ -14,10 +14,10 @@ future theme redesign.
   models.
 - **`wp-content/plugins/atlas-relics-core`** — the companion plugin. Owns security hardening
   (Phase 1); WooCommerce bundle logic, the Beacons importer, MailerLite/newsletter handling, SEO
-  output, and default-page/navigation scaffolding (Phase 2); and will own Tally integration,
-  fulfillment automation, and the admin operations dashboard in Phase 3. Content types the
-  storefront needs (products beyond WooCommerce's own, reflection responses, fulfillment records)
-  belong here so they survive a theme change.
+  output, and default-page/navigation scaffolding (Phase 2); and Tally-driven fulfillment
+  automation, the customer/order migration tool, internal analytics, and the Atlas Relics Ops
+  dashboard (Phase 3). Content types the storefront needs (products beyond WooCommerce's own,
+  reflection responses, fulfillment records) belong here so they survive a theme change.
 
 If a later phase needs the theme to react to plugin state (e.g. show an "order shipped" banner),
 prefer the plugin firing a documented action/filter (see `atlas_relics_core_registered_content_types`
@@ -76,7 +76,12 @@ wp-content/plugins/atlas-relics-core/
     class-mailerlite.php          MailerLite Connect API wrapper
     class-newsletter.php          AJAX handler behind the newsletter signup forms
     class-bundles.php             Bundle products + restrained upsell/related display
-    class-beacons-importer.php    Tools → Beacons Import CSV importer
+    class-beacons-importer.php    Tools → Beacons Import CSV importer (+ file transfer)
+    class-tally.php                Tally webhook receiver + API helper
+    class-fulfillment.php          Conscious Mirror / Pattern Map fulfillment automation
+    class-migration.php            Tools → Atlas Relics Migration (customers/orders, dry-run gated)
+    class-analytics.php            Internal snapshot (wp-admin widget + Ops page)
+    class-dashboard.php            Atlas Relics Ops top-level admin page
   assets/js/newsletter.js  Newsletter form submit handler
   uninstall.php            Cleanup on uninstall
 ```
@@ -102,8 +107,21 @@ volume, keeping the repo limited to code this project owns.
   and are idempotent: re-activating (or redeploying) never duplicates pages or overwrites a menu
   an admin has since customized.
 
-## Extension points for Phase 3
+## Phase 3 additions
 
-New `includes/class-*.php` files registered from `Atlas_Relics_Core::__construct()`, following the
-same one-class-per-concern pattern as every class above, cover Tally integration, fulfillment
-automation, and the admin operations dashboard.
+- **Fulfillment records** (`class-fulfillment.php`) are a private `atlas_relics_fulfillment` post
+  type rather than a new database table — queryable with `WP_Query`/meta queries without a schema
+  migration, which matters more at this project's scale than raw query performance. One record per
+  order line item that needs a personalized reading.
+- **Tally** (`class-tally.php`) only receives webhooks — it doesn't poll an API on a schedule. Its
+  field-extraction is defensive by necessity (see docs/testing.md): Tally's exact webhook payload
+  shape needs confirming against a real form once one exists.
+- **Migration** (`class-migration.php`) is intentionally two admin actions, not one — see
+  docs/security.md for why, and docs/launch.md for how it fits into an actual go-live.
+- **Analytics** (`class-analytics.php`) reads only data this site already has (WooCommerce orders,
+  fulfillment records, migrated-customer meta). It does not wrap Google Analytics or another
+  external service — that needs a real tracking ID this codebase doesn't have, and is a front-end
+  concern for whoever sets up the live site rather than something to hard-code a placeholder for.
+- **Atlas Relics Ops** (`class-dashboard.php`) is a thin composition layer: it renders data other
+  classes already expose (`Atlas_Relics_Core_Analytics::get_snapshot()`, fulfillment/unmatched
+  queries, `Atlas_Relics_Core_Migration::OPTION_LAST_RUN`) rather than owning any logic itself.

@@ -48,6 +48,7 @@ final class Atlas_Relics_Core {
 		new Atlas_Relics_Core_Settings();
 		new Atlas_Relics_Core_SEO();
 		new Atlas_Relics_Core_Newsletter();
+		new Atlas_Relics_Core_Tally();
 
 		// Everything below genuinely depends on WooCommerce being active
 		// (product objects, cart, order data) rather than merely declaring
@@ -56,6 +57,10 @@ final class Atlas_Relics_Core {
 		if ( class_exists( 'WooCommerce' ) ) {
 			new Atlas_Relics_Core_Bundles();
 			new Atlas_Relics_Core_Beacons_Importer();
+			new Atlas_Relics_Core_Fulfillment();
+			new Atlas_Relics_Core_Migration();
+			new Atlas_Relics_Core_Analytics();
+			new Atlas_Relics_Core_Dashboard();
 		}
 	}
 
@@ -70,9 +75,11 @@ final class Atlas_Relics_Core {
 	}
 
 	/**
-	 * Deactivation callback: flush rewrite rules cleanly.
+	 * Deactivation callback: flush rewrite rules and clear scheduled
+	 * cron events so they don't fire against a deactivated plugin.
 	 */
 	public static function deactivate() {
+		wp_clear_scheduled_hook( 'atlas_relics_core_daily_check' );
 		flush_rewrite_rules();
 	}
 

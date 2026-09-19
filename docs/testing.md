@@ -73,16 +73,66 @@ Requires WooCommerce active before `atlas-relics-core` can activate, since Phase
 - [ ] Automated accessibility scan (e.g. axe) has zero critical/serious issues on customer-facing
       pages.
 
-## Phase 3 — Migration & automation checklist (for when that phase starts)
+## Phase 3 — Migration & automation checklist
+
+Follow [docs/launch.md](launch.md) for the full backup/staging/cutover/rollback sequence this
+checklist fits into. Nothing here should run against production before it's passed in staging.
+
+**Tally webhook (verify first — everything else depends on it working):**
+
+- [ ] The exact webhook payload shape from a real Tally form submission has been logged and
+      compared against `Atlas_Relics_Core_Tally::extract_field()` /
+      `extract_field_by_type()` (`class-tally.php`) — Tally's schema wasn't something this
+      codebase could verify without a live account; confirm field extraction actually finds the
+      hidden `fulfillment_id` and the respondent's email, and adjust the extraction methods if not.
+- [ ] A request to the webhook URL with a missing or wrong `Tally-Signature` header is rejected
+      (401), confirming signature verification is actually active and not silently bypassed.
+
+**Migration tool:**
 
 - [ ] A full migration **dry run** completes against a staging copy with a written reconciliation
-      report (counts in vs. counts imported) before any real-data import is approved.
+      report (counts in vs. counts valid vs. invalid) before any real-data import is approved —
+      Tools → Atlas Relics Migration enforces this by design (there is no one-step import).
+- [ ] The commit step is refused if the confirmation checkbox isn't ticked, and refused again if
+      the same token is submitted a second time (replay protection).
 - [ ] Imported customer/order data is spot-checked against the source system for accuracy.
+- [ ] Re-running the same dry run + commit a second time updates/skips rather than duplicating
+      (customers matched by email, orders matched by `external_order_id`).
 - [ ] Newsletter consent/unsubscribe status is preserved exactly — no previously-unsubscribed
-      contact receives a new email as a result of migration.
-- [ ] Fulfillment automation (Conscious Mirror, Pattern Map) is tested with real-shaped but
-      non-production data, including the failure path (what happens when an automated step
-      errors) and confirming an admin notification fires.
+      contact receives a new email as a result of migration (confirm by checking that migration
+      never calls the MailerLite API — see `commit_customer_row()` in `class-migration.php`).
+- [ ] `wp-content/uploads/atlas-relics-migration/` is not reachable directly over HTTP (test both
+      Apache `.htaccess` and, if the host uses Nginx, its equivalent config — the `.htaccess` file
+      this tool writes has no effect on Nginx).
+
+**Fulfillment automation:**
+
+- [ ] Mark a test product as "Conscious Mirror" or "Pattern Map" fulfillment type, complete a test
+      order for it, and confirm: a fulfillment record is created, the customer receives the
+      personalized Tally link email, submitting that Tally form fires the webhook, and the record
+      updates to "ready to prepare" with an admin notification email.
+- [ ] Failure path: submit a Tally webhook with a `fulfillment_id` that doesn't exist, and confirm
+      it's logged to "Unmatched Tally submissions" in Atlas Relics Ops with an admin notification,
+      rather than failing silently.
+- [ ] Reminder cron (`atlas_relics_core_daily_check`) fires and emails customers whose fulfillment
+      has been "awaiting response" past the configured reminder window — trigger it manually with
+      `npm run env:cli -- cron event run atlas_relics_core_daily_check` rather than waiting a day.
+- [ ] "Mark delivered" in Atlas Relics Ops updates the record's status and is protected by a nonce
+      + capability check (confirm the link 403s for a non-admin user).
+
+**Beacons file transfer:**
+
+- [ ] Import with "Transfer files to this site" checked and confirm the resulting product's
+      download file URL points at this site's `wp-content/uploads/woocommerce_uploads/`, not the
+      original Beacons URL.
+
+**Analytics:**
+
+- [ ] The "Atlas Relics Snapshot" widget (wp-admin dashboard and Atlas Relics Ops) shows figures
+      that match a manual count for orders, revenue, and fulfillment status.
+
+**General:**
+
 - [ ] Refund and cancellation flows are tested, not just the happy path.
 - [ ] Rollback plan has been executed at least once in staging (restore from backup, confirm site
       returns to a known-good state) before go-live.

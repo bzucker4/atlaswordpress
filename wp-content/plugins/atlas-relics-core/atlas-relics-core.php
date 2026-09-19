@@ -2,8 +2,8 @@
 /**
  * Plugin Name: Atlas Relics Core
  * Plugin URI: https://atlasrelics.com
- * Description: Companion plugin for the Atlas Relics theme. Provides security hardening, storefront scaffolding (bundles, Beacons import, MailerLite signup), and will grow into fulfillment automation and the admin operations dashboard in Phase 3.
- * Version: 0.2.0
+ * Description: Companion plugin for the Atlas Relics theme. Security hardening, storefront scaffolding (bundles, Beacons import, MailerLite signup), Tally-driven fulfillment automation, migration tooling, and the Atlas Relics Ops dashboard.
+ * Version: 0.3.0
  * Requires at least: 6.5
  * Requires PHP: 8.1
  * Requires Plugins: woocommerce
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'ATLAS_RELICS_CORE_VERSION', '0.2.0' );
+define( 'ATLAS_RELICS_CORE_VERSION', '0.3.0' );
 define( 'ATLAS_RELICS_CORE_PATH', plugin_dir_path( __FILE__ ) );
 define( 'ATLAS_RELICS_CORE_URL', plugin_dir_url( __FILE__ ) );
 define( 'ATLAS_RELICS_CORE_FILE', __FILE__ );
@@ -35,6 +35,11 @@ require_once ATLAS_RELICS_CORE_PATH . 'includes/class-mailerlite.php';
 require_once ATLAS_RELICS_CORE_PATH . 'includes/class-newsletter.php';
 require_once ATLAS_RELICS_CORE_PATH . 'includes/class-bundles.php';
 require_once ATLAS_RELICS_CORE_PATH . 'includes/class-beacons-importer.php';
+require_once ATLAS_RELICS_CORE_PATH . 'includes/class-tally.php';
+require_once ATLAS_RELICS_CORE_PATH . 'includes/class-fulfillment.php';
+require_once ATLAS_RELICS_CORE_PATH . 'includes/class-migration.php';
+require_once ATLAS_RELICS_CORE_PATH . 'includes/class-analytics.php';
+require_once ATLAS_RELICS_CORE_PATH . 'includes/class-dashboard.php';
 
 /**
  * Boot the plugin once all plugins are loaded.

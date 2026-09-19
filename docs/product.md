@@ -4,10 +4,12 @@ Atlas Relics is a WordPress + WooCommerce ecosystem built at `atlasrelics.com`. 
 as one clean, private codebase in three sequential phases — each completed, tested, and merged
 before the next begins — rather than as one large simultaneous build.
 
-**Status:** Phase 1 (Foundation) and Phase 2 (Storefront) are implemented in code. Both still need
-a full manual QA pass against the checklists in [docs/testing.md](testing.md) — see that file for
-what to verify — before either is considered "completed, tested, and merged." Phase 3 has not
-started.
+**Status:** Phases 1–3 are implemented in code. All three still need a full manual QA pass against
+the checklists in [docs/testing.md](testing.md) — see that file for what to verify — before any of
+them is considered "completed, tested, and merged." **No real customer data, orders, or payments
+have been migrated or processed** — Phase 3's migration tool is built but has not been run against
+real data by anyone; that only happens after the dry run + approval sequence in
+[docs/launch.md](launch.md), which is a decision for whoever runs the live site to make.
 
 ## Phase 1 — Foundation
 

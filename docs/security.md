@@ -67,3 +67,25 @@ items below; later phases must extend, not bypass, this baseline.
   are never committed to the repository and are deleted from any local/staging environment once
   the migration is verified. Newsletter consent status must be preserved exactly during migration
   — this is a legal requirement (CAN-SPAM / GDPR-style consent), not just a UX nicety.
+- **Phase 3 (what's already implemented)**:
+  - **Migration is two-step by design** (`class-migration.php`): a dry run only ever validates and
+    caches to disk; committing requires the *exact* token from that dry run plus an explicit
+    confirmation checkbox, verified with a fresh nonce per token (so a token can't be replayed
+    against a different confirmation). The commit handler deletes the cache file before doing any
+    writes, so the same dry run can never be committed twice. Cached dry-run files (real customer
+    PII) live under `wp-content/uploads/atlas-relics-migration/`, are `.htaccess`-denied and
+    `index.php`-silenced on creation, and are deleted automatically after 24 hours if never
+    committed. **The `.htaccess` file only protects Apache** — a site hosted on Nginx needs an
+    equivalent `location` block denying that path; this is called out in `docs/testing.md` and
+    `docs/launch.md` so it isn't missed during launch.
+  - **Migration never calls the MailerLite API.** Newsletter consent from an imported customer is
+    stored as user meta only (`_atlas_relics_newsletter_consent`) — the importer cannot
+    (re-)subscribe anyone. Only the customer's own action, through the newsletter signup form,
+    triggers a MailerLite subscribe call.
+  - **The Tally webhook** (`class-tally.php`) verifies an HMAC-SHA256 signature
+    (`hash_equals()` against a secret stored in Settings) before any payload is processed, and
+    rejects the request with 401 if the signature is missing or doesn't match — it does not trust
+    an unauthenticated POST to a guessable REST URL.
+  - **A submission that can't be matched** to a fulfillment record (bad/missing hidden field, or
+    an email that doesn't match the order) is logged, not silently dropped, and triggers an admin
+    email so a human reconciles it — see `log_unmatched_submission()` in `class-fulfillment.php`.

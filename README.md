@@ -8,12 +8,14 @@ begins.
 
 - **Phase 1 — Foundation** *(done)*: native block theme, companion plugin, design system, base
   templates, local dev environment, and documentation/rules. No live store or third-party services.
-- **Phase 2 — Storefront** *(this phase)*: homepage, journey pages, WooCommerce shop/cart/checkout,
+- **Phase 2 — Storefront** *(done)*: homepage, journey pages, WooCommerce shop/cart/checkout,
   bundles, Beacons import tooling, MailerLite forms, SEO/accessibility/performance work. Uses test
-  products and sanitized data only — see the Status note in [docs/product.md](docs/product.md).
-- **Phase 3 — Migration & automation**: real product/customer/order migration, MailerLite and
-  Tally integrations, fulfillment automation, admin operations dashboard, analytics, and
-  launch/rollback planning. Real data is imported only after a successful dry run and approval.
+  products and sanitized data only.
+- **Phase 3 — Migration & automation** *(this phase)*: Tally-driven fulfillment automation, a
+  dry-run-gated customer/order migration tool, internal analytics, the Atlas Relics Ops dashboard,
+  and the launch/rollback runbook. **Real data is imported only after a successful dry run and
+  explicit approval — that step hasn't happened; see the Status note in
+  [docs/product.md](docs/product.md).**
 
 See [docs/product.md](docs/product.md) for the full product vision and ecosystem description.
 
@@ -43,6 +45,22 @@ See [docs/product.md](docs/product.md) for the full product vision and ecosystem
 
 Phase 2 uses test products and sanitized information — no real customers or historical orders are
 imported (that's Phase 3).
+
+## What's in Phase 3
+
+| Deliverable | Location |
+| --- | --- |
+| Tally webhook + fulfillment automation | `class-tally.php`, `class-fulfillment.php`, product-level "Atlas Relics Fulfillment" meta box |
+| Reminders, admin notifications, error handling | Daily cron (`class-fulfillment.php`), "Unmatched Tally submissions" log |
+| Admin operations dashboard | wp-admin → Atlas Relics Ops, `class-dashboard.php` |
+| Customer/order migration, dry-run gated | Tools → Atlas Relics Migration, `class-migration.php`, [docs/launch.md](docs/launch.md) |
+| Beacons secure file transfer | "Transfer files to this site" option, Tools → Beacons Import |
+| Internal analytics | wp-admin dashboard widget + Atlas Relics Ops, `class-analytics.php` |
+| Backup, launch, cutover, rollback runbook | [docs/launch.md](docs/launch.md) |
+
+Phase 3's tooling is built and syntax-validated but has not been run against real data by anyone —
+that's a deliberate, manual decision for whoever operates the live site, made by following
+[docs/launch.md](docs/launch.md).
 
 ## Local development
 
@@ -96,7 +114,8 @@ storefront, add a MailerLite API key and group IDs under **Settings → Atlas Re
 ## Repository layout
 
 ```
-docs/                                Product, brand, architecture, testing, security, integrations
+docs/                                Product, brand, architecture, testing, security, integrations,
+                                      launch
 wp-content/themes/atlas-relics/      Native WordPress block theme
 wp-content/plugins/atlas-relics-core/ Companion plugin (security, storefront, fulfillment)
 .wp-env.json                         Local dev environment definition (includes WooCommerce)
