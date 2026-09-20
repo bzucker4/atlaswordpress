@@ -117,9 +117,7 @@ class Atlas_Relics_Core_Tally {
 	}
 
 	/**
-	 * Find a field's value by its key (used for hidden fields, which Tally
-	 * includes in the payload using the key set when the form's share
-	 * link was generated).
+	 * Find a field's value by its key or label (used for hidden fields).
 	 *
 	 * @param array  $fields Field list from the webhook payload.
 	 * @param string $key    Field key to find.
@@ -127,7 +125,17 @@ class Atlas_Relics_Core_Tally {
 	 */
 	private function extract_field( array $fields, $key ) {
 		foreach ( $fields as $field ) {
-			if ( isset( $field['key'] ) && $field['key'] === $key ) {
+			if ( ! is_array( $field ) ) {
+				continue;
+			}
+
+			// Tally reports hidden fields with an auto-generated `key`
+			// (e.g. "question_abc123") and the hidden field's name in
+			// `label`, so match on either.
+			$matches_key   = isset( $field['key'] ) && is_string( $field['key'] ) && 0 === strcasecmp( $field['key'], $key );
+			$matches_label = isset( $field['label'] ) && is_string( $field['label'] ) && 0 === strcasecmp( $field['label'], $key );
+
+			if ( $matches_key || $matches_label ) {
 				return is_scalar( $field['value'] ?? null ) ? (string) $field['value'] : null;
 			}
 		}
@@ -146,7 +154,7 @@ class Atlas_Relics_Core_Tally {
 	 */
 	private function extract_field_by_type( array $fields, $type ) {
 		foreach ( $fields as $field ) {
-			if ( isset( $field['type'] ) && false !== stripos( $field['type'], $type ) ) {
+			if ( is_array( $field ) && isset( $field['type'] ) && is_string( $field['type'] ) && false !== stripos( $field['type'], $type ) ) {
 				return is_scalar( $field['value'] ?? null ) ? (string) $field['value'] : null;
 			}
 		}

@@ -18,14 +18,14 @@ if ( ! defined( 'ABSPATH' ) ) {
  *   to the record → admin is notified to prepare the reading → admin
  *   marks it delivered from Atlas Relics Ops.
  *
- * Records are stored as a private `atlas_relics_fulfillment` post per
+ * Records are stored as a private `ar_fulfillment` post per
  * order item, not a new custom table — this keeps the data queryable
  * with WP_Query/meta queries without a schema migration, which matters
  * more here than raw query performance at this project's scale.
  */
 class Atlas_Relics_Core_Fulfillment {
 
-	const POST_TYPE      = 'atlas_relics_fulfillment';
+	const POST_TYPE      = 'ar_fulfillment'; // Max 20 chars: WordPress rejects longer post type slugs.
 	const META_PRODUCT_TYPE = '_atlas_relics_fulfillment_type';
 
 	const STATUS_AWAITING  = 'awaiting_response';

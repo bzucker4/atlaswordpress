@@ -109,7 +109,7 @@ volume, keeping the repo limited to code this project owns.
 
 ## Phase 3 additions
 
-- **Fulfillment records** (`class-fulfillment.php`) are a private `atlas_relics_fulfillment` post
+- **Fulfillment records** (`class-fulfillment.php`) are a private `ar_fulfillment` post
   type rather than a new database table — queryable with `WP_Query`/meta queries without a schema
   migration, which matters more at this project's scale than raw query performance. One record per
   order line item that needs a personalized reading.
