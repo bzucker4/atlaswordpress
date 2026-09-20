@@ -114,11 +114,13 @@ class Atlas_Relics_Core_Dashboard {
 				<?php
 				$order_id = (int) get_post_meta( $record->ID, '_order_id', true );
 				$status   = get_post_meta( $record->ID, '_status', true );
+				// Orders are not posts under HPOS, so use the order's own edit URL.
+				$order    = ( $order_id && function_exists( 'wc_get_order' ) ) ? wc_get_order( $order_id ) : false;
 				?>
 				<tr>
 					<td>
-						<?php if ( $order_id && function_exists( 'wc_get_order' ) && wc_get_order( $order_id ) ) : ?>
-							<a href="<?php echo esc_url( admin_url( 'post.php?post=' . $order_id . '&action=edit' ) ); ?>">#<?php echo esc_html( $order_id ); ?></a>
+						<?php if ( $order ) : ?>
+							<a href="<?php echo esc_url( $order->get_edit_order_url() ); ?>">#<?php echo esc_html( $order_id ); ?></a>
 						<?php else : ?>
 							#<?php echo esc_html( $order_id ); ?>
 						<?php endif; ?>

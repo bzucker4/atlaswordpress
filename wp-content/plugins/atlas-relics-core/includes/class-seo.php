@@ -25,6 +25,8 @@ class Atlas_Relics_Core_SEO {
 	 * Register hooks.
 	 */
 	public function __construct() {
+		// This class prints its own canonical; drop core's so singular pages don't get two.
+		remove_action( 'wp_head', 'rel_canonical' );
 		add_action( 'wp_head', array( $this, 'output_meta_tags' ), 1 );
 	}
 

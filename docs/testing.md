@@ -9,7 +9,10 @@ automated lint check that does exist.
 - `npm run lint:php` — PHP_CodeSniffer against the WordPress Coding Standards ruleset
   (`phpcs.xml.dist`). Must pass with zero errors before merging.
 - `wp-env` boot — the environment in `.wp-env.json` must start clean (`npm run env:start`) with
-  no PHP fatal errors or warnings in the debug log (`WP_DEBUG_LOG` is on by default).
+  no PHP fatal errors or warnings in the debug log (`WP_DEBUG_LOG` is on by default). wp-env
+  installs the theme but does not activate it, so after `npx wp-env start` run
+  `npx wp-env run cli wp theme activate atlas-relics` (or `npm run env:start`, then
+  `npm run env:cli -- theme activate atlas-relics`).
 
 ## Phase 1 — Foundation checklist
 
