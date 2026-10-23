@@ -109,3 +109,14 @@ Once launched, this isn't a one-time checklist:
   files older than 24 hours via the same daily cron fulfillment reminders use — no manual cleanup
   needed, but it's worth knowing that directory exists and why it's `.htaccess`-protected (see
   docs/security.md).
+
+## Domain plan
+
+The site launches on `home.atlas-relics.com`, replacing the current Grok-built site on launch day.
+The bare `atlas-relics.com` stays with the store (`/b/` and `/collection/` links).
+
+- [ ] Choose a host and create the WordPress site on a temporary address; test everything there.
+- [ ] In WordPress, set WordPress Address and Site Address to `https://home.atlas-relics.com`.
+- [ ] Add the host's subdomain to the site, then change the `home` DNS record to the host's
+      value. Keep the old record's value written down so the change can be reversed.
+- [ ] Confirm HTTPS works and click through every page, button and legacy redirect.
