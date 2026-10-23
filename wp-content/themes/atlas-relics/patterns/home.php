@@ -218,33 +218,53 @@ $atlas_tools = array(
 	</div>
 	<!-- /wp:columns -->
 
-	<!-- wp:group {"className":"atlas-card atlas-strip","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
-	<div class="wp-block-group atlas-card atlas-strip">
-		<!-- wp:group {"layout":{"type":"default"}} -->
-		<div class="wp-block-group">
-			<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"lilac-300"} -->
-			<p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html( $atlas_tools[2]['type'] ); ?></p>
-			<!-- /wp:paragraph -->
-
-			<!-- wp:paragraph {"fontSize":"medium"} -->
-			<p class="has-medium-font-size"><strong><?php echo esc_html( $atlas_tools[2]['name'] ); ?></strong> <span class="atlas-muted"><?php echo esc_html( $atlas_tools[2]['body'] ); ?></span></p>
-			<!-- /wp:paragraph -->
-		</div>
-		<!-- /wp:group -->
-
-		<!-- wp:buttons -->
-		<div class="wp-block-buttons">
-			<!-- wp:button {"className":"is-style-outline","textColor":"ivory-50"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-ivory-50-color has-text-color wp-element-button" href="<?php echo esc_url( $atlas_tools[2]['url'] ); ?>"><?php echo esc_html__( 'Open the advisor', 'atlas-relics' ); ?></a></div>
-<!-- /wp:button -->
-		</div>
-		<!-- /wp:buttons -->
-	</div>
-	<!-- /wp:group -->
-
 	<!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
 	<p class="has-mist-400-color has-text-color has-small-font-size"><a href="<?php echo esc_url( home_url( '/courses/' ) ); ?>"><?php echo esc_html__( 'All courses and tools', 'atlas-relics' ); ?></a></p>
 	<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","className":"atlas-promo","layout":{"type":"constrained","contentSize":"1200px"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"gradient":"plum-glow","textColor":"ivory-50"} -->
+<section class="wp-block-group atlas-promo has-ivory-50-color has-text-color has-background has-plum-glow-gradient-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+	<!-- wp:columns {"verticalAlignment":"center","className":"atlas-promo-cols"} -->
+	<div class="wp-block-columns are-vertically-aligned-center atlas-promo-cols">
+		<!-- wp:column {"verticalAlignment":"center","width":"55%"} -->
+		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:55%">
+			<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"lilac-300"} -->
+			<p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'Vedic Life Advisor', 'atlas-relics' ); ?></p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:heading {"level":2,"className":"atlas-display-left"} -->
+			<h2 class="wp-block-heading atlas-display-left"><?php echo esc_html__( 'Your birth chart, in plain language.', 'atlas-relics' ); ?></h2>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph {"textColor":"mist-400"} -->
+			<p class="has-mist-400-color has-text-color"><?php echo esc_html__( 'Enter your birth details, see your chart, and ask one question. You get a short reflection back, with no jargon to decode. For reflection and entertainment, not prediction or advice.', 'atlas-relics' ); ?></p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:buttons -->
+			<div class="wp-block-buttons">
+				<!-- wp:button {"backgroundColor":"violet-500","textColor":"ivory-50"} -->
+				<div class="wp-block-button"><a class="wp-block-button__link has-ivory-50-color has-violet-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( 'https://vediclife.netlify.app/' ); ?>" target="_blank" rel="noopener noreferrer"><?php echo esc_html__( 'Get your chart', 'atlas-relics' ); ?></a></div>
+				<!-- /wp:button -->
+
+				<!-- wp:button {"className":"is-style-outline","textColor":"ivory-50"} -->
+				<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-ivory-50-color has-text-color wp-element-button" href="<?php echo esc_url( home_url( '/vedic-life-advisor/' ) ); ?>"><?php echo esc_html__( 'How it works', 'atlas-relics' ); ?></a></div>
+				<!-- /wp:button -->
+			</div>
+			<!-- /wp:buttons -->
+		</div>
+		<!-- /wp:column -->
+
+		<!-- wp:column {"verticalAlignment":"center","width":"45%"} -->
+		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%">
+			<!-- wp:html -->
+			<a class="atlas-wheel-link" href="<?php echo esc_url( 'https://vediclife.netlify.app/' ); ?>" target="_blank" rel="noopener noreferrer" aria-label="<?php echo esc_attr__( 'Open the Vedic Life Advisor in a new tab', 'atlas-relics' ); ?>"><div class="atlas-wheel" aria-hidden="true"></div></a>
+			<!-- /wp:html -->
+		</div>
+		<!-- /wp:column -->
+	</div>
+	<!-- /wp:columns -->
 </section>
 <!-- /wp:group -->
 
