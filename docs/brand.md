@@ -18,6 +18,15 @@ extend them consistently instead of hard-coding new values.
 | `gold-600` | `#AD8748` | Hover/active state for gold elements |
 | `charcoal-900` | `#1C1C1C` | Body text on light backgrounds |
 | `white` | `#FFFFFF` | Rare — high-contrast accents only |
+| `ink-900` | `#101018` | Default page background (dark). Matches the live home.atlas-relics.com theme color |
+| `ink-700` | `#1B1B28` | Raised surface on the dark page: callout boxes, form fields, alternate table rows |
+| `plum-900` | `#110812` | Optional section background for the Vedic Life Advisor page (matches that app's theme color) |
+| `mist-400` | `#A9A7B8` | Muted text and captions on dark backgrounds |
+
+The site is dark by default: `ink-900` page, `ivory-50` text and headings, `gold-500` links and
+accents. `navy-900` is kept for the header, footer and hero bands so they read as deeper bands on
+the ink page. `ivory-100` and `charcoal-900` are no longer used by the theme; they stay in the
+palette so older content that references them still renders.
 
 Rules:
 

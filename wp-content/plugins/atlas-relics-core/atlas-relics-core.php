@@ -40,6 +40,7 @@ require_once ATLAS_RELICS_CORE_PATH . 'includes/class-fulfillment.php';
 require_once ATLAS_RELICS_CORE_PATH . 'includes/class-migration.php';
 require_once ATLAS_RELICS_CORE_PATH . 'includes/class-analytics.php';
 require_once ATLAS_RELICS_CORE_PATH . 'includes/class-dashboard.php';
+require_once ATLAS_RELICS_CORE_PATH . 'includes/class-redirects.php';
 
 /**
  * Boot the plugin once all plugins are loaded.

@@ -49,6 +49,7 @@ final class Atlas_Relics_Core {
 		new Atlas_Relics_Core_SEO();
 		new Atlas_Relics_Core_Newsletter();
 		new Atlas_Relics_Core_Tally();
+		new Atlas_Relics_Core_Redirects();
 
 		// Everything below genuinely depends on WooCommerce being active
 		// (product objects, cart, order data) rather than merely declaring

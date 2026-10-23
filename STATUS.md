@@ -147,3 +147,29 @@ operates the live site — not something to do casually during development testi
 2. Any typeface preference, or stay on system fonts until there's a brand decision?
 3. Do you want another copy pass on the journey pages, or will you rewrite them yourself
    once real content is loaded?
+
+## Phase 4: One site (consolidation)
+
+The site is now the single Atlas Relics home. Dark theme (ink page, ivory text, gold accents), new
+home page, and pages for everything that used to live on separate sites:
+
+- Pages: Begin, Caves (four caves with anchors plus the First Descent), Essays, Courses, The Four
+  Stages of Consciousness, The Conscious Mirror (course), Vedic Life Advisor (embeds the existing
+  Netlify app, with a new-tab fallback), About.
+- Course lessons stay on their own sites; the landing pages link to the existing checkouts.
+- `Atlas_Relics_Core_Redirects` sends legacy paths (`/store`, `/caves/<name>`, `/go/*`, the old
+  Start Here and Conscious Mirror pages) to the new pages. Edit via the `atlas_relics_redirects` filter.
+- Menus: new installs get the new menu; existing menus gain the new pages once.
+
+Needs your input before launch:
+
+- Copy for the new pages was rebuilt from summaries of the live site, not copied verbatim. Compare
+  each page with the original and edit.
+- Checkout links to fill in: each cave (`patterns/caves.php`), Four Stages (Stripe) and Conscious
+  Mirror (Gumroad) in their course patterns. A page with an empty link hides its buy button.
+- The `/go/*` redirect destinations are assumptions (rhythm to silence, dejavu to identity,
+  invisible to descent, home to identity).
+- Confirm the Vedic Life Advisor app allows being embedded (no `X-Frame-Options: DENY` or restrictive
+  `frame-ancestors` on the Netlify site); the new-tab button covers it if not.
+- The older Phase 2 pages (Start Here, Relics, Pattern Map, free Conscious Mirror) are no longer
+  created on new installs; their patterns remain in the theme.

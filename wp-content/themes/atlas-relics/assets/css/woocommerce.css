@@ -7,6 +7,10 @@
  * releases. Re-theming via CSS selectors here means an upstream WooCommerce
  * update can't silently break checkout the way a stale forked template
  * could.
+ *
+ * The site is dark (ink page, ivory text, gold accents). Literal hex values
+ * below mirror theme.json: ink #101018, ink raised #1b1b28, ivory #f7f3e9,
+ * gold #c6a15c, mist #a9a7b8. Keep them in sync if the palette changes.
  */
 
 /* Notices */
@@ -15,8 +19,8 @@
 .woocommerce-error,
 .woocommerce-notice {
 	border-top-color: #c6a15c;
-	background-color: #f7f3e9;
-	color: #1c1c1c;
+	background-color: #1b1b28;
+	color: #f7f3e9;
 }
 
 .woocommerce-message::before,
@@ -51,40 +55,40 @@
 .woocommerce a.button.alt,
 .wc-block-cart__submit-button,
 .wc-block-components-checkout-place-order-button {
-	background-color: #0b1b33;
-	color: #f7f3e9;
+	background-color: #f7f3e9;
+	color: #0b1b33;
 }
 
 .woocommerce a.button.alt:hover,
 .wc-block-cart__submit-button:hover,
 .wc-block-components-checkout-place-order-button:hover {
-	background-color: #16294a;
-	color: #f7f3e9;
+	background-color: #efe8d6;
+	color: #0b1b33;
 }
 
 /* Price emphasis */
 .woocommerce .price,
 .wc-block-components-product-price,
 .wc-block-components-totals-item__value {
-	color: #ad8748;
+	color: #c6a15c;
 }
 
 /* Cart & Checkout blocks */
 .wc-block-cart,
 .wc-block-checkout {
-	color: #1c1c1c;
+	color: #f7f3e9;
 }
 
 .wc-block-components-panel,
 .wc-block-components-totals-wrapper,
 .wc-block-cart-items,
 .wc-block-components-order-summary {
-	border-color: #efe8d6;
+	border-color: rgba(169, 167, 184, 0.35);
 }
 
 .wc-block-components-totals-footer-item,
 .wc-block-components-totals-item {
-	border-top-color: #efe8d6;
+	border-top-color: rgba(169, 167, 184, 0.35);
 }
 
 .wc-block-components-radio-control__option[aria-checked="true"],
@@ -95,11 +99,11 @@
 
 /* My Account */
 .woocommerce-MyAccount-navigation ul {
-	border-color: #efe8d6;
+	border-color: rgba(169, 167, 184, 0.35);
 }
 
 .woocommerce-MyAccount-navigation-link.is-active a {
-	color: #ad8748;
+	color: #c6a15c;
 	font-weight: 600;
 }
 
@@ -109,7 +113,7 @@ table.shop_table th {
 }
 
 table.shop_table tr:nth-child(even) td {
-	background-color: #f7f3e9;
+	background-color: #1b1b28;
 }
 
 /* Product loop badges */
@@ -122,11 +126,11 @@ table.shop_table tr:nth-child(even) td {
 .atlas-relics-bundle-contents {
 	margin-top: 1.5rem;
 	padding-top: 1.5rem;
-	border-top: 1px solid #efe8d6;
+	border-top: 1px solid rgba(169, 167, 184, 0.35);
 }
 
 .atlas-relics-bundle-included-label {
-	color: #16294a;
+	color: #a9a7b8;
 	font-size: 0.85em;
 	font-style: italic;
 }

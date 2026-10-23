@@ -3,7 +3,7 @@
  * Title: About
  * Slug: atlas-relics/about
  * Categories: atlas-relics
- * Description: The About page — who Atlas Relics is for and why it exists.
+ * Description: About page: what Atlas Relics is, how it is made, and what it is not.
  *
  * @package Atlas_Relics
  */
@@ -12,34 +12,55 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<!-- wp:group {"layout":{"type":"constrained","contentSize":"720px"}} -->
-<div class="wp-block-group">
-	<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"gold-600"} -->
-	<p class="has-gold-600-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'About', 'atlas-relics' ); ?></p>
-	<!-- /wp:paragraph -->
-
-	<!-- wp:heading {"level":1} -->
-	<h1 class="wp-block-heading"><?php echo esc_html__( 'A considered path, not a funnel.', 'atlas-relics' ); ?></h1>
-	<!-- /wp:heading -->
-
-	<!-- wp:paragraph {"fontSize":"medium"} -->
-	<p class="has-medium-font-size"><?php echo esc_html__( 'Atlas Relics exists for people who want to slow down for a moment before deciding what\'s next — a free reflection first, then a newsletter, then a guide or a relic, only if and when it\'s genuinely useful.', 'atlas-relics' ); ?></p>
-	<!-- /wp:paragraph -->
-
-	<!-- wp:paragraph -->
-	<p><?php echo esc_html__( 'Nothing here is designed to rush you. There\'s no countdown timer, no "only 3 left" banner, no exit-intent popup. If something is right for you, it will still be right for you tomorrow.', 'atlas-relics' ); ?></p>
-	<!-- /wp:paragraph -->
-
-	<!-- wp:paragraph -->
-	<p><?php echo esc_html__( 'If you\'re not sure where to begin, Start Here walks through the three ways in.', 'atlas-relics' ); ?></p>
-	<!-- /wp:paragraph -->
-
-	<!-- wp:buttons -->
-	<div class="wp-block-buttons">
-		<!-- wp:button {"backgroundColor":"gold-500","textColor":"navy-900"} -->
-		<div class="wp-block-button"><a class="wp-block-button__link has-navy-900-color has-gold-500-background-color has-text-color has-background wp-element-button" href="/start-here/"><?php echo esc_html__( 'Start Here', 'atlas-relics' ); ?></a></div>
-		<!-- /wp:button -->
-	</div>
-	<!-- /wp:buttons -->
+<!-- wp:group {"tagName":"section","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"backgroundColor":"navy-900","textColor":"ivory-50"} -->
+<section class="wp-block-group has-ivory-50-color has-navy-900-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"gold-500"} -->
+<p class="has-gold-500-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'About', 'atlas-relics' ); ?></p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"level":1,"textColor":"ivory-50"} -->
+<h1 class="wp-block-heading has-ivory-50-color has-text-color"><?php echo esc_html__( 'A considered path, not a funnel.', 'atlas-relics' ); ?></h1>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"medium","textColor":"ivory-50"} -->
+<p class="has-ivory-50-color has-text-color has-medium-font-size"><?php echo esc_html__( 'Slow down before deciding what is next.', 'atlas-relics' ); ?></p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}}} -->
+<section class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+<!-- wp:heading {"level":2} -->
+<h2 class="wp-block-heading"><?php echo esc_html__( 'What this is', 'atlas-relics' ); ?></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p><?php echo esc_html__( 'Atlas Relics makes experiences for examining the inner world: guided caves, a written pattern map, essays, two courses, and a small astrology tool. It is built for people who would rather look closely than be told what to think.', 'atlas-relics' ); ?></p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"level":2} -->
+<h2 class="wp-block-heading"><?php echo esc_html__( 'How it is made', 'atlas-relics' ); ?></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p><?php echo esc_html__( 'Everything is written by one person. There are no streaks, no countdown timers, and no urgency banners. If something is right for you, it will still be right tomorrow.', 'atlas-relics' ); ?></p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"level":2} -->
+<h2 class="wp-block-heading"><?php echo esc_html__( 'What it is not', 'atlas-relics' ); ?></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p><?php echo esc_html__( 'It is not therapy, medical advice, or a prediction. It is a set of structured ways to pay attention.', 'atlas-relics' ); ?></p>
+<!-- /wp:paragraph -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"tagName":"section","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"backgroundColor":"navy-900","textColor":"ivory-50"} -->
+<section class="wp-block-group has-ivory-50-color has-navy-900-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+<!-- wp:heading {"level":2,"textColor":"ivory-50"} -->
+<h2 class="wp-block-heading has-ivory-50-color has-text-color"><?php echo esc_html__( 'Where to go from here', 'atlas-relics' ); ?></h2>
+<!-- /wp:heading -->
+<!-- wp:buttons -->
+<div class="wp-block-buttons">
+<!-- wp:button {"backgroundColor":"gold-500","textColor":"navy-900"} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-navy-900-color has-gold-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( home_url( '/begin/' ) ); ?>"><?php echo esc_html__( 'Choose where to begin', 'atlas-relics' ); ?></a></div>
+<!-- /wp:button -->
+<!-- wp:button {"className":"is-style-outline","textColor":"ivory-50"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-ivory-50-color has-text-color wp-element-button" href="<?php echo esc_url( home_url( '/essays/' ) ); ?>"><?php echo esc_html__( 'Read the essays', 'atlas-relics' ); ?></a></div>
+<!-- /wp:button -->
 </div>
+<!-- /wp:buttons -->
+</section>
 <!-- /wp:group -->

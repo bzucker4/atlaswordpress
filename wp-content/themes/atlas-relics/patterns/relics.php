@@ -34,8 +34,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</div>
 	<!-- /wp:buttons -->
 
-	<!-- wp:paragraph {"fontSize":"small","textColor":"navy-700"} -->
-	<p class="has-navy-700-color has-text-color has-small-font-size"><?php echo esc_html__( 'This page links to the "relics" product category — create it and tag matching products once the catalog is populated.', 'atlas-relics' ); ?></p>
+	<!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
+	<p class="has-mist-400-color has-text-color has-small-font-size"><?php echo esc_html__( 'This page links to the "relics" product category — create it and tag matching products once the catalog is populated.', 'atlas-relics' ); ?></p>
 	<!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
