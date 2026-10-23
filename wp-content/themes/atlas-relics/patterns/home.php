@@ -380,7 +380,7 @@ $atlas_tools = array(
 	<!-- /wp:heading -->
 
 	<!-- wp:paragraph {"textColor":"ivory-50"} -->
-	<p class="has-ivory-50-color has-text-color"><?php echo esc_html__( 'A free newsletter, sent separately from the essays. Subscribers confirm by email.', 'atlas-relics' ); ?></p>
+	<p class="has-ivory-50-color has-text-color"><?php echo esc_html__( 'A free newsletter, sent separately from the essays.', 'atlas-relics' ); ?></p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:buttons -->
