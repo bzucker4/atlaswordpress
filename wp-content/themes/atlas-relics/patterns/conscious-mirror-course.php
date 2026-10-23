@@ -71,5 +71,15 @@ $atlas_checkout = '';
 </div>
 <!-- /wp:buttons -->
 <?php endif; ?>
+<!-- wp:paragraph {"textColor":"ivory-50"} -->
+<p class="has-ivory-50-color has-text-color"><?php echo esc_html__( 'Already bought it? Unlock the lessons with your license key.', 'atlas-relics' ); ?></p>
+<!-- /wp:paragraph -->
+<!-- wp:buttons -->
+<div class="wp-block-buttons">
+<!-- wp:button {"className":"is-style-outline","textColor":"ivory-50"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-ivory-50-color has-text-color wp-element-button" href="https://course.consciousness-mirror.com/unlock"><?php echo esc_html__( 'Unlock with license key', 'atlas-relics' ); ?></a></div>
+<!-- /wp:button -->
+</div>
+<!-- /wp:buttons -->
 </section>
 <!-- /wp:group -->

@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Checkout link. Set the real Stripe link here; with no link the buy button is hidden.
-$atlas_checkout = '';
+$atlas_checkout = 'https://buy.stripe.com/5kQ8wQ5Qo2Nu3LHgpqak000';
 ?>
 <!-- wp:group {"tagName":"section","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"backgroundColor":"navy-900","textColor":"ivory-50"} -->
 <section class="wp-block-group has-ivory-50-color has-navy-900-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">

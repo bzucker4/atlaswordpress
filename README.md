@@ -148,7 +148,7 @@ Needs your input before launch:
 
 - Copy for the new pages was rebuilt from summaries of the live site, not copied verbatim. Compare
   each page with the original and edit.
-- Checkout links to fill in: each cave (`patterns/caves.php`), Four Stages (Stripe) and Conscious
+- Checkout links to fill in: each cave (`patterns/caves.php`), Conscious
   Mirror (Gumroad) in their course patterns. A page with an empty link hides its buy button.
 - The `/go/*` redirect destinations are assumptions (rhythm to silence, dejavu to identity,
   invisible to descent, home to identity).
