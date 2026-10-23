@@ -1,0 +1,129 @@
+/*
+ * Layout polish: logo in the header and footer, flat list rows, quieter
+ * cards and buttons. Literal colors mirror theme.json: ink #101018,
+ * ivory #f7f3e9, mist #a9a7b8, lilac #c9b6f7, violet #7a3fd6.
+ */
+
+body {
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+	text-wrap: balance;
+}
+
+h1.wp-block-heading {
+	font-size: clamp(2.4rem, 5.2vw, 3.9rem);
+	line-height: 1.08;
+	letter-spacing: -0.01em;
+}
+
+/* Logo mark before the site title */
+.atlas-header .wp-block-site-title a,
+footer .wp-block-site-title a {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.9rem;
+	color: #f7f3e9;
+	text-decoration: none;
+}
+
+.atlas-header .wp-block-site-title a::before,
+footer .wp-block-site-title a::before {
+	content: "";
+	flex: none;
+	width: 2.75rem;
+	height: 2.75rem;
+	background: url("../img/logo.png") center / contain no-repeat;
+	border-radius: 4px;
+}
+
+/* Navigation */
+.atlas-header .wp-block-navigation a {
+	color: #a9a7b8;
+	text-decoration: none;
+	font-size: 0.95rem;
+	letter-spacing: 0.02em;
+	text-transform: none;
+}
+
+.atlas-header .wp-block-navigation a:hover,
+.atlas-header .wp-block-navigation .current-menu-item > a {
+	color: #f7f3e9;
+}
+
+.atlas-header .wp-block-button__link {
+	padding: 0.7rem 1.3rem;
+}
+
+/* Buttons */
+.wp-block-button__link {
+	border-radius: 4px;
+	letter-spacing: 0.03em;
+	text-transform: none;
+	font-weight: 500;
+	font-size: 0.95rem;
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link {
+	background: transparent;
+	border: 1px solid rgba(169, 167, 184, 0.35);
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link:hover {
+	border-color: #c9b6f7;
+}
+
+/* Flat list rows (home hero store list) */
+.atlas-list .atlas-row {
+	padding: 1.1rem 0;
+	border-bottom: 1px solid rgba(169, 167, 184, 0.18);
+}
+
+.atlas-list .atlas-row:first-of-type {
+	border-top: 1px solid rgba(169, 167, 184, 0.18);
+}
+
+.atlas-row-head {
+	display: flex;
+	align-items: baseline;
+	gap: 0.75rem;
+	margin: 0 0 0.35rem;
+	font-size: 1.05rem;
+}
+
+.atlas-row-head a {
+	color: #f7f3e9;
+	text-decoration: none;
+}
+
+.atlas-row-head a:hover {
+	color: #c9b6f7;
+}
+
+.atlas-num {
+	color: #c9b6f7;
+	font-size: 0.8rem;
+	letter-spacing: 0.1em;
+}
+
+.atlas-price {
+	margin-left: auto;
+	color: #a9a7b8;
+	font-size: 0.95rem;
+}
+
+/* Cards: quiet panels instead of outlined boxes */
+.wp-block-group.has-plum-700-background-color.has-border-color {
+	background: rgba(255, 255, 255, 0.025) !important;
+	border-color: rgba(169, 167, 184, 0.2) !important;
+	border-radius: 6px !important;
+}
+
+@media (max-width: 781px) {
+	.atlas-header .wp-block-navigation__responsive-container-open {
+		color: #f7f3e9;
+	}
+}

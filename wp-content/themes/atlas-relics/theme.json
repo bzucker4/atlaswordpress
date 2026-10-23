@@ -28,8 +28,8 @@
 				{ "slug": "ink-700", "name": "Ink Raised", "color": "#1B1B28" },
 				{ "slug": "plum-900", "name": "Plum", "color": "#110812" },
 				{ "slug": "mist-400", "name": "Mist", "color": "#A9A7B8" },
-				{ "slug": "plum-800", "name": "Plum Band", "color": "#1C0E24" },
-				{ "slug": "plum-700", "name": "Plum Raised", "color": "#2A1536" },
+				{ "slug": "plum-800", "name": "Plum Band", "color": "#171120" },
+				{ "slug": "plum-700", "name": "Plum Raised", "color": "#231A30" },
 				{ "slug": "violet-600", "name": "Violet Dark", "color": "#6330B8" },
 				{ "slug": "violet-500", "name": "Violet", "color": "#7A3FD6" },
 				{ "slug": "lilac-300", "name": "Lilac", "color": "#C9B6F7" }
@@ -94,7 +94,7 @@
 				"color": {
 					"palette": [
 						{ "slug": "violet-500", "name": "Violet", "color": "#7A3FD6" },
-						{ "slug": "plum-800", "name": "Plum Band", "color": "#1C0E24" },
+						{ "slug": "plum-800", "name": "Plum Band", "color": "#171120" },
 						{ "slug": "ivory-50", "name": "Ivory", "color": "#F7F3E9" }
 					]
 				}
@@ -103,7 +103,7 @@
 	},
 	"styles": {
 		"color": {
-			"background": "var(--wp--preset--color--plum-900)",
+			"background": "var(--wp--preset--color--ink-900)",
 			"text": "var(--wp--preset--color--ivory-50)"
 		},
 		"typography": {

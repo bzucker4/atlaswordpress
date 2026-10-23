@@ -82,69 +82,95 @@ $atlas_tools = array(
 	),
 );
 ?>
-<!-- wp:group {"tagName":"section","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"gradient":"plum-glow","textColor":"ivory-50"} -->
-<section class="wp-block-group has-ivory-50-color has-text-color has-background has-plum-glow-gradient-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
-	<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"lilac-300"} -->
-	<p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'Atlas Relics', 'atlas-relics' ); ?></p>
-	<!-- /wp:paragraph -->
-
-	<!-- wp:heading {"level":1,"textColor":"ivory-50"} -->
-	<h1 class="wp-block-heading has-ivory-50-color has-text-color"><?php echo esc_html__( 'Experiences for examining the inner world.', 'atlas-relics' ); ?></h1>
-	<!-- /wp:heading -->
-
-	<!-- wp:paragraph {"fontSize":"medium","textColor":"ivory-50"} -->
-	<p class="has-ivory-50-color has-text-color has-medium-font-size"><?php echo esc_html__( 'Some questions need reflection. Others require descent. Choose where you want to begin.', 'atlas-relics' ); ?></p>
-	<!-- /wp:paragraph -->
-
-	<!-- wp:buttons -->
-	<div class="wp-block-buttons">
-		<!-- wp:button {"backgroundColor":"violet-500","textColor":"ivory-50"} -->
-		<div class="wp-block-button"><a class="wp-block-button__link has-ivory-50-color has-violet-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( home_url( '/begin/' ) ); ?>"><?php echo esc_html__( 'Choose where to begin', 'atlas-relics' ); ?></a></div>
-		<!-- /wp:button -->
-
-		<!-- wp:button {"className":"is-style-outline","textColor":"ivory-50"} -->
-		<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-ivory-50-color has-text-color wp-element-button" href="<?php echo esc_url( home_url( '/caves/' ) ); ?>"><?php echo esc_html__( 'Enter the caves', 'atlas-relics' ); ?></a></div>
-		<!-- /wp:button -->
-	</div>
-	<!-- /wp:buttons -->
-</section>
+<!-- wp:group {"tagName":"section","className":"atlas-hero","layout":{"type":"constrained","contentSize":"1200px"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|50","right":"var:preset|spacing|50"}}},"gradient":"plum-glow","textColor":"ivory-50"} -->
+<section class="wp-block-group atlas-hero has-ivory-50-color has-text-color has-background has-plum-glow-gradient-background" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--50)">
+<!-- wp:columns {"verticalAlignment":"center"} -->
+<div class="wp-block-columns are-vertically-aligned-center">
+<!-- wp:column {"verticalAlignment":"center","width":"55%"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:55%">
+<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"lilac-300"} -->
+<p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'Atlas Relics', 'atlas-relics' ); ?></p>
+<!-- /wp:paragraph -->
+<!-- wp:heading {"level":1,"textColor":"ivory-50"} -->
+<h1 class="wp-block-heading has-ivory-50-color has-text-color"><?php echo esc_html__( 'Experiences for examining the inner world.', 'atlas-relics' ); ?></h1>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"medium","textColor":"mist-400"} -->
+<p class="has-mist-400-color has-text-color has-medium-font-size"><?php echo esc_html__( 'Some questions need reflection. Others require descent. Choose where you want to begin.', 'atlas-relics' ); ?></p>
+<!-- /wp:paragraph -->
+<!-- wp:buttons -->
+<div class="wp-block-buttons">
+<!-- wp:button {"backgroundColor":"violet-500","textColor":"ivory-50"} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-ivory-50-color has-violet-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( home_url( '/begin/' ) ); ?>"><?php echo esc_html__( 'Choose where to begin', 'atlas-relics' ); ?></a></div>
+<!-- /wp:button -->
+<!-- wp:button {"className":"is-style-outline","textColor":"ivory-50"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-ivory-50-color has-text-color wp-element-button" href="<?php echo esc_url( home_url( '/caves/' ) ); ?>"><?php echo esc_html__( 'Enter the caves', 'atlas-relics' ); ?></a></div>
+<!-- /wp:button -->
+</div>
+<!-- /wp:buttons -->
+</div>
+<!-- /wp:column -->
+<!-- wp:column {"verticalAlignment":"center","width":"45%","className":"atlas-list"} -->
+<div class="wp-block-column is-vertically-aligned-center atlas-list" style="flex-basis:45%">
+<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"lilac-300"} -->
+<p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'On the store', 'atlas-relics' ); ?></p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
+<p class="has-mist-400-color has-text-color has-small-font-size"><?php echo esc_html__( 'Five doors. Open the sentence that snags.', 'atlas-relics' ); ?></p>
+<!-- /wp:paragraph -->
+<!-- wp:group {"className":"atlas-row"} -->
+<div class="wp-block-group atlas-row">
+<!-- wp:paragraph {"className":"atlas-row-head"} -->
+<p class="atlas-row-head"><span class="atlas-num">01</span> <a href="<?php echo esc_url( home_url( '/caves/#control' ) ); ?>"><?php echo esc_html__( 'Control', 'atlas-relics' ); ?></a> <span class="atlas-price">$7.77</span></p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
+<p class="has-mist-400-color has-text-color has-small-font-size"><?php echo esc_html__( 'What if the need to control your life is quietly preventing you from experiencing it?', 'atlas-relics' ); ?></p>
+<!-- /wp:paragraph -->
+</div>
 <!-- /wp:group -->
-
-<!-- wp:group {"tagName":"section","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}}} -->
-<section class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
-	<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"lilac-300"} -->
-	<p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'On the store', 'atlas-relics' ); ?></p>
-	<!-- /wp:paragraph -->
-
-	<!-- wp:heading {"level":2} -->
-	<h2 class="wp-block-heading"><?php echo esc_html__( 'Four caves, one longer way in.', 'atlas-relics' ); ?></h2>
-	<!-- /wp:heading -->
-
-	<!-- wp:group {"align":"wide","layout":{"type":"grid","minimumColumnWidth":"16rem"}} -->
-	<div class="wp-block-group alignwide">
-		<?php foreach ( $atlas_caves as $atlas_index => $atlas_cave ) : ?>
-		<!-- wp:group {"style":{"border":{"width":"1px","radius":"2px"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"borderColor":"violet-500","backgroundColor":"plum-700"} -->
-		<div class="wp-block-group has-border-color has-violet-500-border-color has-plum-700-background-color has-background" style="border-width:1px;border-radius:2px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
-			<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"lilac-300"} -->
-			<p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html( sprintf( '%02d', $atlas_index + 1 ) ); ?> &middot; $7.77</p>
-			<!-- /wp:paragraph -->
-
-			<!-- wp:heading {"level":3,"fontSize":"medium"} -->
-			<h3 class="wp-block-heading has-medium-font-size"><a href="<?php echo esc_url( home_url( '/caves/#' . $atlas_cave['id'] ) ); ?>"><?php echo esc_html( $atlas_cave['name'] ); ?></a></h3>
-			<!-- /wp:heading -->
-
-			<!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
-			<p class="has-mist-400-color has-text-color has-small-font-size"><?php echo esc_html( $atlas_cave['question'] ); ?></p>
-			<!-- /wp:paragraph -->
-		</div>
-		<!-- /wp:group -->
-		<?php endforeach; ?>
-	</div>
-	<!-- /wp:group -->
-
-	<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
-	<p style="margin-top:var(--wp--preset--spacing--40)"><a href="<?php echo esc_url( home_url( '/caves/' ) ); ?>"><?php echo esc_html__( 'See what each one holds', 'atlas-relics' ); ?></a></p>
-	<!-- /wp:paragraph -->
+<!-- wp:group {"className":"atlas-row"} -->
+<div class="wp-block-group atlas-row">
+<!-- wp:paragraph {"className":"atlas-row-head"} -->
+<p class="atlas-row-head"><span class="atlas-num">02</span> <a href="<?php echo esc_url( home_url( '/caves/#desire' ) ); ?>"><?php echo esc_html__( 'Desire', 'atlas-relics' ); ?></a> <span class="atlas-price">$7.77</span></p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
+<p class="has-mist-400-color has-text-color has-small-font-size"><?php echo esc_html__( 'What if the thing you want is not actually what you are searching for?', 'atlas-relics' ); ?></p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"atlas-row"} -->
+<div class="wp-block-group atlas-row">
+<!-- wp:paragraph {"className":"atlas-row-head"} -->
+<p class="atlas-row-head"><span class="atlas-num">03</span> <a href="<?php echo esc_url( home_url( '/caves/#identity' ) ); ?>"><?php echo esc_html__( 'Identity', 'atlas-relics' ); ?></a> <span class="atlas-price">$7.77</span></p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
+<p class="has-mist-400-color has-text-color has-small-font-size"><?php echo esc_html__( 'Who are you when you are no longer required to stay recognizable?', 'atlas-relics' ); ?></p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"atlas-row"} -->
+<div class="wp-block-group atlas-row">
+<!-- wp:paragraph {"className":"atlas-row-head"} -->
+<p class="atlas-row-head"><span class="atlas-num">04</span> <a href="<?php echo esc_url( home_url( '/caves/#silence' ) ); ?>"><?php echo esc_html__( 'Silence', 'atlas-relics' ); ?></a> <span class="atlas-price">$7.77</span></p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
+<p class="has-mist-400-color has-text-color has-small-font-size"><?php echo esc_html__( 'What remains when the noise stops?', 'atlas-relics' ); ?></p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"atlas-row"} -->
+<div class="wp-block-group atlas-row">
+<!-- wp:paragraph {"className":"atlas-row-head"} -->
+<p class="atlas-row-head"><span class="atlas-num">05</span> <a href="<?php echo esc_url( home_url( '/caves/#descent' ) ); ?>"><?php echo esc_html__( 'The First Descent', 'atlas-relics' ); ?></a> <span class="atlas-price">$17.77</span></p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
+<p class="has-mist-400-color has-text-color has-small-font-size"><?php echo esc_html__( 'Control, Desire, and Identity together, for less than they cost apart.', 'atlas-relics' ); ?></p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:column -->
+</div>
+<!-- /wp:columns -->
 </section>
 <!-- /wp:group -->
 
