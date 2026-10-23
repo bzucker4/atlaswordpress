@@ -165,8 +165,7 @@ Needs your input before launch:
 
 - Copy for the new pages was rebuilt from summaries of the live site, not copied verbatim. Compare
   each page with the original and edit.
-- Checkout links to fill in: each cave (`patterns/caves.php`), Conscious
-  Mirror (Gumroad) in their course patterns. A page with an empty link hides its buy button.
+- Checkout links are set for the four caves, the First Descent, Four Stages (Stripe) and Conscious Mirror (Gumroad). Confirm each opens the right product.
 - The `/go/*` redirect destinations are assumptions (rhythm to silence, dejavu to identity,
   invisible to descent, home to identity).
 - Confirm the Vedic Life Advisor app allows being embedded (no `X-Frame-Options: DENY` or restrictive

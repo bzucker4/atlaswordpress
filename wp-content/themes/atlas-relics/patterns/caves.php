@@ -15,10 +15,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Checkout links for each cave. Fill these in with the real store links;
 // a cave with an empty link shows its description without a buy button.
 $atlas_cave_links = array(
-	'control'  => '',
-	'desire'   => '',
-	'identity' => '',
-	'silence'  => '',
+	'control'  => 'https://atlas-relics.com/b/sUMGE?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=caves',
+	'desire'   => 'https://atlas-relics.com/b/dMk6W?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=caves',
+	'identity' => 'https://atlas-relics.com/b/OPpd2?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=caves',
+	'silence'  => 'https://atlas-relics.com/b/Tqz97?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=caves',
 );
 $atlas_descent_link = 'https://atlas-relics.com/b/f3DGy?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=caves-descent';
 ?>
