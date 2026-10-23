@@ -10,7 +10,7 @@
 	left: 0;
 	z-index: 100000;
 	padding: 0.85rem 1.5rem;
-	background-color: #0b1b33;
+	background-color: #1c0e24;
 	color: #f7f3e9;
 	text-decoration: none;
 	font-size: 0.9rem;
@@ -27,7 +27,7 @@ select:focus-visible,
 textarea:focus-visible,
 .wp-element-button:focus-visible,
 [tabindex]:focus-visible {
-	outline: 2px solid #c6a15c;
+	outline: 2px solid #c9b6f7;
 	outline-offset: 2px;
 }
 

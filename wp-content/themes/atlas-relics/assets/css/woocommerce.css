@@ -9,8 +9,8 @@
  * could.
  *
  * The site is dark (ink page, ivory text, gold accents). Literal hex values
- * below mirror theme.json: ink #101018, ink raised #1b1b28, ivory #f7f3e9,
- * gold #c6a15c, mist #a9a7b8. Keep them in sync if the palette changes.
+ * below mirror theme.json: ink #101018, ink raised #2a1536, ivory #f7f3e9,
+ * gold #c9b6f7, mist #a9a7b8. Keep them in sync if the palette changes.
  */
 
 /* Notices */
@@ -18,14 +18,14 @@
 .woocommerce-info,
 .woocommerce-error,
 .woocommerce-notice {
-	border-top-color: #c6a15c;
-	background-color: #1b1b28;
+	border-top-color: #c9b6f7;
+	background-color: #2a1536;
 	color: #f7f3e9;
 }
 
 .woocommerce-message::before,
 .woocommerce-info::before {
-	color: #c6a15c;
+	color: #c9b6f7;
 }
 
 /* Buttons (classic templates: My Account, order-pay, coupon form) */
@@ -34,8 +34,8 @@
 .woocommerce input.button,
 .woocommerce #respond input#submit,
 .wc-block-components-button {
-	background-color: #c6a15c;
-	color: #0b1b33;
+	background-color: #7a3fd6;
+	color: #f7f3e9;
 	border-radius: 2px;
 	text-transform: uppercase;
 	letter-spacing: 0.08em;
@@ -48,29 +48,29 @@
 .woocommerce input.button:hover,
 .woocommerce #respond input#submit:hover,
 .wc-block-components-button:hover {
-	background-color: #ad8748;
-	color: #0b1b33;
+	background-color: #6330b8;
+	color: #f7f3e9;
 }
 
 .woocommerce a.button.alt,
 .wc-block-cart__submit-button,
 .wc-block-components-checkout-place-order-button {
 	background-color: #f7f3e9;
-	color: #0b1b33;
+	color: #110812;
 }
 
 .woocommerce a.button.alt:hover,
 .wc-block-cart__submit-button:hover,
 .wc-block-components-checkout-place-order-button:hover {
 	background-color: #efe8d6;
-	color: #0b1b33;
+	color: #110812;
 }
 
 /* Price emphasis */
 .woocommerce .price,
 .wc-block-components-product-price,
 .wc-block-components-totals-item__value {
-	color: #c6a15c;
+	color: #c9b6f7;
 }
 
 /* Cart & Checkout blocks */
@@ -93,8 +93,8 @@
 
 .wc-block-components-radio-control__option[aria-checked="true"],
 .wc-block-components-checkbox input[type="checkbox"]:checked {
-	border-color: #c6a15c;
-	background-color: #c6a15c;
+	border-color: #7a3fd6;
+	background-color: #7a3fd6;
 }
 
 /* My Account */
@@ -103,23 +103,23 @@
 }
 
 .woocommerce-MyAccount-navigation-link.is-active a {
-	color: #c6a15c;
+	color: #c9b6f7;
 	font-weight: 600;
 }
 
 table.shop_table th {
-	background-color: #0b1b33;
+	background-color: #1c0e24;
 	color: #f7f3e9;
 }
 
 table.shop_table tr:nth-child(even) td {
-	background-color: #1b1b28;
+	background-color: #2a1536;
 }
 
 /* Product loop badges */
 .woocommerce span.onsale {
-	background-color: #c6a15c;
-	color: #0b1b33;
+	background-color: #7a3fd6;
+	color: #f7f3e9;
 }
 
 /* Bundles */

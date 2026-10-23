@@ -22,10 +22,10 @@ $atlas_cave_links = array(
 );
 $atlas_descent_link = 'https://atlas-relics.com/b/f3DGy?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=caves-descent';
 ?>
-<!-- wp:group {"tagName":"section","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"backgroundColor":"navy-900","textColor":"ivory-50"} -->
-<section class="wp-block-group has-ivory-50-color has-navy-900-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
-<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"gold-500"} -->
-<p class="has-gold-500-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'The store', 'atlas-relics' ); ?></p>
+<!-- wp:group {"tagName":"section","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"gradient":"plum-glow","textColor":"ivory-50"} -->
+<section class="wp-block-group has-ivory-50-color has-text-color has-background has-plum-glow-gradient-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"lilac-300"} -->
+<p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'The store', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":1,"textColor":"ivory-50"} -->
 <h1 class="wp-block-heading has-ivory-50-color has-text-color"><?php echo esc_html__( 'Four caves. One longer way in.', 'atlas-relics' ); ?></h1>
@@ -37,8 +37,8 @@ $atlas_descent_link = 'https://atlas-relics.com/b/f3DGy?utm_source=atlasrelics-s
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","anchor":"control","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}}} -->
 <section id="control" class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
-<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"gold-500"} -->
-<p class="has-gold-500-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( '$7.77 · about 20 to 30 minutes', 'atlas-relics' ); ?></p>
+<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"lilac-300"} -->
+<p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( '$7.77 · about 20 to 30 minutes', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":2} -->
 <h2 class="wp-block-heading"><?php echo esc_html__( 'The Cave of Control', 'atlas-relics' ); ?></h2>
@@ -52,18 +52,18 @@ $atlas_descent_link = 'https://atlas-relics.com/b/f3DGy?utm_source=atlasrelics-s
 <?php if ( ! empty( $atlas_cave_links[ 'control' ] ) ) : ?>
 <!-- wp:buttons -->
 <div class="wp-block-buttons">
-<!-- wp:button {"backgroundColor":"gold-500","textColor":"navy-900"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-navy-900-color has-gold-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( $atlas_cave_links[ 'control' ] ); ?>"><?php echo esc_html__( 'Enter this cave', 'atlas-relics' ); ?></a></div>
+<!-- wp:button {"backgroundColor":"violet-500","textColor":"ivory-50"} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-ivory-50-color has-violet-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( $atlas_cave_links[ 'control' ] ); ?>"><?php echo esc_html__( 'Enter this cave', 'atlas-relics' ); ?></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
 <?php endif; ?>
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","anchor":"desire","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"backgroundColor":"navy-900","textColor":"ivory-50"} -->
-<section id="desire" class="wp-block-group has-ivory-50-color has-navy-900-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
-<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"gold-500"} -->
-<p class="has-gold-500-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( '$7.77 · about 20 to 30 minutes', 'atlas-relics' ); ?></p>
+<!-- wp:group {"tagName":"section","anchor":"desire","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"backgroundColor":"plum-800","textColor":"ivory-50"} -->
+<section id="desire" class="wp-block-group has-ivory-50-color has-plum-800-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"lilac-300"} -->
+<p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( '$7.77 · about 20 to 30 minutes', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":2} -->
 <h2 class="wp-block-heading"><?php echo esc_html__( 'The Cave of Desire', 'atlas-relics' ); ?></h2>
@@ -77,8 +77,8 @@ $atlas_descent_link = 'https://atlas-relics.com/b/f3DGy?utm_source=atlasrelics-s
 <?php if ( ! empty( $atlas_cave_links[ 'desire' ] ) ) : ?>
 <!-- wp:buttons -->
 <div class="wp-block-buttons">
-<!-- wp:button {"backgroundColor":"gold-500","textColor":"navy-900"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-navy-900-color has-gold-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( $atlas_cave_links[ 'desire' ] ); ?>"><?php echo esc_html__( 'Enter this cave', 'atlas-relics' ); ?></a></div>
+<!-- wp:button {"backgroundColor":"violet-500","textColor":"ivory-50"} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-ivory-50-color has-violet-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( $atlas_cave_links[ 'desire' ] ); ?>"><?php echo esc_html__( 'Enter this cave', 'atlas-relics' ); ?></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
@@ -87,8 +87,8 @@ $atlas_descent_link = 'https://atlas-relics.com/b/f3DGy?utm_source=atlasrelics-s
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","anchor":"identity","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}}} -->
 <section id="identity" class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
-<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"gold-500"} -->
-<p class="has-gold-500-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( '$7.77 · about 20 to 30 minutes', 'atlas-relics' ); ?></p>
+<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"lilac-300"} -->
+<p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( '$7.77 · about 20 to 30 minutes', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":2} -->
 <h2 class="wp-block-heading"><?php echo esc_html__( 'The Cave of Identity', 'atlas-relics' ); ?></h2>
@@ -102,18 +102,18 @@ $atlas_descent_link = 'https://atlas-relics.com/b/f3DGy?utm_source=atlasrelics-s
 <?php if ( ! empty( $atlas_cave_links[ 'identity' ] ) ) : ?>
 <!-- wp:buttons -->
 <div class="wp-block-buttons">
-<!-- wp:button {"backgroundColor":"gold-500","textColor":"navy-900"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-navy-900-color has-gold-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( $atlas_cave_links[ 'identity' ] ); ?>"><?php echo esc_html__( 'Enter this cave', 'atlas-relics' ); ?></a></div>
+<!-- wp:button {"backgroundColor":"violet-500","textColor":"ivory-50"} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-ivory-50-color has-violet-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( $atlas_cave_links[ 'identity' ] ); ?>"><?php echo esc_html__( 'Enter this cave', 'atlas-relics' ); ?></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
 <?php endif; ?>
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","anchor":"silence","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"backgroundColor":"navy-900","textColor":"ivory-50"} -->
-<section id="silence" class="wp-block-group has-ivory-50-color has-navy-900-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
-<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"gold-500"} -->
-<p class="has-gold-500-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( '$7.77 · about 20 to 30 minutes', 'atlas-relics' ); ?></p>
+<!-- wp:group {"tagName":"section","anchor":"silence","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"backgroundColor":"plum-800","textColor":"ivory-50"} -->
+<section id="silence" class="wp-block-group has-ivory-50-color has-plum-800-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"lilac-300"} -->
+<p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( '$7.77 · about 20 to 30 minutes', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":2} -->
 <h2 class="wp-block-heading"><?php echo esc_html__( 'The Cave of Silence', 'atlas-relics' ); ?></h2>
@@ -127,8 +127,8 @@ $atlas_descent_link = 'https://atlas-relics.com/b/f3DGy?utm_source=atlasrelics-s
 <?php if ( ! empty( $atlas_cave_links[ 'silence' ] ) ) : ?>
 <!-- wp:buttons -->
 <div class="wp-block-buttons">
-<!-- wp:button {"backgroundColor":"gold-500","textColor":"navy-900"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-navy-900-color has-gold-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( $atlas_cave_links[ 'silence' ] ); ?>"><?php echo esc_html__( 'Enter this cave', 'atlas-relics' ); ?></a></div>
+<!-- wp:button {"backgroundColor":"violet-500","textColor":"ivory-50"} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-ivory-50-color has-violet-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( $atlas_cave_links[ 'silence' ] ); ?>"><?php echo esc_html__( 'Enter this cave', 'atlas-relics' ); ?></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
@@ -137,8 +137,8 @@ $atlas_descent_link = 'https://atlas-relics.com/b/f3DGy?utm_source=atlasrelics-s
 <!-- /wp:group -->
 <!-- wp:group {"tagName":"section","anchor":"descent","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}}} -->
 <section id="descent" class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
-<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"gold-500"} -->
-<p class="has-gold-500-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'The longer way in', 'atlas-relics' ); ?></p>
+<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"lilac-300"} -->
+<p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'The longer way in', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":2} -->
 <h2 class="wp-block-heading"><?php echo esc_html__( 'The First Descent', 'atlas-relics' ); ?></h2>
@@ -151,17 +151,17 @@ $atlas_descent_link = 'https://atlas-relics.com/b/f3DGy?utm_source=atlasrelics-s
 <!-- /wp:paragraph -->
 <!-- wp:buttons -->
 <div class="wp-block-buttons">
-<!-- wp:button {"backgroundColor":"gold-500","textColor":"navy-900"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-navy-900-color has-gold-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( $atlas_descent_link ); ?>"><?php echo esc_html__( 'Begin the descent', 'atlas-relics' ); ?></a></div>
+<!-- wp:button {"backgroundColor":"violet-500","textColor":"ivory-50"} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-ivory-50-color has-violet-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( $atlas_descent_link ); ?>"><?php echo esc_html__( 'Begin the descent', 'atlas-relics' ); ?></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"backgroundColor":"navy-900","textColor":"ivory-50"} -->
-<section class="wp-block-group has-ivory-50-color has-navy-900-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
-<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"gold-500"} -->
-<p class="has-gold-500-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'Before you enter', 'atlas-relics' ); ?></p>
+<!-- wp:group {"tagName":"section","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"backgroundColor":"plum-800","textColor":"ivory-50"} -->
+<section class="wp-block-group has-ivory-50-color has-plum-800-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"lilac-300"} -->
+<p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'Before you enter', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":2} -->
 <h2 class="wp-block-heading"><?php echo esc_html__( 'How the caves work', 'atlas-relics' ); ?></h2>
@@ -196,8 +196,8 @@ $atlas_descent_link = 'https://atlas-relics.com/b/f3DGy?utm_source=atlasrelics-s
 <!-- /wp:heading -->
 <!-- wp:buttons -->
 <div class="wp-block-buttons">
-<!-- wp:button {"backgroundColor":"gold-500","textColor":"navy-900"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-navy-900-color has-gold-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( home_url( '/begin/' ) ); ?>"><?php echo esc_html__( 'Choose where to begin', 'atlas-relics' ); ?></a></div>
+<!-- wp:button {"backgroundColor":"violet-500","textColor":"ivory-50"} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-ivory-50-color has-violet-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( home_url( '/begin/' ) ); ?>"><?php echo esc_html__( 'Choose where to begin', 'atlas-relics' ); ?></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

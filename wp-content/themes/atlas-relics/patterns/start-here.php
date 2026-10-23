@@ -14,8 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <!-- wp:group {"layout":{"type":"constrained","contentSize":"720px"}} -->
 <div class="wp-block-group">
-	<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"gold-600"} -->
-	<p class="has-gold-600-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'Start Here', 'atlas-relics' ); ?></p>
+	<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"lilac-300"} -->
+	<p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'Start Here', 'atlas-relics' ); ?></p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:heading {"level":1} -->
@@ -26,8 +26,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<p class="has-medium-font-size"><?php echo esc_html__( 'There\'s no single right entry point — only the one that meets you where you are right now.', 'atlas-relics' ); ?></p>
 	<!-- /wp:paragraph -->
 
-	<!-- wp:separator {"backgroundColor":"gold-500"} -->
-	<hr class="wp-block-separator has-text-color has-gold-500-color has-alpha-channel-opacity has-gold-500-background-color has-background"/>
+	<!-- wp:separator {"backgroundColor":"violet-500"} -->
+	<hr class="wp-block-separator has-text-color has-lilac-300-color has-alpha-channel-opacity has-violet-500-background-color has-background"/>
 	<!-- /wp:separator -->
 
 	<!-- wp:heading {"level":2,"fontSize":"large"} -->
@@ -40,8 +40,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<!-- wp:buttons -->
 	<div class="wp-block-buttons">
-		<!-- wp:button {"backgroundColor":"gold-500","textColor":"navy-900"} -->
-		<div class="wp-block-button"><a class="wp-block-button__link has-navy-900-color has-gold-500-background-color has-text-color has-background wp-element-button" href="/conscious-mirror/"><?php echo esc_html__( 'Try the Conscious Mirror', 'atlas-relics' ); ?></a></div>
+		<!-- wp:button {"backgroundColor":"violet-500","textColor":"ivory-50"} -->
+		<div class="wp-block-button"><a class="wp-block-button__link has-ivory-50-color has-violet-500-background-color has-text-color has-background wp-element-button" href="/conscious-mirror/"><?php echo esc_html__( 'Try the Conscious Mirror', 'atlas-relics' ); ?></a></div>
 		<!-- /wp:button -->
 	</div>
 	<!-- /wp:buttons -->

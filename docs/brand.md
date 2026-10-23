@@ -22,11 +22,16 @@ extend them consistently instead of hard-coding new values.
 | `ink-700` | `#1B1B28` | Raised surface on the dark page: callout boxes, form fields, alternate table rows |
 | `plum-900` | `#110812` | Optional section background for the Vedic Life Advisor page (matches that app's theme color) |
 | `mist-400` | `#A9A7B8` | Muted text and captions on dark backgrounds |
+| `plum-800` | `#1C0E24` | Header-free bands: footer and alternating sections |
+| `plum-700` | `#2A1536` | Cards, form fields, table rows |
+| `violet-500` | `#7A3FD6` | Primary buttons and borders |
+| `violet-600` | `#6330B8` | Button hover |
+| `lilac-300` | `#C9B6F7` | Links, eyebrow labels, small accents |
 
-The site is dark by default: `ink-900` page, `ivory-50` text and headings, `gold-500` links and
-accents. `navy-900` is kept for the header, footer and hero bands so they read as deeper bands on
-the ink page. `ivory-100` and `charcoal-900` are no longer used by the theme; they stay in the
-palette so older content that references them still renders.
+The site is dark plum by default: `plum-900` page (`#110812`), `plum-800` bands, `plum-700` cards,
+`ivory-50` text, `violet-500` buttons and `lilac-300` links and labels. The older navy, gold and
+ivory tokens stay in the palette so earlier content still renders, but the theme no longer uses
+them.
 
 Rules:
 

@@ -19,6 +19,6 @@ this stylesheet only carries the required theme header and print/no-JS fallbacks
 
 /* Fallback layout for environments where block styles fail to load (e.g. print). */
 body {
-	background-color: #101018;
+	background-color: #110812;
 	color: #f7f3e9;
 }
