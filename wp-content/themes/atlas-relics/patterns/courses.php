@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h1 class="wp-block-heading has-ivory-50-color has-text-color"><?php echo esc_html__( 'For a longer stay.', 'atlas-relics' ); ?></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"fontSize":"medium","textColor":"ivory-50"} -->
-<p class="has-ivory-50-color has-text-color has-medium-font-size"><?php echo esc_html__( 'Two self-paced courses. Lessons live on their own course sites; buying and access happen there.', 'atlas-relics' ); ?></p>
+<p class="has-ivory-50-color has-text-color has-medium-font-size"><?php echo esc_html__( 'Two self-paced courses. Each has its own course site, where you buy and sign in.', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
@@ -31,7 +31,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h2 class="wp-block-heading"><?php echo esc_html__( 'The Four Stages of Consciousness', 'atlas-relics' ); ?></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph -->
-<p><?php echo esc_html__( 'A self-paced workbook in six modules, moving through four stages: To Me, By Me, Through Me, As Me.', 'atlas-relics' ); ?></p>
+<p><?php echo esc_html__( 'Six modules across four stages: To Me, By Me, Through Me, As Me. A workbook you return to.', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons -->
 <div class="wp-block-buttons">
@@ -48,7 +48,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h2 class="wp-block-heading"><?php echo esc_html__( 'The Conscious Mirror', 'atlas-relics' ); ?></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph -->
-<p><?php echo esc_html__( 'A self-paced course for noticing the patterns in how you think, react, choose, and live.', 'atlas-relics' ); ?></p>
+<p><?php echo esc_html__( 'A self-paced practice for noticing how you think, react and choose, without grading any of it.', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons -->
 <div class="wp-block-buttons">

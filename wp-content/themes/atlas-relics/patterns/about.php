@@ -31,13 +31,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h2 class="wp-block-heading"><?php echo esc_html__( 'What this is', 'atlas-relics' ); ?></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph -->
-<p><?php echo esc_html__( 'Atlas Relics makes experiences for examining the inner world: guided caves, essays, two courses, and a small astrology tool. It is built for people who would rather look closely than be told what to think.', 'atlas-relics' ); ?></p>
+<p><?php echo esc_html__( 'Atlas Relics makes experiences for examining the inner world: guided caves, essays, two courses and a small astrology tool. They are for people who would rather look closely than be told what to think.', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":2} -->
 <h2 class="wp-block-heading"><?php echo esc_html__( 'How it is made', 'atlas-relics' ); ?></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph -->
-<p><?php echo esc_html__( 'Everything is written by one person. There are no streaks, no countdown timers, and no urgency banners. If something is right for you, it will still be right tomorrow.', 'atlas-relics' ); ?></p>
+<p><?php echo esc_html__( 'One person writes all of it. No streaks, no countdown timers, no urgency banners. If something is right for you, it will still be right tomorrow.', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":2} -->
 <h2 class="wp-block-heading"><?php echo esc_html__( 'What it is not', 'atlas-relics' ); ?></h2>
@@ -55,7 +55,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:buttons -->
 <div class="wp-block-buttons">
 <!-- wp:button {"backgroundColor":"violet-500","textColor":"ivory-50"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-ivory-50-color has-violet-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( home_url( '/begin/' ) ); ?>"><?php echo esc_html__( 'Choose where to begin', 'atlas-relics' ); ?></a></div>
+<div class="wp-block-button"><a class="wp-block-button__link has-ivory-50-color has-violet-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( home_url( '/begin/' ) ); ?>"><?php echo esc_html__( 'Find your sentence', 'atlas-relics' ); ?></a></div>
 <!-- /wp:button -->
 <!-- wp:button {"className":"is-style-outline","textColor":"ivory-50"} -->
 <div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-ivory-50-color has-text-color wp-element-button" href="<?php echo esc_url( 'https://medium.com/the-conscious-path' ); ?>"><?php echo esc_html__( 'Read the essays', 'atlas-relics' ); ?></a></div>

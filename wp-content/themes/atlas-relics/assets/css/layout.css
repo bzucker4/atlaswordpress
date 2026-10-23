@@ -194,3 +194,162 @@ footer .wp-block-site-title a::before {
 	position: absolute;
 	inset: 0;
 }
+
+/* Headings: larger, tighter, more present */
+main h2.wp-block-heading {
+	font-size: clamp(1.9rem, 3.8vw, 3rem);
+	line-height: 1.1;
+	letter-spacing: -0.015em;
+}
+
+main h2.wp-block-heading.atlas-display {
+	font-size: clamp(2.4rem, 6vw, 4.75rem);
+	line-height: 1.04;
+	letter-spacing: -0.02em;
+	max-width: 16ch;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Hero: an aperture opening behind the headline */
+.atlas-hero {
+	position: relative;
+	overflow: hidden;
+	isolation: isolate;
+}
+
+.atlas-hero::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	width: 120vmax;
+	height: 120vmax;
+	left: 72%;
+	top: 38%;
+	translate: -50% -50%;
+	pointer-events: none;
+	background:
+		radial-gradient(circle, rgba(122, 63, 214, 0.38) 0%, rgba(122, 63, 214, 0) 22%),
+		repeating-radial-gradient(circle, rgba(201, 182, 247, 0.13) 0 1px, transparent 1px 64px);
+	-webkit-mask-image: radial-gradient(circle, #000 0%, transparent 34%);
+	mask-image: radial-gradient(circle, #000 0%, transparent 34%);
+	animation: atlas-breathe 16s ease-in-out infinite;
+}
+
+.atlas-hero h1 {
+	font-size: clamp(2.5rem, 5.4vw, 4.6rem);
+	line-height: 1.03;
+	letter-spacing: -0.02em;
+	text-wrap: balance;
+}
+
+/* One orchestrated entrance, on load only */
+.atlas-hero .wp-block-column:first-child > * {
+	animation: atlas-rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.atlas-hero .wp-block-column:first-child > :nth-child(2) { animation-delay: 0.08s; }
+.atlas-hero .wp-block-column:first-child > :nth-child(3) { animation-delay: 0.16s; }
+.atlas-hero .wp-block-column:first-child > :nth-child(4) { animation-delay: 0.24s; }
+
+.atlas-hero .atlas-list .atlas-row {
+	animation: atlas-rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.atlas-hero .atlas-list .atlas-row:nth-of-type(1) { animation-delay: 0.3s; }
+.atlas-hero .atlas-list .atlas-row:nth-of-type(2) { animation-delay: 0.38s; }
+.atlas-hero .atlas-list .atlas-row:nth-of-type(3) { animation-delay: 0.46s; }
+.atlas-hero .atlas-list .atlas-row:nth-of-type(4) { animation-delay: 0.54s; }
+.atlas-hero .atlas-list .atlas-row:nth-of-type(5) { animation-delay: 0.62s; }
+
+@keyframes atlas-rise {
+	from { opacity: 0; transform: translateY(14px); }
+	to { opacity: 1; transform: none; }
+}
+
+@keyframes atlas-breathe {
+	0%, 100% { scale: 1; opacity: 0.9; }
+	50% { scale: 1.06; opacity: 1; }
+}
+
+/* Interlude: one statement, set large */
+.atlas-interlude {
+	position: relative;
+	isolation: isolate;
+	text-align: center;
+}
+
+.atlas-interlude::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	inset: 0;
+	background: radial-gradient(60% 70% at 50% 50%, rgba(122, 63, 214, 0.2) 0%, rgba(16, 16, 24, 0) 70%);
+	pointer-events: none;
+}
+
+.atlas-facts {
+	gap: 0.5rem 0;
+	margin: 2.25rem 0 2.5rem;
+}
+
+.atlas-facts p {
+	margin: 0;
+	padding: 0 1.5rem;
+	color: #a9a7b8;
+	font-size: 1rem;
+	letter-spacing: 0.02em;
+}
+
+.atlas-facts p + p {
+	border-left: 1px solid rgba(169, 167, 184, 0.3);
+}
+
+/* Course cards: a lit edge */
+.atlas-card-course {
+	position: relative;
+	overflow: hidden;
+}
+
+.atlas-card-course::before {
+	content: "";
+	position: absolute;
+	inset: 0 0 auto 0;
+	height: 2px;
+	background: linear-gradient(90deg, #7a3fd6, #c9b6f7 60%, transparent);
+}
+
+.atlas-card-course:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 18px 50px -20px rgba(122, 63, 214, 0.6);
+}
+
+.atlas-card-course {
+	transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.wp-block-button__link {
+	transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.wp-block-button__link:hover {
+	transform: translateY(-1px);
+}
+
+@media (max-width: 781px) {
+	.atlas-hero::before { left: 50%; top: 22%; }
+	.atlas-facts p + p { border-left: 0; }
+	.atlas-facts { flex-direction: column; align-items: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.atlas-hero::before,
+	.atlas-hero .wp-block-column:first-child > *,
+	.atlas-hero .atlas-list .atlas-row {
+		animation: none;
+	}
+	.atlas-card-course,
+	.wp-block-button__link { transition: none; }
+	.atlas-card-course:hover,
+	.wp-block-button__link:hover { transform: none; }
+}

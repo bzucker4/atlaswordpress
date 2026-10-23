@@ -31,7 +31,7 @@ $atlas_descent_link = 'https://atlas-relics.com/b/f3DGy?utm_source=atlasrelics-s
 <h1 class="wp-block-heading has-ivory-50-color has-text-color"><?php echo esc_html__( 'Four caves. One longer way in.', 'atlas-relics' ); ?></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"fontSize":"medium","textColor":"ivory-50"} -->
-<p class="has-ivory-50-color has-text-color has-medium-font-size"><?php echo esc_html__( 'Guided experiences for the questions that need more than a reflection. Choose one, or take the three together.', 'atlas-relics' ); ?></p>
+<p class="has-ivory-50-color has-text-color has-medium-font-size"><?php echo esc_html__( 'Guided experiences for questions that need more than a reflection. Take one, or take three together.', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
@@ -144,7 +144,7 @@ $atlas_descent_link = 'https://atlas-relics.com/b/f3DGy?utm_source=atlasrelics-s
 <h2 class="wp-block-heading"><?php echo esc_html__( 'The First Descent', 'atlas-relics' ); ?></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph -->
-<p><?php echo esc_html__( 'Control, Desire, and Identity together. Bought separately they come to $23.31. As the First Descent, they are $17.77.', 'atlas-relics' ); ?></p>
+<p><?php echo esc_html__( 'Control, Desire and Identity in one passage. Bought apart they come to $23.31. As the First Descent, $17.77.', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph -->
 <p><?php echo esc_html__( 'Take them in order. Each cave leaves a question that the next one picks up.', 'atlas-relics' ); ?></p>
@@ -197,7 +197,7 @@ $atlas_descent_link = 'https://atlas-relics.com/b/f3DGy?utm_source=atlasrelics-s
 <!-- wp:buttons -->
 <div class="wp-block-buttons">
 <!-- wp:button {"backgroundColor":"violet-500","textColor":"ivory-50"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-ivory-50-color has-violet-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( home_url( '/begin/' ) ); ?>"><?php echo esc_html__( 'Choose where to begin', 'atlas-relics' ); ?></a></div>
+<div class="wp-block-button"><a class="wp-block-button__link has-ivory-50-color has-violet-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( home_url( '/begin/' ) ); ?>"><?php echo esc_html__( 'Find your sentence', 'atlas-relics' ); ?></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
