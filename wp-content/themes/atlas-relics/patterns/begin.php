@@ -124,7 +124,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:buttons -->
 <div class="wp-block-buttons">
 <!-- wp:button {"className":"is-style-outline","textColor":"ivory-50"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-ivory-50-color has-text-color wp-element-button" href="<?php echo esc_url( home_url( '/essays/' ) ); ?>"><?php echo esc_html__( 'Read from the essays', 'atlas-relics' ); ?></a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-ivory-50-color has-text-color wp-element-button" href="<?php echo esc_url( 'https://medium.com/the-conscious-path' ); ?>"><?php echo esc_html__( 'Read from the essays', 'atlas-relics' ); ?></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->

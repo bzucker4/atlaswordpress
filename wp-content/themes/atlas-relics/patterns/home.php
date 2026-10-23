@@ -165,7 +165,7 @@ $atlas_tools = array(
 	<!-- wp:buttons -->
 	<div class="wp-block-buttons">
 		<!-- wp:button {"backgroundColor":"gold-500","textColor":"navy-900"} -->
-		<div class="wp-block-button"><a class="wp-block-button__link has-navy-900-color has-gold-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( home_url( '/essays/' ) ); ?>"><?php echo esc_html__( 'Read from the essays', 'atlas-relics' ); ?></a></div>
+		<div class="wp-block-button"><a class="wp-block-button__link has-navy-900-color has-gold-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( 'https://medium.com/the-conscious-path' ); ?>"><?php echo esc_html__( 'Read from the essays', 'atlas-relics' ); ?></a></div>
 		<!-- /wp:button -->
 	</div>
 	<!-- /wp:buttons -->
@@ -217,7 +217,7 @@ $atlas_tools = array(
 	<!-- /wp:list -->
 
 	<!-- wp:paragraph -->
-	<p><a href="<?php echo esc_url( home_url( '/essays/' ) ); ?>"><?php echo esc_html__( 'All recent essays', 'atlas-relics' ); ?></a></p>
+	<p><a href="<?php echo esc_url( 'https://medium.com/the-conscious-path' ); ?>"><?php echo esc_html__( 'All recent essays', 'atlas-relics' ); ?></a></p>
 	<!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->

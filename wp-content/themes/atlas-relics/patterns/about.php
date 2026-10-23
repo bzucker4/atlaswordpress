@@ -58,7 +58,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-button"><a class="wp-block-button__link has-navy-900-color has-gold-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( home_url( '/begin/' ) ); ?>"><?php echo esc_html__( 'Choose where to begin', 'atlas-relics' ); ?></a></div>
 <!-- /wp:button -->
 <!-- wp:button {"className":"is-style-outline","textColor":"ivory-50"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-ivory-50-color has-text-color wp-element-button" href="<?php echo esc_url( home_url( '/essays/' ) ); ?>"><?php echo esc_html__( 'Read the essays', 'atlas-relics' ); ?></a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-ivory-50-color has-text-color wp-element-button" href="<?php echo esc_url( 'https://medium.com/the-conscious-path' ); ?>"><?php echo esc_html__( 'Read the essays', 'atlas-relics' ); ?></a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
