@@ -99,23 +99,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:group -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"backgroundColor":"plum-800","textColor":"ivory-50"} -->
-<section class="wp-block-group has-ivory-50-color has-plum-800-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
-<!-- wp:heading {"level":2,"textColor":"ivory-50"} -->
-<h2 class="wp-block-heading has-ivory-50-color has-text-color"><?php echo esc_html__( 'Prefer to write it out?', 'atlas-relics' ); ?></h2>
-<!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p><?php echo esc_html__( 'The Personal Pattern Map is a private written reflection. You answer in your own words and the map is returned by email within 48 hours.', 'atlas-relics' ); ?></p>
-<!-- /wp:paragraph -->
-<!-- wp:buttons -->
-<div class="wp-block-buttons">
-<!-- wp:button {"backgroundColor":"violet-500","textColor":"ivory-50"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-ivory-50-color has-violet-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( 'https://atlas-relics.com/b/UYo5J?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=begin-map' ); ?>"><?php echo esc_html__( 'Begin the map', 'atlas-relics' ); ?></a></div>
-<!-- /wp:button -->
-</div>
-<!-- /wp:buttons -->
-</section>
-<!-- /wp:group -->
 <!-- wp:group {"tagName":"section","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}}} -->
 <section class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
 <!-- wp:heading {"level":2} -->

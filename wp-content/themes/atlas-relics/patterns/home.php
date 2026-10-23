@@ -3,7 +3,7 @@
  * Title: Home
  * Slug: atlas-relics/home
  * Categories: atlas-relics
- * Description: The Atlas Relics home page: hero, the caves on the store, essays, the First Descent, the Pattern Map, courses and tools, and the newsletter.
+ * Description: The Atlas Relics home page: hero, the caves on the store, essays, the First Descent, courses and tools, and the newsletter.
  *
  * @package Atlas_Relics
  */
@@ -174,27 +174,77 @@ $atlas_tools = array(
 </section>
 <!-- /wp:group -->
 
-<!-- wp:group {"tagName":"section","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"backgroundColor":"plum-800","textColor":"ivory-50"} -->
+<!-- wp:group {"tagName":"section","layout":{"type":"constrained","contentSize":"1200px"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"backgroundColor":"plum-800","textColor":"ivory-50"} -->
 <section class="wp-block-group has-ivory-50-color has-plum-800-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
 	<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"lilac-300"} -->
-	<p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'Reflection', 'atlas-relics' ); ?></p>
-	<!-- /wp:paragraph -->
+<p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'Courses', 'atlas-relics' ); ?></p>
+<!-- /wp:paragraph -->
 
 	<!-- wp:heading {"level":2,"textColor":"ivory-50"} -->
-	<h2 class="wp-block-heading has-ivory-50-color has-text-color"><?php echo esc_html__( 'Follow what stirs within.', 'atlas-relics' ); ?></h2>
+	<h2 class="wp-block-heading has-ivory-50-color has-text-color"><?php echo esc_html__( 'Go further with a guided course.', 'atlas-relics' ); ?></h2>
 	<!-- /wp:heading -->
 
-	<!-- wp:paragraph {"textColor":"ivory-50"} -->
-	<p class="has-ivory-50-color has-text-color"><?php echo esc_html__( 'Essays now and then on the questions beneath everyday life. The Conscious Path is the main place to start.', 'atlas-relics' ); ?></p>
-	<!-- /wp:paragraph -->
+	<!-- wp:columns {"className":"atlas-course-cols"} -->
+	<div class="wp-block-columns atlas-course-cols">
+		<?php foreach ( array( $atlas_tools[0], $atlas_tools[1] ) as $atlas_tool ) : ?>
+		<!-- wp:column -->
+		<div class="wp-block-column">
+			<!-- wp:group {"className":"atlas-card atlas-card-course","layout":{"type":"default"}} -->
+			<div class="wp-block-group atlas-card atlas-card-course">
+				<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"lilac-300"} -->
+				<p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html( $atlas_tool['type'] ); ?></p>
+				<!-- /wp:paragraph -->
 
-	<!-- wp:buttons -->
-	<div class="wp-block-buttons">
-		<!-- wp:button {"backgroundColor":"violet-500","textColor":"ivory-50"} -->
-		<div class="wp-block-button"><a class="wp-block-button__link has-ivory-50-color has-violet-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( 'https://medium.com/the-conscious-path' ); ?>"><?php echo esc_html__( 'Read from the essays', 'atlas-relics' ); ?></a></div>
-		<!-- /wp:button -->
+				<!-- wp:heading {"level":3,"fontSize":"large"} -->
+				<h3 class="wp-block-heading has-large-font-size"><?php echo esc_html( $atlas_tool['name'] ); ?></h3>
+				<!-- /wp:heading -->
+
+				<!-- wp:paragraph {"textColor":"mist-400"} -->
+				<p class="has-mist-400-color has-text-color"><?php echo esc_html( $atlas_tool['body'] ); ?></p>
+				<!-- /wp:paragraph -->
+
+				<!-- wp:buttons -->
+				<div class="wp-block-buttons">
+					<!-- wp:button {"backgroundColor":"violet-500","textColor":"ivory-50"} -->
+					<div class="wp-block-button"><a class="wp-block-button__link has-ivory-50-color has-violet-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( $atlas_tool['url'] ); ?>"><?php echo esc_html__( 'Explore the course', 'atlas-relics' ); ?></a></div>
+					<!-- /wp:button -->
+				</div>
+				<!-- /wp:buttons -->
+			</div>
+			<!-- /wp:group -->
+		</div>
+		<!-- /wp:column -->
+		<?php endforeach; ?>
 	</div>
-	<!-- /wp:buttons -->
+	<!-- /wp:columns -->
+
+	<!-- wp:group {"className":"atlas-card atlas-strip","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+	<div class="wp-block-group atlas-card atlas-strip">
+		<!-- wp:group {"layout":{"type":"default"}} -->
+		<div class="wp-block-group">
+			<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"lilac-300"} -->
+			<p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html( $atlas_tools[2]['type'] ); ?></p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:paragraph {"fontSize":"medium"} -->
+			<p class="has-medium-font-size"><strong><?php echo esc_html( $atlas_tools[2]['name'] ); ?></strong> <span class="atlas-muted"><?php echo esc_html( $atlas_tools[2]['body'] ); ?></span></p>
+			<!-- /wp:paragraph -->
+		</div>
+		<!-- /wp:group -->
+
+		<!-- wp:buttons -->
+		<div class="wp-block-buttons">
+			<!-- wp:button {"className":"is-style-outline","textColor":"ivory-50"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-ivory-50-color has-text-color wp-element-button" href="<?php echo esc_url( $atlas_tools[2]['url'] ); ?>"><?php echo esc_html__( 'Try the advisor', 'atlas-relics' ); ?></a></div>
+<!-- /wp:button -->
+		</div>
+		<!-- /wp:buttons -->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
+	<p class="has-mist-400-color has-text-color has-small-font-size"><a href="<?php echo esc_url( home_url( '/courses/' ) ); ?>"><?php echo esc_html__( 'See everything in Courses and tools', 'atlas-relics' ); ?></a></p>
+	<!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
 
@@ -222,29 +272,48 @@ $atlas_tools = array(
 </section>
 <!-- /wp:group -->
 
-<!-- wp:group {"tagName":"section","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"backgroundColor":"plum-800","textColor":"ivory-50"} -->
+<!-- wp:group {"tagName":"section","layout":{"type":"constrained","contentSize":"1200px"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"backgroundColor":"plum-800","textColor":"ivory-50"} -->
 <section class="wp-block-group has-ivory-50-color has-plum-800-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
 	<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"lilac-300"} -->
-	<p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'If an essay sent you', 'atlas-relics' ); ?></p>
-	<!-- /wp:paragraph -->
+<p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'If an essay sent you', 'atlas-relics' ); ?></p>
+<!-- /wp:paragraph -->
 
 	<!-- wp:heading {"level":2,"textColor":"ivory-50"} -->
 	<h2 class="wp-block-heading has-ivory-50-color has-text-color"><?php echo esc_html__( 'Continue the question you already opened.', 'atlas-relics' ); ?></h2>
 	<!-- /wp:heading -->
 
-	<!-- wp:list {"style":{"spacing":{"padding":{"left":"0"}}}} -->
-	<ul class="wp-block-list" style="padding-left:0;list-style:none">
+	<!-- wp:group {"className":"atlas-essay-grid","layout":{"type":"grid","columnCount":2,"minimumColumnWidth":"18rem"}} -->
+	<div class="wp-block-group atlas-essay-grid">
 		<?php foreach ( $atlas_essays as $atlas_essay ) : ?>
-		<!-- wp:list-item -->
-		<li><?php echo esc_html( $atlas_essay['date'] ); ?> &middot; <?php echo esc_html( $atlas_essay['title'] ); ?> (<a href="<?php echo esc_url( home_url( '/caves/#' . $atlas_essay['cave'] ) ); ?>"><?php echo esc_html__( 'Continue this question', 'atlas-relics' ); ?></a>)</li>
-		<!-- /wp:list-item -->
-		<?php endforeach; ?>
-	</ul>
-	<!-- /wp:list -->
+		<?php
+		$atlas_dest = 'descent' === $atlas_essay['cave'] ? __( 'The First Descent', 'atlas-relics' ) : sprintf( /* translators: %s: cave name */ __( 'the Cave of %s', 'atlas-relics' ), ucfirst( $atlas_essay['cave'] ) );
+		?>
+		<!-- wp:group {"className":"atlas-card atlas-card-link","layout":{"type":"default"}} -->
+		<div class="wp-block-group atlas-card atlas-card-link">
+			<!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
+			<p class="has-mist-400-color has-text-color has-small-font-size"><?php echo esc_html( $atlas_essay['date'] ); ?></p>
+			<!-- /wp:paragraph -->
 
-	<!-- wp:paragraph -->
-	<p><a href="<?php echo esc_url( 'https://medium.com/the-conscious-path' ); ?>"><?php echo esc_html__( 'All recent essays', 'atlas-relics' ); ?></a></p>
-	<!-- /wp:paragraph -->
+			<!-- wp:heading {"level":3,"fontSize":"medium"} -->
+			<h3 class="wp-block-heading has-medium-font-size"><?php echo esc_html( $atlas_essay['title'] ); ?></h3>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph {"fontSize":"small","textColor":"lilac-300"} -->
+			<p class="has-lilac-300-color has-text-color has-small-font-size"><a href="<?php echo esc_url( home_url( '/caves/#' . $atlas_essay['cave'] ) ); ?>"><?php echo esc_html( sprintf( /* translators: %s: destination */ __( 'Take it into %s', 'atlas-relics' ), $atlas_dest ) ); ?> &rarr;</a></p>
+			<!-- /wp:paragraph -->
+		</div>
+		<!-- /wp:group -->
+		<?php endforeach; ?>
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:buttons -->
+	<div class="wp-block-buttons">
+		<!-- wp:button {"className":"is-style-outline","textColor":"ivory-50"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-ivory-50-color has-text-color wp-element-button" href="<?php echo esc_url( 'https://medium.com/the-conscious-path' ); ?>"><?php echo esc_html__( 'Read all essays on Medium', 'atlas-relics' ); ?></a></div>
+<!-- /wp:button -->
+	</div>
+	<!-- /wp:buttons -->
 </section>
 <!-- /wp:group -->
 
@@ -279,25 +348,21 @@ $atlas_tools = array(
 <!-- wp:group {"tagName":"section","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"backgroundColor":"plum-800","textColor":"ivory-50"} -->
 <section class="wp-block-group has-ivory-50-color has-plum-800-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
 	<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"lilac-300"} -->
-	<p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'Also on the store', 'atlas-relics' ); ?></p>
+	<p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'Reflection', 'atlas-relics' ); ?></p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:heading {"level":2,"textColor":"ivory-50"} -->
-	<h2 class="wp-block-heading has-ivory-50-color has-text-color"><?php echo esc_html__( 'The Personal Pattern Map', 'atlas-relics' ); ?></h2>
+	<h2 class="wp-block-heading has-ivory-50-color has-text-color"><?php echo esc_html__( 'Follow what stirs within.', 'atlas-relics' ); ?></h2>
 	<!-- /wp:heading -->
 
 	<!-- wp:paragraph {"textColor":"ivory-50"} -->
-	<p class="has-ivory-50-color has-text-color"><?php echo esc_html__( 'A private written reflection, $19. About 15 to 20 minutes to begin. The written map is returned by email within 48 hours.', 'atlas-relics' ); ?></p>
+	<p class="has-ivory-50-color has-text-color"><?php echo esc_html__( 'Essays now and then on the questions beneath everyday life. The Conscious Path is the main place to start.', 'atlas-relics' ); ?></p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:buttons -->
 	<div class="wp-block-buttons">
 		<!-- wp:button {"backgroundColor":"violet-500","textColor":"ivory-50"} -->
-		<div class="wp-block-button"><a class="wp-block-button__link has-ivory-50-color has-violet-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( $atlas_buy . 'UYo5J' . $atlas_utm . '-map' ); ?>"><?php echo esc_html__( 'Begin the map ($19)', 'atlas-relics' ); ?></a></div>
-		<!-- /wp:button -->
-
-		<!-- wp:button {"className":"is-style-outline","textColor":"ivory-50"} -->
-		<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-ivory-50-color has-text-color wp-element-button" href="<?php echo esc_url( home_url( '/caves/' ) ); ?>"><?php echo esc_html__( 'See the full store', 'atlas-relics' ); ?></a></div>
+		<div class="wp-block-button"><a class="wp-block-button__link has-ivory-50-color has-violet-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( 'https://medium.com/the-conscious-path' ); ?>"><?php echo esc_html__( 'Read from the essays', 'atlas-relics' ); ?></a></div>
 		<!-- /wp:button -->
 	</div>
 	<!-- /wp:buttons -->
@@ -306,40 +371,6 @@ $atlas_tools = array(
 
 <!-- wp:group {"tagName":"section","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}}} -->
 <section class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
-	<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"lilac-300"} -->
-	<p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'Courses and tools', 'atlas-relics' ); ?></p>
-	<!-- /wp:paragraph -->
-
-	<!-- wp:heading {"level":2} -->
-	<h2 class="wp-block-heading"><?php echo esc_html__( 'For a longer stay.', 'atlas-relics' ); ?></h2>
-	<!-- /wp:heading -->
-
-	<!-- wp:group {"align":"wide","layout":{"type":"grid","minimumColumnWidth":"16rem"}} -->
-	<div class="wp-block-group alignwide">
-		<?php foreach ( $atlas_tools as $atlas_tool ) : ?>
-		<!-- wp:group {"style":{"border":{"width":"1px","radius":"2px"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"borderColor":"violet-500","backgroundColor":"plum-700"} -->
-		<div class="wp-block-group has-border-color has-violet-500-border-color has-plum-700-background-color has-background" style="border-width:1px;border-radius:2px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
-			<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"lilac-300"} -->
-			<p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html( $atlas_tool['type'] ); ?></p>
-			<!-- /wp:paragraph -->
-
-			<!-- wp:heading {"level":3,"fontSize":"medium"} -->
-			<h3 class="wp-block-heading has-medium-font-size"><a href="<?php echo esc_url( $atlas_tool['url'] ); ?>"><?php echo esc_html( $atlas_tool['name'] ); ?></a></h3>
-			<!-- /wp:heading -->
-
-			<!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
-			<p class="has-mist-400-color has-text-color has-small-font-size"><?php echo esc_html( $atlas_tool['body'] ); ?></p>
-			<!-- /wp:paragraph -->
-		</div>
-		<!-- /wp:group -->
-		<?php endforeach; ?>
-	</div>
-	<!-- /wp:group -->
-</section>
-<!-- /wp:group -->
-
-<!-- wp:group {"tagName":"section","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"backgroundColor":"plum-800","textColor":"ivory-50"} -->
-<section class="wp-block-group has-ivory-50-color has-plum-800-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
 	<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"lilac-300"} -->
 	<p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'The letter', 'atlas-relics' ); ?></p>
 	<!-- /wp:paragraph -->

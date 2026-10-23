@@ -31,7 +31,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h2 class="wp-block-heading"><?php echo esc_html__( 'What this is', 'atlas-relics' ); ?></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph -->
-<p><?php echo esc_html__( 'Atlas Relics makes experiences for examining the inner world: guided caves, a written pattern map, essays, two courses, and a small astrology tool. It is built for people who would rather look closely than be told what to think.', 'atlas-relics' ); ?></p>
+<p><?php echo esc_html__( 'Atlas Relics makes experiences for examining the inner world: guided caves, essays, two courses, and a small astrology tool. It is built for people who would rather look closely than be told what to think.', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":2} -->
 <h2 class="wp-block-heading"><?php echo esc_html__( 'How it is made', 'atlas-relics' ); ?></h2>

@@ -127,3 +127,70 @@ footer .wp-block-site-title a::before {
 		color: #f7f3e9;
 	}
 }
+
+/* Cards: courses, strip, essays */
+.atlas-card {
+	background: rgba(255, 255, 255, 0.03);
+	border: 1px solid rgba(169, 167, 184, 0.2);
+	border-radius: 8px;
+	padding: 1.75rem;
+	transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.atlas-card:hover {
+	border-color: rgba(201, 182, 247, 0.55);
+	background: rgba(122, 63, 214, 0.08);
+}
+
+.atlas-course-cols {
+	gap: 1.5rem;
+	margin: 2.25rem 0 1.5rem;
+}
+
+.atlas-card-course {
+	height: 100%;
+	padding: 2.25rem;
+	background: linear-gradient(160deg, rgba(122, 63, 214, 0.18) 0%, rgba(255, 255, 255, 0.03) 70%);
+	border-color: rgba(201, 182, 247, 0.35);
+}
+
+.atlas-card-course h3 {
+	font-size: clamp(1.5rem, 2.6vw, 2rem);
+	line-height: 1.15;
+	margin: 0.4rem 0 0.9rem;
+}
+
+.atlas-strip {
+	align-items: center;
+	margin-bottom: 1.25rem;
+}
+
+.atlas-strip .atlas-muted {
+	color: #a9a7b8;
+	font-size: 0.95rem;
+	margin-left: 0.5rem;
+}
+
+.atlas-essay-grid {
+	gap: 1.25rem;
+	margin: 2rem 0;
+}
+
+.atlas-card-link {
+	position: relative;
+}
+
+.atlas-card-link h3 {
+	margin: 0.35rem 0 0.9rem;
+	line-height: 1.25;
+}
+
+.atlas-card-link a {
+	text-decoration: none;
+}
+
+.atlas-card-link a::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+}
