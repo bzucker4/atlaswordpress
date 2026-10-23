@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Atlas_Relics_Core_Redirects {
 
 	/**
-	 * Old path => new path (may include a #fragment).
+	 * Old path => new path (may include a #fragment) or a full URL.
 	 *
 	 * @var array
 	 */
@@ -28,7 +28,8 @@ class Atlas_Relics_Core_Redirects {
 		'conscious-mirror' => '/conscious-mirror-course/',
 		'pattern-map'      => '/caves/',
 		'relics'           => '/caves/',
-		'journal'          => '/essays/',
+		'journal'          => 'https://medium.com/the-conscious-path',
+		'essays'           => 'https://medium.com/the-conscious-path',
 		'caves/control'    => '/caves/#control',
 		'caves/desire'     => '/caves/#desire',
 		'caves/identity'   => '/caves/#identity',
@@ -75,7 +76,10 @@ class Atlas_Relics_Core_Redirects {
 			return;
 		}
 
-		wp_safe_redirect( home_url( $map[ $path ] ), 301 );
+		$target = 0 === strpos( $map[ $path ], 'http' ) ? $map[ $path ] : home_url( $map[ $path ] );
+
+		// Targets come from the map above (or a site-owner filter), never from the request.
+		wp_redirect( $target, 301 ); // phpcs:ignore WordPress.Security.SafeRedirect.wp_redirect_wp_redirect
 		exit;
 	}
 }

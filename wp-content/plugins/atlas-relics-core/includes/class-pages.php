@@ -29,7 +29,6 @@ class Atlas_Relics_Core_Pages {
 	private static $pages = array(
 		'begin'                   => array( 'Begin', 'atlas-relics/begin' ),
 		'caves'                   => array( 'Caves', 'atlas-relics/caves' ),
-		'essays'                  => array( 'Essays', 'atlas-relics/essays' ),
 		'courses'                 => array( 'Courses', 'atlas-relics/courses' ),
 		'four-stages'             => array( 'The Four Stages of Consciousness', 'atlas-relics/four-stages' ),
 		'conscious-mirror-course' => array( 'The Conscious Mirror', 'atlas-relics/conscious-mirror-course' ),
@@ -43,8 +42,8 @@ class Atlas_Relics_Core_Pages {
 	 * @var array
 	 */
 	private static $menu_slugs = array(
-		'primary' => array( 'begin', 'caves', 'essays', 'courses', 'vedic-life-advisor', 'about' ),
-		'footer'  => array( 'about', 'essays', 'begin' ),
+		'primary' => array( 'begin', 'caves', 'courses', 'vedic-life-advisor', 'about' ),
+		'footer'  => array( 'about', 'begin' ),
 	);
 
 	/**
