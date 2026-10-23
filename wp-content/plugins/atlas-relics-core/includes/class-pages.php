@@ -42,9 +42,62 @@ class Atlas_Relics_Core_Pages {
 	 * @var array
 	 */
 	private static $menu_slugs = array(
-		'primary' => array( 'begin', 'caves', 'courses', 'vedic-life-advisor', 'about' ),
+		'primary' => array( 'begin', 'caves', 'courses', 'link:essays', 'vedic-life-advisor', 'about' ),
 		'footer'  => array( 'about', 'begin' ),
 	);
+
+	/**
+	 * Custom (non-page) menu links, referenced from the menu lists above as
+	 * "link:<key>": key => [ title, url ].
+	 *
+	 * @var array
+	 */
+	private static $menu_links = array(
+		'essays' => array( 'Essays', 'https://medium.com/the-conscious-path' ),
+	);
+
+	/**
+	 * Add one menu entry: a page, or a "link:<key>" custom link.
+	 *
+	 * @param int    $menu_id  Menu term ID.
+	 * @param string $entry    Page slug or "link:<key>".
+	 * @param array  $page_ids slug => page ID map.
+	 */
+	private static function add_menu_entry( $menu_id, $entry, array $page_ids ) {
+		if ( 0 === strpos( $entry, 'link:' ) ) {
+			$key = substr( $entry, 5 );
+			if ( empty( self::$menu_links[ $key ] ) ) {
+				return;
+			}
+
+			wp_update_nav_menu_item(
+				$menu_id,
+				0,
+				array(
+					'menu-item-type'   => 'custom',
+					'menu-item-title'  => self::$menu_links[ $key ][0],
+					'menu-item-url'    => self::$menu_links[ $key ][1],
+					'menu-item-status' => 'publish',
+				)
+			);
+			return;
+		}
+
+		if ( empty( $page_ids[ $entry ] ) ) {
+			return;
+		}
+
+		wp_update_nav_menu_item(
+			$menu_id,
+			0,
+			array(
+				'menu-item-object-id' => $page_ids[ $entry ],
+				'menu-item-object'    => 'page',
+				'menu-item-type'      => 'post_type',
+				'menu-item-status'    => 'publish',
+			)
+		);
+	}
 
 	/**
 	 * Create default pages, wire up the Journal as the posts page, and
@@ -137,23 +190,8 @@ class Atlas_Relics_Core_Pages {
 				return;
 			}
 
-			$slugs = self::$menu_slugs[ $location ];
-
-			foreach ( $slugs as $slug ) {
-				if ( empty( $page_ids[ $slug ] ) ) {
-					continue;
-				}
-
-				wp_update_nav_menu_item(
-					$menu_id,
-					0,
-					array(
-						'menu-item-object-id' => $page_ids[ $slug ],
-						'menu-item-object'    => 'page',
-						'menu-item-type'      => 'post_type',
-						'menu-item-status'    => 'publish',
-					)
-				);
+			foreach ( self::$menu_slugs[ $location ] as $entry ) {
+				self::add_menu_entry( $menu_id, $entry, $page_ids );
 			}
 		}
 
@@ -183,26 +221,24 @@ class Atlas_Relics_Core_Pages {
 			return;
 		}
 
-		$present = array();
+		$present_ids  = array();
+		$present_urls = array();
 		foreach ( (array) wp_get_nav_menu_items( $menu_id ) as $item ) {
-			$present[] = (int) $item->object_id;
+			$present_ids[]  = (int) $item->object_id;
+			$present_urls[] = untrailingslashit( $item->url );
 		}
 
-		foreach ( self::$menu_slugs[ $location ] as $slug ) {
-			if ( empty( $page_ids[ $slug ] ) || in_array( (int) $page_ids[ $slug ], $present, true ) ) {
+		foreach ( self::$menu_slugs[ $location ] as $entry ) {
+			if ( 0 === strpos( $entry, 'link:' ) ) {
+				$link = self::$menu_links[ substr( $entry, 5 ) ] ?? null;
+				if ( ! $link || in_array( untrailingslashit( $link[1] ), $present_urls, true ) ) {
+					continue;
+				}
+			} elseif ( empty( $page_ids[ $entry ] ) || in_array( (int) $page_ids[ $entry ], $present_ids, true ) ) {
 				continue;
 			}
 
-			wp_update_nav_menu_item(
-				$menu_id,
-				0,
-				array(
-					'menu-item-object-id' => $page_ids[ $slug ],
-					'menu-item-object'    => 'page',
-					'menu-item-type'      => 'post_type',
-					'menu-item-status'    => 'publish',
-				)
-			);
+			self::add_menu_entry( $menu_id, $entry, $page_ids );
 		}
 
 		update_option( $flag, 1 );
