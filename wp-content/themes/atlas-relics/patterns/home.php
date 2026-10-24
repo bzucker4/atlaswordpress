@@ -67,21 +67,21 @@ $atlas_books = array(
 		'name'  => __( 'The Ageless Truths', 'atlas-relics' ),
 		'price' => '$11.11',
 		'code'  => 'fH5cW',
-		'body'  => __( 'A practical companion to slowing down. Seven chapters on letting go, stillness, presence and inner transformation, drawn from Stoic, Taoist, Sufi, Vedic and Greek teachings. Each ends in simple daily practices.', 'atlas-relics' ),
+		'body'  => __( 'A practical companion to slowing down. Seven chapters on letting go, stillness, presence and change, drawing on Stoic, Taoist, Sufi, Vedic and Greek teachings. Each chapter ends with daily practices you can keep.', 'atlas-relics' ),
 	),
 	array(
 		'key'   => 'b',
 		'name'  => __( 'Laws of the Universe', 'atlas-relics' ),
 		'price' => '$14.99',
 		'code'  => 'Glyzs',
-		'body'  => __( 'The Twelve Universal Laws in plain language, traced to their Hermetic roots and set beside what psychology supports. Honest about where the evidence stops.', 'atlas-relics' ),
+		'body'  => __( 'The Twelve Universal Laws in plain language, traced back to the Kybalion and checked against what psychology supports. It says where the evidence stops.', 'atlas-relics' ),
 	),
 	array(
 		'key'   => 'c',
 		'name'  => __( 'The Great Shift', 'atlas-relics' ),
 		'price' => '$19.99',
 		'code'  => 'gt6pG',
-		'body'  => __( 'Hidden truths about the matrix: false thrones, the Trinity of Theft, Override Codes and the timing of the awakening. Read it as one seer\'s map, not settled fact.', 'atlas-relics' ),
+		'body'  => __( 'Hidden truths about the matrix: false thrones, the Trinity of Theft, Override Codes and why the awakening is already moving. Read it as one seer\'s map, not settled fact.', 'atlas-relics' ),
 	),
 );
 
@@ -89,13 +89,13 @@ $atlas_tools = array(
 	array(
 		'type' => __( 'Course', 'atlas-relics' ),
 		'name' => __( 'The Four Stages of Consciousness', 'atlas-relics' ),
-		'body' => __( 'Six modules across four stages: To Me, By Me, Through Me, As Me. A workbook you return to, not a ladder you climb.', 'atlas-relics' ),
+		'body' => __( 'Six modules across four stages: To Me, By Me, Through Me, As Me. You can return to any of them.', 'atlas-relics' ),
 		'url'  => home_url( '/four-stages/' ),
 	),
 	array(
 		'type' => __( 'Course', 'atlas-relics' ),
 		'name' => __( 'The Conscious Mirror', 'atlas-relics' ),
-		'body' => __( 'A self-paced practice for noticing how you think, react and choose, without grading any of it.', 'atlas-relics' ),
+		'body' => __( 'A self-paced course for noticing how you think, react and choose. Nothing is graded.', 'atlas-relics' ),
 		'url'  => home_url( '/conscious-mirror-course/' ),
 	),
 	array(
@@ -187,7 +187,7 @@ $atlas_tools = array(
 <p class="atlas-row-head"><span class="atlas-num">05</span> <a href="<?php echo esc_url( home_url( '/caves/#descent' ) ); ?>"><?php echo esc_html__( 'The First Descent', 'atlas-relics' ); ?></a> <span class="atlas-price">$17.77</span></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
-<p class="has-mist-400-color has-text-color has-small-font-size"><?php echo esc_html__( 'Control, Desire and Identity in one passage. Less than they cost apart.', 'atlas-relics' ); ?></p>
+<p class="has-mist-400-color has-text-color has-small-font-size"><?php echo esc_html__( 'All three caves in one. Cheaper than buying them apart.', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
@@ -287,7 +287,7 @@ $atlas_tools = array(
 			<!-- /wp:heading -->
 
 			<!-- wp:paragraph {"textColor":"mist-400"} -->
-			<p class="has-mist-400-color has-text-color"><?php echo esc_html__( 'Enter your birth details, see your chart, and ask one question. You get a short reflection back, with no jargon to decode. For reflection and entertainment, not prediction or advice.', 'atlas-relics' ); ?></p>
+			<p class="has-mist-400-color has-text-color"><?php echo esc_html__( 'Enter your birth details, see your chart, and ask one question. You get a short reflection back in plain language. This is for reflection and entertainment, not prediction or advice.', 'atlas-relics' ); ?></p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:buttons -->
@@ -449,7 +449,7 @@ $atlas_tools = array(
 	<!-- /wp:heading -->
 
 	<!-- wp:paragraph -->
-	<p><?php echo esc_html__( 'Control, Desire and Identity in one passage. $17.77 instead of $23.31 bought apart.', 'atlas-relics' ); ?></p>
+	<p><?php echo esc_html__( 'The three caves in one purchase: Control, Desire and Identity. $17.77, instead of $23.31 separately.', 'atlas-relics' ); ?></p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:buttons -->
@@ -497,7 +497,7 @@ $atlas_tools = array(
 	<!-- /wp:paragraph -->
 
 	<!-- wp:heading {"level":2,"textColor":"ivory-50"} -->
-	<h2 class="wp-block-heading has-ivory-50-color has-text-color"><?php echo esc_html__( 'A note when there is something worth sitting with.', 'atlas-relics' ); ?></h2>
+	<h2 class="wp-block-heading has-ivory-50-color has-text-color"><?php echo esc_html__( 'A short note when there is something worth sharing.', 'atlas-relics' ); ?></h2>
 	<!-- /wp:heading -->
 
 	<!-- wp:paragraph {"textColor":"ivory-50"} -->

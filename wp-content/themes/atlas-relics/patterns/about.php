@@ -32,13 +32,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 <p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'The mission', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":2} -->
-<h2 class="wp-block-heading"><?php echo esc_html__( 'To make inner work feel less like a performance and more like paying attention.', 'atlas-relics' ); ?></h2>
+<h2 class="wp-block-heading"><?php echo esc_html__( 'To make inner work feel like paying attention.', 'atlas-relics' ); ?></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph -->
-<p><?php echo esc_html__( 'Most self-improvement asks you to keep up: streaks, scores, a better version of you by Friday. Atlas Relics asks for something smaller and harder. Notice what is already there. Stay with a question long enough to hear your own answer.', 'atlas-relics' ); ?></p>
+<p><?php echo esc_html__( 'Most self-improvement asks you to keep up with streaks, scores and a better version of you by Friday. Atlas Relics asks you to notice what is already there, and to stay with a question long enough to hear your own answer.', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph -->
-<p><?php echo esc_html__( 'The work here is built for people who would rather look closely than be told what to think. It offers structure, honest sources and a slower pace. What you conclude is yours.', 'atlas-relics' ); ?></p>
+<p><?php echo esc_html__( 'This work is for people who would rather look closely than be told what to think. It gives you structure, honest sources and a slower pace. What you conclude is up to you.', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
@@ -55,7 +55,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <p><?php echo esc_html__( 'Atlas Reed is the pen name behind everything here: the caves, the courses, the books and the essays. The work sits where psychology, neuroscience and the old wisdom traditions meet, drawing on Vedanta, Hermeticism and Jungian thought, and checking each against what holds up.', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph -->
-<p><?php echo esc_html__( 'Everything is written by one person. Nothing is generated, and nothing is built to hurry you.', 'atlas-relics' ); ?></p>
+<p><?php echo esc_html__( 'One person writes everything. Nothing is generated, and nothing is built to hurry you.', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
@@ -106,7 +106,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h3 class="wp-block-heading has-large-font-size"><?php echo esc_html__( 'Your own conclusions', 'atlas-relics' ); ?></h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
-<p class="has-mist-400-color has-text-color has-small-font-size"><?php echo esc_html__( 'Questions come before answers. You are given ways to pay attention, not a verdict on who you are.', 'atlas-relics' ); ?></p>
+<p class="has-mist-400-color has-text-color has-small-font-size"><?php echo esc_html__( 'Questions come before answers. You get ways to pay attention, and no verdict on who you are.', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->

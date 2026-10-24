@@ -24,7 +24,7 @@ $atlas_checkout = 'https://buy.stripe.com/5kQ8wQ5Qo2Nu3LHgpqak000';
 <h1 class="wp-block-heading has-ivory-50-color has-text-color"><?php echo esc_html__( 'The Four Stages of Consciousness', 'atlas-relics' ); ?></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"fontSize":"medium","textColor":"ivory-50"} -->
-<p class="has-ivory-50-color has-text-color has-medium-font-size"><?php echo esc_html__( 'A self-paced workbook in six modules. A workbook, not a ladder.', 'atlas-relics' ); ?></p>
+<p class="has-ivory-50-color has-text-color has-medium-font-size"><?php echo esc_html__( 'A self-paced workbook in six modules. Return to any of them when you need to.', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->

@@ -31,7 +31,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h2 class="wp-block-heading"><?php echo esc_html__( 'The Four Stages of Consciousness', 'atlas-relics' ); ?></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph -->
-<p><?php echo esc_html__( 'Six modules across four stages: To Me, By Me, Through Me, As Me. A workbook you return to.', 'atlas-relics' ); ?></p>
+<p><?php echo esc_html__( 'Six modules across four stages: To Me, By Me, Through Me, As Me. You can return to any of them.', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons -->
 <div class="wp-block-buttons">
@@ -48,7 +48,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h2 class="wp-block-heading"><?php echo esc_html__( 'The Conscious Mirror', 'atlas-relics' ); ?></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph -->
-<p><?php echo esc_html__( 'A self-paced practice for noticing how you think, react and choose, without grading any of it.', 'atlas-relics' ); ?></p>
+<p><?php echo esc_html__( 'A self-paced course for noticing how you think, react and choose. Nothing is graded.', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons -->
 <div class="wp-block-buttons">
