@@ -534,3 +534,14 @@ main h2.wp-block-heading.atlas-display-left {
 		gap: 3rem;
 	}
 }
+
+/* About */
+.atlas-social-grid.wp-block-group {
+	display: grid !important;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+	gap: 1.25rem;
+	margin-top: 2rem;
+}
+
+.atlas-principles { gap: 1.25rem; margin-top: 2rem; }
+.atlas-principles .atlas-card { height: 100%; }
