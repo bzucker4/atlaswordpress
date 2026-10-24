@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'ATLAS_RELICS_VERSION', '0.7.0' );
+define( 'ATLAS_RELICS_VERSION', '0.7.1' );
 
 /**
  * Register theme support and navigation menus.
@@ -110,3 +110,22 @@ function atlas_relics_disable_emoji_scripts() {
 	remove_filter( 'wp_resource_hints', 'wp_emoji_resource_hints' );
 }
 add_action( 'init', 'atlas_relics_disable_emoji_scripts' );
+
+/**
+ * Keep WooCommerce from adding its account and mini-cart blocks to the
+ * header navigation. Products are sold on atlas-relics.com, so this site's
+ * own cart and login icons only lead visitors to dead ends.
+ */
+add_filter(
+	'hooked_block_types',
+	static function ( $hooked_blocks, $relative_position, $anchor_block ) {
+		if ( 'core/navigation' === $anchor_block && 'last_child' === $relative_position ) {
+			$hooked_blocks = array_values(
+				array_diff( $hooked_blocks, array( 'woocommerce/mini-cart', 'woocommerce/customer-account' ) )
+			);
+		}
+		return $hooked_blocks;
+	},
+	20,
+	3
+);

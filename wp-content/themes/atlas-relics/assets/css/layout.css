@@ -501,3 +501,9 @@ main h2.wp-block-heading.atlas-display-left {
 	.atlas-cover { transition: none; }
 	.atlas-cover:hover { transform: none; }
 }
+
+/* Header: no account or cart icons */
+.atlas-header .wp-block-woocommerce-customer-account,
+.atlas-header .wp-block-woocommerce-mini-cart {
+	display: none;
+}
