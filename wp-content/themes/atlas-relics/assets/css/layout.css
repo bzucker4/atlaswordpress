@@ -507,3 +507,30 @@ main h2.wp-block-heading.atlas-display-left {
 .atlas-header .wp-block-woocommerce-mini-cart {
 	display: none;
 }
+
+/* Books: three even columns, covers at a book's proportions */
+.atlas-books .atlas-book-grid.wp-block-group {
+	display: grid !important;
+	grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+	align-items: start;
+	gap: 2.5rem;
+}
+
+.atlas-books .atlas-cover {
+	width: 100%;
+	max-width: 300px;
+	margin: 0 auto;
+}
+
+.atlas-books .atlas-book > * {
+	max-width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media (max-width: 900px) {
+	.atlas-books .atlas-book-grid.wp-block-group {
+		grid-template-columns: minmax(0, 1fr) !important;
+		gap: 3rem;
+	}
+}
