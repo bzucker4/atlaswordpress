@@ -1,5 +1,5 @@
 /*
- * Layout polish: logo in the header and footer, flat list rows, quieter
+ * Layout polish: logo in the header and footer, flat list rows, lighter
  * cards and buttons. Literal colors mirror theme.json: ink #101018,
  * ivory #f7f3e9, mist #a9a7b8, lilac #c9b6f7, violet #7a3fd6.
  */
@@ -115,7 +115,7 @@ footer .wp-block-site-title a::before {
 	font-size: 0.95rem;
 }
 
-/* Cards: quiet panels instead of outlined boxes */
+/* Cards: soft panels instead of outlined boxes */
 .wp-block-group.has-plum-700-background-color.has-border-color {
 	background: rgba(255, 255, 255, 0.025) !important;
 	border-color: rgba(169, 167, 184, 0.2) !important;

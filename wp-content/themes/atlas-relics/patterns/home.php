@@ -67,7 +67,7 @@ $atlas_books = array(
 		'name'  => __( 'The Ageless Truths', 'atlas-relics' ),
 		'price' => '$11.11',
 		'code'  => 'fH5cW',
-		'body'  => __( 'A quiet, practical companion to slowing down. Seven chapters on letting go, stillness, presence and inner transformation, drawn from Stoic, Taoist, Sufi, Vedic and Greek teachings. Each ends in simple daily practices.', 'atlas-relics' ),
+		'body'  => __( 'A practical companion to slowing down. Seven chapters on letting go, stillness, presence and inner transformation, drawn from Stoic, Taoist, Sufi, Vedic and Greek teachings. Each ends in simple daily practices.', 'atlas-relics' ),
 	),
 	array(
 		'key'   => 'b',

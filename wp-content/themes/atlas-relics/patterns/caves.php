@@ -122,7 +122,7 @@ $atlas_descent_link = 'https://atlas-relics.com/b/f3DGy?utm_source=atlasrelics-s
 <p class="has-medium-font-size"><?php echo esc_html__( 'What remains when the noise stops?', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph -->
-<p><?php echo esc_html__( 'A guided descent into quiet. Less a technique than an invitation to notice what the noise has been covering.', 'atlas-relics' ); ?></p>
+<p><?php echo esc_html__( 'A guided descent into silence. Less a technique than an invitation to notice what the noise has been covering.', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 <?php if ( ! empty( $atlas_cave_links[ 'silence' ] ) ) : ?>
 <!-- wp:buttons -->

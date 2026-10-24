@@ -35,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<!-- /wp:heading -->
 
 	<!-- wp:paragraph -->
-	<p><?php echo esc_html__( 'A free reflection that takes a few quiet minutes and meets you exactly where you are.', 'atlas-relics' ); ?></p>
+	<p><?php echo esc_html__( 'A free reflection that takes a few unhurried minutes and meets you exactly where you are.', 'atlas-relics' ); ?></p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:buttons -->
