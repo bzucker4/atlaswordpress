@@ -155,3 +155,11 @@ Needs your input before launch:
   `frame-ancestors` on the Netlify site); the new-tab button covers it if not.
 - The older Phase 2 pages (Start Here, Relics, Pattern Map, free Conscious Mirror) are no longer
   created on new installs; their patterns remain in the theme.
+
+## Updating the live site from GitHub
+
+The plugin adds **Tools, Atlas Updates**. The "Update from GitHub" button downloads `main`, replaces the
+`atlas-relics` theme and the `atlas-relics-core` plugin, keeps one backup, and purges the cache. Tick
+"Update automatically" to have the site check every 15 minutes. "Restore the previous version" rolls
+back one step. Pages, settings and other plugins are never touched. The repository must stay public for
+this to work.
