@@ -3,7 +3,7 @@
  * Title: Conscious Mirror
  * Slug: atlas-relics/conscious-mirror
  * Categories: atlas-relics
- * Description: The Conscious Mirror landing page. The interactive reflection itself is a Tally form wired up in Phase 3 — this page carries the copy and the newsletter fallback until then.
+ * Description: The Conscious Mirror landing page. The interactive reflection itself is a Tally form wired up in Phase 3, this page carries the copy and the newsletter fallback until then.
  *
  * @package Atlas_Relics
  */
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<!-- /wp:heading -->
 
 	<!-- wp:paragraph {"fontSize":"medium"} -->
-	<p class="has-medium-font-size"><?php echo esc_html__( 'The Conscious Mirror is a short, free reflection — a handful of questions, answered honestly, that give you back a clearer read on where you actually are. No account, no cost, no catch.', 'atlas-relics' ); ?></p>
+	<p class="has-medium-font-size"><?php echo esc_html__( 'The Conscious Mirror is a short, free reflection, a handful of questions, answered honestly, that give you back a clearer read on where you actually are. No account, no cost, no catch.', 'atlas-relics' ); ?></p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:group {"style":{"border":{"width":"1px","radius":"2px"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"borderColor":"violet-500","backgroundColor":"plum-700"} -->

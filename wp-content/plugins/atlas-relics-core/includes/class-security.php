@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Applies conservative, non-breaking security hardening that every phase of
  * the project relies on. Nothing here disables core functionality that
- * later phases (WooCommerce, REST-based integrations) will need — it only
+ * later phases (WooCommerce, REST-based integrations) will need, it only
  * removes information disclosure and unused legacy attack surface.
  */
 class Atlas_Relics_Core_Security {

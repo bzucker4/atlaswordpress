@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * match against a pending fulfillment record.
  *
  * Tally's exact webhook payload shape is not something this codebase can
- * verify without a live Tally account and form — the field extraction
+ * verify without a live Tally account and form, the field extraction
  * below is written defensively (never fatals on an unexpected shape) and
  * should be confirmed against a real payload during setup. Log the raw
  * body once (temporarily) via `error_log( $request->get_body() )` in

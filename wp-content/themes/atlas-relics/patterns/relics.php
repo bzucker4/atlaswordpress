@@ -3,7 +3,7 @@
  * Title: Relics
  * Slug: atlas-relics/relics
  * Categories: atlas-relics
- * Description: Relics landing page — the physical/collectible object collection. Points to the "relics" product category once it exists in the catalog.
+ * Description: Relics landing page, the physical/collectible object collection. Points to the "relics" product category once it exists in the catalog.
  *
  * @package Atlas_Relics
  */
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<!-- /wp:heading -->
 
 	<!-- wp:paragraph {"fontSize":"medium"} -->
-	<p class="has-medium-font-size"><?php echo esc_html__( 'Relics are the physical counterpart to the reflection — things made to be held, kept on a shelf or a desk, and returned to.', 'atlas-relics' ); ?></p>
+	<p class="has-medium-font-size"><?php echo esc_html__( 'Relics are the physical counterpart to the reflection, things made to be held, kept on a shelf or a desk, and returned to.', 'atlas-relics' ); ?></p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:buttons -->
@@ -35,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<!-- /wp:buttons -->
 
 	<!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
-	<p class="has-mist-400-color has-text-color has-small-font-size"><?php echo esc_html__( 'This page links to the "relics" product category — create it and tag matching products once the catalog is populated.', 'atlas-relics' ); ?></p>
+	<p class="has-mist-400-color has-text-color has-small-font-size"><?php echo esc_html__( 'This page links to the "relics" product category, create it and tag matching products once the catalog is populated.', 'atlas-relics' ); ?></p>
 	<!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->

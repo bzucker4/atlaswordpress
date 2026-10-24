@@ -30,7 +30,7 @@ class Atlas_Relics_Core_Setup {
 	/**
 	 * Register custom post types and taxonomies.
 	 *
-	 * Empty in Phase 1 on purpose — Phase 2 adds the Beacons product-import
+	 * Empty in Phase 1 on purpose, Phase 2 adds the Beacons product-import
 	 * data model here, and Phase 3 adds fulfillment/order-status types.
 	 */
 	public function register_content_types() {

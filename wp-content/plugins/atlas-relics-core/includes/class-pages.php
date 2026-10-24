@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Creates the Phase 2 journey pages, sets up the Journal as the site's
- * posts page, and builds the primary/footer navigation menus — all
+ * posts page, and builds the primary/footer navigation menus, all
  * idempotently, so re-running activation (or a future deploy) never
  * duplicates content or clobbers an admin's manual changes.
  *
@@ -152,7 +152,7 @@ class Atlas_Relics_Core_Pages {
 
 	/**
 	 * Set the Journal as the posts page, but only if the site is still on
-	 * WordPress's out-of-the-box Reading settings — never override a
+	 * WordPress's out-of-the-box Reading settings, never override a
 	 * deliberate admin configuration.
 	 *
 	 * @param int $home_id    "Home" page ID.

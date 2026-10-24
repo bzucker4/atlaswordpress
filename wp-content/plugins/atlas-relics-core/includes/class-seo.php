@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * `/wp-sitemap.xml`; this class fills the remaining gap for Phase 2's
  * customer-facing pages.
  *
- * This intentionally stays minimal — if the project later adopts Yoast or
+ * This intentionally stays minimal, if the project later adopts Yoast or
  * RankMath, deactivate this class's output rather than running both.
  */
 class Atlas_Relics_Core_SEO {

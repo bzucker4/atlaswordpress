@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<!-- /wp:heading -->
 
 	<!-- wp:paragraph {"fontSize":"small"} -->
-	<p class="has-small-font-size"><?php echo esc_html__( 'Join The Weekly Mirror — one reflection a week, nothing else.', 'atlas-relics' ); ?></p>
+	<p class="has-small-font-size"><?php echo esc_html__( 'Join The Weekly Mirror, one reflection a week, nothing else.', 'atlas-relics' ); ?></p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:html -->

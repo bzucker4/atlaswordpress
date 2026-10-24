@@ -7,12 +7,12 @@ presentation, the plugin owns behavior and data.** This matters because the them
 swappable in principle without losing store logic, and the plugin should keep working under a
 future theme redesign.
 
-- **`wp-content/themes/atlas-relics`** — the block theme. `theme.json` (design tokens), block
+- **`wp-content/themes/atlas-relics`**, the block theme. `theme.json` (design tokens), block
   templates and template parts (`templates/`, `parts/`), block patterns (`patterns/`), and
   `functions.php` (theme support flags, nav menu registration, asset enqueue only). The theme
-  contains **no business logic** — no order handling, no third-party API calls, no custom data
+  contains **no business logic**, no order handling, no third-party API calls, no custom data
   models.
-- **`wp-content/plugins/atlas-relics-core`** — the companion plugin. Owns security hardening
+- **`wp-content/plugins/atlas-relics-core`**, the companion plugin. Owns security hardening
   (Phase 1); WooCommerce bundle logic, the Beacons importer, MailerLite/newsletter handling, SEO
   output, and default-page/navigation scaffolding (Phase 2); and Tally-driven fulfillment
   automation, the customer/order migration tool, internal analytics, and the Atlas Relics Ops
@@ -46,7 +46,7 @@ inherits them automatically unless it provides its own. Those two templates' inn
 is genuinely complex and changes between WooCommerce releases; hand-authoring and maintaining a
 forked copy risks silently breaking checkout on a WooCommerce update. Instead,
 `assets/css/woocommerce.css` re-themes WooCommerce's own default Cart/Checkout markup (and the
-classic My Account/notice templates) via CSS selectors — full visual integration with the design
+classic My Account/notice templates) via CSS selectors, full visual integration with the design
 system, none of the fork-maintenance risk. Revisit only if the storefront needs cart/checkout
 *layout* changes that CSS can't express.
 
@@ -91,18 +91,18 @@ wp-content/plugins/atlas-relics-core/
 `.wp-env.json` at the repo root defines a [`wp-env`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/)
 Docker stack: it mounts `wp-content/themes/atlas-relics` and `wp-content/plugins/atlas-relics-core`
 straight from the repo, so there is no separate "install the plugin" step for local development.
-WordPress core itself is **not** vendored into the repo — `wp-env` downloads it into a Docker
+WordPress core itself is **not** vendored into the repo, `wp-env` downloads it into a Docker
 volume, keeping the repo limited to code this project owns.
 
 ## Phase 2 additions
 
 - **WooCommerce** is declared via `Requires Plugins: woocommerce` in `atlas-relics-core.php`'s
-  header, so the plugin cannot activate until WooCommerce is already active — every
+  header, so the plugin cannot activate until WooCommerce is already active, every
   WooCommerce-dependent class (`class-bundles.php`, `class-beacons-importer.php`) is still guarded
   with `class_exists( 'WooCommerce' )` in `Atlas_Relics_Core::__construct()` so a later WooCommerce
   *deactivation* degrades gracefully instead of a fatal error.
 - **MailerLite** is a thin wrapper (`class-mailerlite.php`) called only by `class-newsletter.php`'s
-  AJAX handler — no other class makes an HTTP call or touches the API key directly.
+  AJAX handler, no other class makes an HTTP call or touches the API key directly.
 - **Default pages and navigation** (`class-pages.php`) run once, from the plugin's activation hook,
   and are idempotent: re-activating (or redeploying) never duplicates pages or overwrites a menu
   an admin has since customized.
@@ -110,17 +110,17 @@ volume, keeping the repo limited to code this project owns.
 ## Phase 3 additions
 
 - **Fulfillment records** (`class-fulfillment.php`) are a private `ar_fulfillment` post
-  type rather than a new database table — queryable with `WP_Query`/meta queries without a schema
+  type rather than a new database table, queryable with `WP_Query`/meta queries without a schema
   migration, which matters more at this project's scale than raw query performance. One record per
   order line item that needs a personalized reading.
-- **Tally** (`class-tally.php`) only receives webhooks — it doesn't poll an API on a schedule. Its
+- **Tally** (`class-tally.php`) only receives webhooks, it doesn't poll an API on a schedule. Its
   field-extraction is defensive by necessity (see docs/testing.md): Tally's exact webhook payload
   shape needs confirming against a real form once one exists.
-- **Migration** (`class-migration.php`) is intentionally two admin actions, not one — see
+- **Migration** (`class-migration.php`) is intentionally two admin actions, not one, see
   docs/security.md for why, and docs/launch.md for how it fits into an actual go-live.
 - **Analytics** (`class-analytics.php`) reads only data this site already has (WooCommerce orders,
   fulfillment records, migrated-customer meta). It does not wrap Google Analytics or another
-  external service — that needs a real tracking ID this codebase doesn't have, and is a front-end
+  external service, that needs a real tracking ID this codebase doesn't have, and is a front-end
   concern for whoever sets up the live site rather than something to hard-code a placeholder for.
 - **Atlas Relics Ops** (`class-dashboard.php`) is a thin composition layer: it renders data other
   classes already expose (`Atlas_Relics_Core_Analytics::get_snapshot()`, fulfillment/unmatched

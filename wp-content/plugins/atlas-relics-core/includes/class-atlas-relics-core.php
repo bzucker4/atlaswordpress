@@ -53,7 +53,7 @@ final class Atlas_Relics_Core {
 
 		// Everything below genuinely depends on WooCommerce being active
 		// (product objects, cart, order data) rather than merely declaring
-		// it in "Requires Plugins" — keep the guard so a WooCommerce
+		// it in "Requires Plugins", keep the guard so a WooCommerce
 		// deactivation degrades gracefully instead of fataling.
 		if ( class_exists( 'WooCommerce' ) ) {
 			new Atlas_Relics_Core_Bundles();

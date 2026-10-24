@@ -2,7 +2,7 @@
 	"name": "atlas-relics-wordpress",
 	"version": "0.1.0",
 	"private": true,
-	"description": "Atlas Relics WordPress & WooCommerce ecosystem — local dev environment and tooling.",
+	"description": "Atlas Relics WordPress & WooCommerce ecosystem, local dev environment and tooling.",
 	"scripts": {
 		"env:start": "wp-env start",
 		"env:stop": "wp-env stop",

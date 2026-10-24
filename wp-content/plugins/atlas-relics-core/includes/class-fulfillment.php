@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *   marks it delivered from Atlas Relics Ops.
  *
  * Records are stored as a private `ar_fulfillment` post per
- * order item, not a new custom table — this keeps the data queryable
+ * order item, not a new custom table, this keeps the data queryable
  * with WP_Query/meta queries without a schema migration, which matters
  * more here than raw query performance at this project's scale.
  */
@@ -162,7 +162,7 @@ class Atlas_Relics_Core_Fulfillment {
 				array(
 					'post_type'   => self::POST_TYPE,
 					'post_status' => 'publish',
-					'post_title'  => sprintf( 'Order #%1$d — %2$s', $order_id, $type ),
+					'post_title'  => sprintf( 'Order #%1$d, %2$s', $order_id, $type ),
 					'meta_input'  => array(
 						'_order_id'        => $order_id,
 						'_order_item_id'   => $item_id,
@@ -187,7 +187,7 @@ class Atlas_Relics_Core_Fulfillment {
 	/**
 	 * Find an existing fulfillment record for an order line item, if any
 	 * (guards against duplicate records if this hook fires more than once
-	 * for the same order — e.g. a status change that re-triggers "completed").
+	 * for the same order, e.g. a status change that re-triggers "completed").
 	 *
 	 * @param int $order_id Order ID.
 	 * @param int $item_id  Order item ID.
@@ -243,7 +243,7 @@ class Atlas_Relics_Core_Fulfillment {
 			),
 			sprintf(
 				/* translators: 1: reading name, 2: personalized form link */
-				__( "Thank you for your order. Your %1\$s is built from your own answers, so we'd love to hear from you:\n\n%2\$s\n\nTake your time — there's no rush.", 'atlas-relics-core' ),
+				__( "Thank you for your order. Your %1\$s is built from your own answers, so we'd love to hear from you:\n\n%2\$s\n\nTake your time, there's no rush.", 'atlas-relics-core' ),
 				$label,
 				$personal_link
 			)
@@ -268,7 +268,7 @@ class Atlas_Relics_Core_Fulfillment {
 		$expected_email = get_post_meta( $fulfillment_id, '_customer_email', true );
 
 		if ( $email && $expected_email && ! hash_equals( strtolower( $expected_email ), strtolower( $email ) ) ) {
-			// Record and email exist but don't match each other — flag for a human rather than guessing.
+			// Record and email exist but don't match each other, flag for a human rather than guessing.
 			$this->log_unmatched_submission( $fulfillment_id, $email, $submission_id, 'email_mismatch' );
 		}
 

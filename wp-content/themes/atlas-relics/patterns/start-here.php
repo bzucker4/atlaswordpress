@@ -3,7 +3,7 @@
  * Title: Start Here
  * Slug: atlas-relics/start-here
  * Categories: atlas-relics
- * Description: The Start Here journey page — orients a new visitor and points them to the Conscious Mirror and the newsletter.
+ * Description: The Start Here journey page, orients a new visitor and points them to the Conscious Mirror and the newsletter.
  *
  * @package Atlas_Relics
  */
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<!-- /wp:heading -->
 
 	<!-- wp:paragraph {"fontSize":"medium"} -->
-	<p class="has-medium-font-size"><?php echo esc_html__( 'There\'s no single right entry point — only the one that meets you where you are right now.', 'atlas-relics' ); ?></p>
+	<p class="has-medium-font-size"><?php echo esc_html__( 'There\'s no single right entry point, only the one that meets you where you are right now.', 'atlas-relics' ); ?></p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:separator {"backgroundColor":"violet-500"} -->

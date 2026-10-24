@@ -11,14 +11,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * A deliberately two-step CSV importer for real customer and historical
- * order data: a **dry run** (always safe — parses and validates, writes
+ * order data: a **dry run** (always safe, parses and validates, writes
  * nothing) produces a reconciliation report and a token; only submitting
  * that exact token back, with an explicit confirmation checkbox, commits
  * anything to the database. There is no way to import in one step.
  *
  * This mirrors the project's own rule (docs/product.md): real data is
  * imported only after a successful dry run and explicit approval. Nothing
- * in this class runs automatically — every commit is a deliberate,
+ * in this class runs automatically, every commit is a deliberate,
  * capability-checked, nonce-verified admin action.
  *
  * Known limitation, documented rather than hidden: one CSV row = one order
@@ -61,7 +61,7 @@ class Atlas_Relics_Core_Migration {
 			wp_mkdir_p( $dir );
 			// Defense in depth: the directory name isn't guessable-by-purpose,
 			// but block direct access outright in case of a misconfigured
-			// server. (Nginx needs an equivalent `location` block — see
+			// server. (Nginx needs an equivalent `location` block, see
 			// docs/security.md.)
 			file_put_contents( $dir . '.htaccess', "Deny from all\n" ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_file_put_contents
 			file_put_contents( $dir . 'index.php', "<?php\n// Silence is golden.\n" ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_file_put_contents
@@ -84,8 +84,8 @@ class Atlas_Relics_Core_Migration {
 	}
 
 	/**
-	 * Render the dry-run form, its results, and — only once a dry run has
-	 * produced a live token — the commit form.
+	 * Render the dry-run form, its results, and, only once a dry run has
+	 * produced a live token, the commit form.
 	 */
 	public function render_page() {
 		if ( ! current_user_can( self::CAPABILITY ) ) {
@@ -173,7 +173,7 @@ class Atlas_Relics_Core_Migration {
 			<h2><?php echo esc_html__( 'Expected columns', 'atlas-relics-core' ); ?></h2>
 			<p><strong><?php echo esc_html__( 'Customers:', 'atlas-relics-core' ); ?></strong> <code><?php echo esc_html( implode( ', ', self::CUSTOMER_COLUMNS ) ); ?></code></p>
 			<p><strong><?php echo esc_html__( 'Orders (one line item per row):', 'atlas-relics-core' ); ?></strong> <code><?php echo esc_html( implode( ', ', self::ORDER_COLUMNS ) ); ?></code></p>
-			<p class="description"><?php echo esc_html__( '"newsletter_consent" (yes/no) is stored as-is and never used to (re-)subscribe anyone automatically — see docs/security.md.', 'atlas-relics-core' ); ?></p>
+			<p class="description"><?php echo esc_html__( '"newsletter_consent" (yes/no) is stored as-is and never used to (re-)subscribe anyone automatically, see docs/security.md.', 'atlas-relics-core' ); ?></p>
 		</div>
 		<?php
 	}
@@ -477,7 +477,7 @@ class Atlas_Relics_Core_Migration {
 		update_user_meta( $user_id, 'billing_postcode', $row['billing_postcode'] );
 		update_user_meta( $user_id, 'billing_country', $row['billing_country'] );
 
-		// Preserve consent as data only — never call the MailerLite API
+		// Preserve consent as data only, never call the MailerLite API
 		// here. Re-subscribing someone based on a historical export would
 		// override whatever they've actually chosen since.
 		update_user_meta( $user_id, '_atlas_relics_newsletter_consent', $row['newsletter_consent'] );
@@ -492,7 +492,7 @@ class Atlas_Relics_Core_Migration {
 	 */
 	private function commit_order_row( array $row, array &$results ) {
 		// Re-check at commit time rather than trusting the dry run's cached
-		// flag — the cache can be up to CACHE_TTL_HOURS old, and another
+		// flag, the cache can be up to CACHE_TTL_HOURS old, and another
 		// import may have created this order in the meantime.
 		if ( ! empty( $row['external_order_id'] ) && $this->order_exists_by_external_id( $row['external_order_id'] ) ) {
 			$results['skipped']++;

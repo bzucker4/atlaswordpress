@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * A lightweight, dependency-free alternative to the paid "WooCommerce
  * Product Bundles" extension. A bundle is an ordinary simple WooCommerce
- * product (its own price — usually a bundle discount — its own listing,
+ * product (its own price, usually a bundle discount, its own listing,
  * its own "Add to cart") flagged as a bundle with a list of component
  * products. Adding it to the cart also adds each component at $0, so:
  *
@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * Known limitation (documented rather than hidden): if a shopper uses the
  * cart's "undo" link after removing the bundle, only the bundle parent is
- * restored — the component rows are not automatically restored with it.
+ * restored, the component rows are not automatically restored with it.
  * Acceptable for Phase 2's test-catalog scope; revisit if bundles become a
  * high-volume path in Phase 3.
  */
@@ -276,7 +276,7 @@ class Atlas_Relics_Core_Bundles {
 	}
 
 	/**
-	 * Cap upsells at 2 — a suggestion, not a wall of products.
+	 * Cap upsells at 2, a suggestion, not a wall of products.
 	 *
 	 * @param array $args Upsell display args.
 	 * @return array

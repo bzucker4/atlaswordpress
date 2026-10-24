@@ -13,8 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * A single top-level admin page giving an admin the operational view
  * Phase 3 asked for: what fulfillment is waiting on a customer, what's
  * ready to prepare, what Tally submissions couldn't be matched
- * automatically, and the status of the last migration dry run/import —
- * without digging through Pages, Tools, and Settings separately.
+ * automatically, and the status of the last migration dry run/import, * without digging through Pages, Tools, and Settings separately.
  */
 class Atlas_Relics_Core_Dashboard {
 
@@ -94,7 +93,7 @@ class Atlas_Relics_Core_Dashboard {
 		);
 
 		if ( empty( $records ) ) {
-			echo '<p>' . esc_html__( 'Nothing waiting — every fulfillment is delivered.', 'atlas-relics-core' ) . '</p>';
+			echo '<p>' . esc_html__( 'Nothing waiting, every fulfillment is delivered.', 'atlas-relics-core' ) . '</p>';
 			return;
 		}
 		?>
@@ -153,7 +152,7 @@ class Atlas_Relics_Core_Dashboard {
 		$log = get_option( Atlas_Relics_Core_Fulfillment::OPTION_UNMATCHED_LOG, array() );
 
 		if ( empty( $log ) ) {
-			echo '<p>' . esc_html__( 'None — every submission matched automatically.', 'atlas-relics-core' ) . '</p>';
+			echo '<p>' . esc_html__( 'None, every submission matched automatically.', 'atlas-relics-core' ) . '</p>';
 			return;
 		}
 
@@ -201,7 +200,7 @@ class Atlas_Relics_Core_Dashboard {
 			esc_html(
 				sprintf(
 					/* translators: 1: dry_run or import, 2: date, 3: valid rows, 4: invalid rows */
-					__( 'Last run: %1$s on %2$s — %3$d valid rows, %4$d invalid.', 'atlas-relics-core' ),
+					__( 'Last run: %1$s on %2$s, %3$d valid rows, %4$d invalid.', 'atlas-relics-core' ),
 					! empty( $summary['dry_run'] ) ? __( 'dry run', 'atlas-relics-core' ) : __( 'live import', 'atlas-relics-core' ),
 					$summary['time'] ?? '',
 					$summary['valid'] ?? 0,

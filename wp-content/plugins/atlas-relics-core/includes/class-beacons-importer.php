@@ -12,14 +12,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Imports a Beacons.ai product export (CSV) into WooCommerce products.
  *
- * Every imported product lands as a **draft** — this tool moves inventory
+ * Every imported product lands as a **draft**, this tool moves inventory
  * data into WooCommerce's shape, it does not decide what goes live.
  * Matches existing products by SKU so re-running an import updates rather
  * than duplicates.
  *
  * With "Transfer files to this site" checked, each `download_url` is
  * fetched once and moved into WooCommerce's own protected uploads
- * directory rather than left pointing at Beacons' hosting — see
+ * directory rather than left pointing at Beacons' hosting, see
  * `transfer_download_file()`. This matters for Phase 3's "secure download
  * files" goal: WooCommerce token-gates delivery either way, but a locally
  * stored file doesn't depend on Beacons' hosting staying up, and isn't

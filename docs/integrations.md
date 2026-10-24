@@ -1,7 +1,7 @@
 # Integrations
 
 This project wires up the *code* for each integration below. None goes live until an admin fills
-in real credentials in **Settings → Atlas Relics** — nothing here ships with a hard-coded key, per
+in real credentials in **Settings → Atlas Relics**, nothing here ships with a hard-coded key, per
 [docs/security.md](security.md) rule 6.
 
 ## MailerLite
@@ -17,7 +17,7 @@ to `Atlas_Relics_Core_MailerLite::subscribe()`
 1. In MailerLite: Integrations → API → create an API key. Subscribers → Groups → create a group
    for each segment you want (footer signups, Start Here, Conscious Mirror).
 2. In wp-admin: Settings → Atlas Relics → paste the API key and each group's ID.
-3. That's it — the existing signup forms on the homepage, Start Here, and Conscious Mirror pages
+3. That's it, the existing signup forms on the homepage, Start Here, and Conscious Mirror pages
    start working immediately; no template changes needed.
 
 **Segmentation** is by which pattern the form came from, not a form field: each of the three
@@ -38,7 +38,7 @@ example from the "Download a sample CSV template" link on the import page itself
 
 **Behavior to know before running a real import:**
 
-- Every imported/updated product is set to **draft** — nothing goes live automatically.
+- Every imported/updated product is set to **draft**, nothing goes live automatically.
 - Matching is by `sku`: a row whose SKU matches an existing product updates it instead of creating
   a duplicate, so the same file can be re-imported safely.
 - `download_url` presence makes the product virtual + downloadable with that URL as its file.
@@ -48,7 +48,7 @@ example from the "Download a sample CSV template" link on the import page itself
 Phase 2 uses this against test/sanitized exports only. The real historical catalog moves in
 Phase 3, after a dry run (see [docs/testing.md](testing.md)). Check "Transfer files to this site"
 to move each `download_url` into this site's own protected storage instead of linking to Beacons'
-hosting — see the class docblock in `class-beacons-importer.php` for why that matters.
+hosting, see the class docblock in `class-beacons-importer.php` for why that matters.
 
 ## Tally
 
@@ -71,6 +71,6 @@ the order it belongs to. See `docs/architecture.md` for how fulfillment records 
    reading?" to the matching type.
 
 **Before relying on this in production**, verify the actual webhook payload shape against a real
-Tally submission — see the note at the top of `class-tally.php` and the corresponding item in
+Tally submission, see the note at the top of `class-tally.php` and the corresponding item in
 `docs/testing.md`'s Phase 3 checklist. Tally's field extraction is written defensively (it never
 fatals on an unexpected shape), but "defensive" isn't the same as "verified".

@@ -1,17 +1,17 @@
 # Product vision
 
 Atlas Relics is a WordPress + WooCommerce ecosystem built at `atlasrelics.com`. It is developed
-as one clean, private codebase in three sequential phases — each completed, tested, and merged
-before the next begins — rather than as one large simultaneous build.
+as one clean, private codebase in three sequential phases, each completed, tested, and merged
+before the next begins, rather than as one large simultaneous build.
 
-**Status:** Phases 1–3 are implemented in code. All three still need a full manual QA pass against
-the checklists in [docs/testing.md](testing.md) — see that file for what to verify — before any of
+**Status:** Phases 1-3 are implemented in code. All three still need a full manual QA pass against
+the checklists in [docs/testing.md](testing.md), see that file for what to verify, before any of
 them is considered "completed, tested, and merged." **No real customer data, orders, or payments
-have been migrated or processed** — Phase 3's migration tool is built but has not been run against
+have been migrated or processed**, Phase 3's migration tool is built but has not been run against
 real data by anyone; that only happens after the dry run + approval sequence in
 [docs/launch.md](launch.md), which is a decision for whoever runs the live site to make.
 
-## Phase 1 — Foundation
+## Phase 1, Foundation
 
 Builds the underlying WordPress system and brand framework:
 
@@ -24,10 +24,10 @@ Builds the underlying WordPress system and brand framework:
 - Security and coding rules
 
 Phase 1 creates the structure. It does **not** build the finished store or connect real
-services — there is no live checkout, no test or real product catalog, and no third-party
+services, there is no live checkout, no test or real product catalog, and no third-party
 integration configured yet.
 
-## Phase 2 — Storefront
+## Phase 2, Storefront
 
 Turns the foundation into a complete customer-facing store:
 
@@ -42,7 +42,7 @@ Turns the foundation into a complete customer-facing store:
 Phase 2 uses test products and sanitized information. It does not import real customers or
 historical orders.
 
-## Phase 3 — Migration & automation
+## Phase 3, Migration & automation
 
 Moves the existing business into the new system and automates repeatable work:
 

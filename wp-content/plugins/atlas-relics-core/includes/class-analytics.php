@@ -11,8 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * A small operational snapshot built entirely from data this site already
- * has (WooCommerce orders, fulfillment records, migrated customer meta) —
- * deliberately not a wrapper around Google Analytics or another external
+ * has (WooCommerce orders, fulfillment records, migrated customer meta), * deliberately not a wrapper around Google Analytics or another external
  * service, since that needs a real tracking ID/credential this codebase
  * doesn't have. Wiring an external analytics *script* is a front-end
  * concern for whoever sets up the live site (see docs/launch.md), not
@@ -76,7 +75,7 @@ class Atlas_Relics_Core_Analytics {
 
 	/**
 	 * Compute the snapshot. All counts are cheap at this project's scale
-	 * (a niche storefront, not a high-volume marketplace) — if that stops
+	 * (a niche storefront, not a high-volume marketplace), if that stops
 	 * being true, replace the WC_Order_Query sum with a direct
 	 * `wc_get_order_stats` / HPOS analytics query instead of optimizing
 	 * this further pre-emptively.
