@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h1 class="wp-block-heading has-text-align-center has-ivory-50-color has-text-color"><?php echo esc_html__( 'Look closely. Decide for yourself.', 'atlas-relics' ); ?></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"align":"center","fontSize":"medium","textColor":"mist-400"} -->
-<p class="has-text-align-center has-mist-400-color has-text-color has-medium-font-size"><?php echo esc_html__( 'Atlas Relics makes considered tools for examining the inner world: guided caves, courses, books and essays.', 'atlas-relics' ); ?></p>
+<p class="has-text-align-center has-mist-400-color has-text-color has-medium-font-size"><?php echo esc_html__( 'Atlas Relics makes tools for examining the inner world: guided caves, courses, books and essays.', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->

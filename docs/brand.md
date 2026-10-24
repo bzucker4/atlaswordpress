@@ -1,6 +1,6 @@
 # Brand & design system
 
-Atlas Relics reads as considered and unhurried — a premium, editorial tone rather than a loud
+Atlas Relics reads as unhurried — a premium, editorial tone rather than a loud
 retail one. The design system exists as tokens in
 [`wp-content/themes/atlas-relics/theme.json`](../wp-content/themes/atlas-relics/theme.json); this
 document explains the intent behind those tokens so future phases (and future contributors)
