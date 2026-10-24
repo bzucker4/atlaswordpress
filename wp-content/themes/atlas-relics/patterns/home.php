@@ -61,6 +61,30 @@ $atlas_essays = array(
 	),
 );
 
+$atlas_books = array(
+	array(
+		'key'   => 'a',
+		'name'  => __( 'The Ageless Truths', 'atlas-relics' ),
+		'price' => '$11.11',
+		'code'  => 'fH5cW',
+		'body'  => __( 'A quiet, practical companion to slowing down. Seven chapters on letting go, stillness, presence and inner transformation, drawn from Stoic, Taoist, Sufi, Vedic and Greek teachings. Each ends in simple daily practices.', 'atlas-relics' ),
+	),
+	array(
+		'key'   => 'b',
+		'name'  => __( 'Laws of the Universe', 'atlas-relics' ),
+		'price' => '$14.99',
+		'code'  => 'Glyzs',
+		'body'  => __( 'The Twelve Universal Laws in plain language, traced to their Hermetic roots and set beside what psychology supports. Honest about where the evidence stops.', 'atlas-relics' ),
+	),
+	array(
+		'key'   => 'c',
+		'name'  => __( 'The Great Shift', 'atlas-relics' ),
+		'price' => '$19.99',
+		'code'  => 'gt6pG',
+		'body'  => __( 'Hidden truths about the matrix: false thrones, the Trinity of Theft, Override Codes and the timing of the awakening. Read it as one seer\'s map, not settled fact.', 'atlas-relics' ),
+	),
+);
+
 $atlas_tools = array(
 	array(
 		'type' => __( 'Course', 'atlas-relics' ),
@@ -265,6 +289,49 @@ $atlas_tools = array(
 		<!-- /wp:column -->
 	</div>
 	<!-- /wp:columns -->
+</section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","className":"atlas-books","layout":{"type":"constrained","contentSize":"1200px"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"backgroundColor":"plum-800","textColor":"ivory-50"} -->
+<section class="wp-block-group atlas-books has-ivory-50-color has-plum-800-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+	<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"lilac-300"} -->
+	<p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'Books by Atlas Reed', 'atlas-relics' ); ?></p>
+	<!-- /wp:paragraph -->
+
+	<!-- wp:heading {"level":2,"textColor":"ivory-50"} -->
+	<h2 class="wp-block-heading has-ivory-50-color has-text-color"><?php echo esc_html__( 'Books for slower reading.', 'atlas-relics' ); ?></h2>
+	<!-- /wp:heading -->
+
+	<!-- wp:group {"className":"atlas-book-grid","layout":{"type":"grid","columnCount":3,"minimumColumnWidth":"15rem"}} -->
+	<div class="wp-block-group atlas-book-grid">
+		<?php foreach ( $atlas_books as $atlas_book ) : ?>
+		<?php $atlas_book_url = $atlas_buy . $atlas_book['code'] . $atlas_utm . '-books'; ?>
+		<!-- wp:group {"className":"atlas-book","layout":{"type":"default"}} -->
+		<div class="wp-block-group atlas-book">
+			<!-- wp:html -->
+			<a class="atlas-cover atlas-cover--<?php echo esc_attr( $atlas_book['key'] ); ?>" href="<?php echo esc_url( $atlas_book_url ); ?>"><span class="atlas-cover-mark" aria-hidden="true"></span><h3><?php echo esc_html( $atlas_book['name'] ); ?></h3><span class="atlas-cover-author"><?php echo esc_html__( 'Atlas Reed', 'atlas-relics' ); ?></span></a>
+			<!-- /wp:html -->
+
+			<!-- wp:paragraph {"className":"atlas-book-price","textColor":"lilac-300"} -->
+			<p class="atlas-book-price has-lilac-300-color has-text-color"><?php echo esc_html( $atlas_book['price'] ); ?></p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
+			<p class="has-mist-400-color has-text-color has-small-font-size"><?php echo esc_html( $atlas_book['body'] ); ?></p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:buttons -->
+			<div class="wp-block-buttons">
+				<!-- wp:button {"className":"is-style-outline","textColor":"ivory-50"} -->
+				<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-ivory-50-color has-text-color wp-element-button" href="<?php echo esc_url( $atlas_book_url ); ?>"><?php echo esc_html__( 'Get the book', 'atlas-relics' ); ?></a></div>
+				<!-- /wp:button -->
+			</div>
+			<!-- /wp:buttons -->
+		</div>
+		<!-- /wp:group -->
+		<?php endforeach; ?>
+	</div>
+	<!-- /wp:group -->
 </section>
 <!-- /wp:group -->
 
