@@ -242,6 +242,30 @@ $atlas_tools = array(
 	</div>
 	<!-- /wp:columns -->
 
+	<!-- wp:group {"className":"atlas-card atlas-strip","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+	<div class="wp-block-group atlas-card atlas-strip">
+		<!-- wp:group {"layout":{"type":"default"}} -->
+		<div class="wp-block-group">
+			<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"lilac-300"} -->
+			<p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'Tool', 'atlas-relics' ); ?></p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:paragraph {"fontSize":"medium"} -->
+			<p class="has-medium-font-size"><strong><?php echo esc_html__( 'The Shadow Ledger', 'atlas-relics' ); ?></strong> <span class="atlas-muted"><?php echo esc_html__( 'A Jungian shadow work system for Notion.', 'atlas-relics' ); ?></span></p>
+			<!-- /wp:paragraph -->
+		</div>
+		<!-- /wp:group -->
+
+		<!-- wp:buttons -->
+		<div class="wp-block-buttons">
+			<!-- wp:button {"className":"is-style-outline","textColor":"ivory-50"} -->
+			<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-ivory-50-color has-text-color wp-element-button" href="<?php echo esc_url( 'https://shop.beacons.ai/atlasrelics/db21710c-65a4-4be9-a745-8bf19b342fd0' ); ?>" target="_blank" rel="noopener noreferrer"><?php echo esc_html__( 'Get the system', 'atlas-relics' ); ?></a></div>
+			<!-- /wp:button -->
+		</div>
+		<!-- /wp:buttons -->
+	</div>
+	<!-- /wp:group -->
+
 	<!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
 	<p class="has-mist-400-color has-text-color has-small-font-size"><a href="<?php echo esc_url( home_url( '/courses/' ) ); ?>"><?php echo esc_html__( 'All courses and tools', 'atlas-relics' ); ?></a></p>
 	<!-- /wp:paragraph -->
