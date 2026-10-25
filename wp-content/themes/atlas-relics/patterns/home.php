@@ -105,6 +105,13 @@ $atlas_tools = array(
 		'url'  => home_url( '/vedic-life-advisor/' ),
 	),
 );
+
+$atlas_decks = array(
+	array( 'key' => 'horror', 'name' => 'Dark Horror Tarot', 'type' => '78 cards', 'body' => 'A gothic 78-card tarot with a dark, haunted edge.', 'url' => 'https://www.makeplayingcards.com/sell/marketplace/dark-horror-tarot.html' ),
+	array( 'key' => 'keywords', 'name' => 'Beginner Tarot With Keywords', 'type' => '78 cards', 'body' => 'Keywords for zodiac, numerology and the elements on every card.', 'url' => 'https://www.makeplayingcards.com/sell/marketplace/beginner-tarot-with-keywords.html' ),
+	array( 'key' => 'zen', 'name' => 'Japanese Zen Oracle', 'type' => 'Oracle deck', 'body' => 'An oracle deck of ink, blossom and stillness.', 'url' => 'https://www.makeplayingcards.com/sell/marketplace/japanese-zen-oracle.html' ),
+	array( 'key' => 'shroom', 'name' => 'ShroomOracle Cards', 'type' => 'Oracle deck', 'body' => 'An oracle deck drawn from the forest floor.', 'url' => 'https://www.makeplayingcards.com/sell/marketplace/shroomoracle-cards.html' ),
+);
 ?>
 <!-- wp:group {"tagName":"section","className":"atlas-hero atlas-hero--v2","layout":{"type":"constrained","contentSize":"1200px"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|50","right":"var:preset|spacing|50"}}},"textColor":"ivory-50"} -->
 <section class="wp-block-group atlas-hero atlas-hero--v2 has-ivory-50-color has-text-color" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--50)">
@@ -300,6 +307,40 @@ $atlas_tools = array(
 		<?php endforeach; ?>
 	</div>
 	<!-- /wp:group -->
+</section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","className":"atlas-decks","layout":{"type":"constrained","contentSize":"1200px"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"backgroundColor":"plum-900","textColor":"ivory-50"} -->
+<section class="wp-block-group atlas-decks has-ivory-50-color has-plum-900-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+	<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"lilac-300"} -->
+	<p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'Printed decks', 'atlas-relics' ); ?></p>
+	<!-- /wp:paragraph -->
+
+	<!-- wp:heading {"level":2,"textColor":"ivory-50"} -->
+	<h2 class="wp-block-heading has-ivory-50-color has-text-color"><?php echo esc_html__( 'Decks for readings and rituals.', 'atlas-relics' ); ?></h2>
+	<!-- /wp:heading -->
+
+	<!-- wp:paragraph {"textColor":"mist-400"} -->
+	<p class="has-mist-400-color has-text-color"><?php echo esc_html__( 'Designed by Atlas Reed and printed by Make Playing Cards.', 'atlas-relics' ); ?></p>
+	<!-- /wp:paragraph -->
+
+	<!-- wp:html -->
+	<div class="atlas-deck-grid">
+		<?php foreach ( $atlas_decks as $atlas_deck ) : ?>
+		<a class="atlas-deck atlas-deck--<?php echo esc_attr( $atlas_deck['key'] ); ?>" href="<?php echo esc_url( $atlas_deck['url'] ); ?>" target="_blank" rel="noopener">
+			<span class="atlas-deck-card" aria-hidden="true"><span class="atlas-deck-sigil"></span></span>
+			<span class="atlas-deck-type"><?php echo esc_html( $atlas_deck['type'] ); ?></span>
+			<h3><?php echo esc_html( $atlas_deck['name'] ); ?></h3>
+			<span class="atlas-deck-body"><?php echo esc_html( $atlas_deck['body'] ); ?></span>
+			<span class="atlas-deck-go"><?php echo esc_html__( 'View the deck', 'atlas-relics' ); ?></span>
+		</a>
+		<?php endforeach; ?>
+	</div>
+	<!-- /wp:html -->
+
+	<!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
+	<p class="has-mist-400-color has-text-color has-small-font-size"><a href="https://www.makeplayingcards.com/sell/atlas-relics-shop" target="_blank" rel="noopener"><?php echo esc_html__( 'See every deck in the full shop', 'atlas-relics' ); ?></a></p>
+	<!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
 
