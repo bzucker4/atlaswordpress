@@ -209,7 +209,7 @@
 	if ( reduce || ! ( 'IntersectionObserver' in window ) ) {
 		return;
 	}
-	var sel = '[class*="atlas-card"], .atlas-book-grid > *, .atlas-social-grid > *, .atlas-principles > *, .atlas-facts, .atlas-promo, .atlas-doors h2, main h2.wp-block-heading';
+	var sel = '[class*="atlas-card"], .atlas-tool-grid > *, .atlas-deck-grid > *, .atlas-book-grid > *, .atlas-social-grid > *, .atlas-principles > *, .atlas-facts, .atlas-promo, .atlas-doors h2, main h2.wp-block-heading';
 	var nodes = document.querySelectorAll( sel );
 	var io = new IntersectionObserver( function ( entries ) {
 		entries.forEach( function ( en ) {

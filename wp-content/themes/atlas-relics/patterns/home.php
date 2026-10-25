@@ -112,6 +112,13 @@ $atlas_decks = array(
 	array( 'key' => 'zen', 'name' => 'Japanese Zen Oracle', 'type' => 'Oracle deck', 'body' => 'An oracle deck of ink, blossom and stillness.', 'url' => 'https://www.makeplayingcards.com/sell/marketplace/japanese-zen-oracle.html' ),
 	array( 'key' => 'shroom', 'name' => 'ShroomOracle Cards', 'type' => 'Oracle deck', 'body' => 'An oracle deck drawn from the forest floor.', 'url' => 'https://www.makeplayingcards.com/sell/marketplace/shroomoracle-cards.html' ),
 );
+
+$atlas_etsy_tools = array(
+	array( 'key' => 'audio', 'type' => 'Audio', 'name' => 'Shadow Work Audio for Practitioners', 'price' => '$55', 'body' => 'A 14-minute sub bass soundscape with a script, licensed for use with your clients.', 'url' => 'https://www.etsy.com/listing/4570440370' ),
+	array( 'key' => 'sheet', 'type' => 'Google Sheets', 'name' => 'Human Design Planner', 'price' => '$33', 'body' => 'A decision tracker built around your type, strategy and authority.', 'url' => 'https://www.etsy.com/listing/4570231442' ),
+	array( 'key' => 'sheet', 'type' => 'Google Sheets', 'name' => 'Lunar Cycle Consciousness Tracker', 'price' => '$33', 'body' => 'A shadow work dashboard that follows the lunar cycle.', 'url' => 'https://www.etsy.com/listing/4569892185' ),
+	array( 'key' => 'kit', 'type' => 'Workbook and audio', 'name' => 'The Nocturne Mirror', 'price' => '$24', 'body' => 'A Jungian dream analysis workbook, a fillable dream journal and a guided audio.', 'url' => 'https://www.etsy.com/listing/4592667471' ),
+);
 ?>
 <!-- wp:group {"tagName":"section","className":"atlas-hero atlas-hero--v2","layout":{"type":"constrained","contentSize":"1200px"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|50","right":"var:preset|spacing|50"}}},"textColor":"ivory-50"} -->
 <section class="wp-block-group atlas-hero atlas-hero--v2 has-ivory-50-color has-text-color" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--50)">
@@ -264,6 +271,39 @@ $atlas_decks = array(
 		<!-- /wp:column -->
 	</div>
 	<!-- /wp:columns -->
+</section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","className":"atlas-tools","layout":{"type":"constrained","contentSize":"1200px"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}}} -->
+<section class="wp-block-group atlas-tools" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+	<!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"lilac-300"} -->
+	<p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'Tools and workbooks', 'atlas-relics' ); ?></p>
+	<!-- /wp:paragraph -->
+
+	<!-- wp:heading {"level":2} -->
+	<h2 class="wp-block-heading"><?php echo esc_html__( 'Work with the material yourself.', 'atlas-relics' ); ?></h2>
+	<!-- /wp:heading -->
+
+	<!-- wp:paragraph {"textColor":"mist-400"} -->
+	<p class="has-mist-400-color has-text-color"><?php echo esc_html__( 'Sheets, audio and workbooks for your own practice, or for the people you work with. They are sold on Etsy.', 'atlas-relics' ); ?></p>
+	<!-- /wp:paragraph -->
+
+	<!-- wp:html -->
+	<div class="atlas-tool-grid">
+		<?php foreach ( $atlas_etsy_tools as $atlas_tool ) : ?>
+		<a class="atlas-tool atlas-tool--<?php echo esc_attr( $atlas_tool['key'] ); ?>" href="<?php echo esc_url( $atlas_tool['url'] ); ?>" target="_blank" rel="noopener">
+			<span class="atlas-tool-type"><?php echo esc_html( $atlas_tool['type'] ); ?></span>
+			<h3><?php echo esc_html( $atlas_tool['name'] ); ?></h3>
+			<span class="atlas-tool-body"><?php echo esc_html( $atlas_tool['body'] ); ?></span>
+			<span class="atlas-tool-foot"><span class="atlas-tool-price"><?php echo esc_html( $atlas_tool['price'] ); ?></span><span class="atlas-tool-go"><?php echo esc_html__( 'Get it on Etsy', 'atlas-relics' ); ?></span></span>
+		</a>
+		<?php endforeach; ?>
+	</div>
+	<!-- /wp:html -->
+
+	<!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
+	<p class="has-mist-400-color has-text-color has-small-font-size"><a href="https://www.etsy.com/shop/AtlasRelicsShop" target="_blank" rel="noopener"><?php echo esc_html__( 'Browse the full Etsy shop', 'atlas-relics' ); ?></a></p>
+	<!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
 
