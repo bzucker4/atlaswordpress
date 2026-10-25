@@ -15,8 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Checkout link. Set the real Stripe link here; with no link the buy button is hidden.
 $atlas_checkout = 'https://buy.stripe.com/5kQ8wQ5Qo2Nu3LHgpqak000';
 ?>
-<!-- wp:group {"tagName":"section","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"gradient":"plum-glow","textColor":"ivory-50"} -->
-<section class="wp-block-group has-ivory-50-color has-text-color has-background has-plum-glow-gradient-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+<!-- wp:group {"tagName":"section","className":"atlas-subhero atlas-m-rise","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"gradient":"plum-glow","textColor":"ivory-50"} -->
+<section class="wp-block-group has-ivory-50-color has-text-color has-background has-plum-glow-gradient-background atlas-subhero atlas-m-rise" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
 <!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"lilac-300"} -->
 <p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'Course', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->

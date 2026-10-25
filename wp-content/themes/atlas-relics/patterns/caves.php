@@ -22,8 +22,8 @@ $atlas_cave_links = array(
 );
 $atlas_descent_link = 'https://atlas-relics.com/b/f3DGy?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=caves-descent';
 ?>
-<!-- wp:group {"tagName":"section","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"gradient":"plum-glow","textColor":"ivory-50"} -->
-<section class="wp-block-group has-ivory-50-color has-text-color has-background has-plum-glow-gradient-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+<!-- wp:group {"tagName":"section","className":"atlas-subhero atlas-m-fall","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"gradient":"plum-glow","textColor":"ivory-50"} -->
+<section class="wp-block-group has-ivory-50-color has-text-color has-background has-plum-glow-gradient-background atlas-subhero atlas-m-fall" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
 <!-- wp:paragraph {"fontSize":"small","style":{"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"lilac-300"} -->
 <p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'The store', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
