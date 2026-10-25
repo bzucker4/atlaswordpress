@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'ATLAS_RELICS_VERSION', '0.7.6' );
+define( 'ATLAS_RELICS_VERSION', '0.8.0' );
 
 /**
  * Register theme support and navigation menus.
@@ -94,6 +94,25 @@ function atlas_relics_enqueue_assets() {
 		);
 	}
 }
+/**
+ * Hero motion script, front page only.
+ */
+function atlas_relics_enqueue_hero_script() {
+	if ( is_front_page() ) {
+		wp_enqueue_script(
+			'atlas-relics-hero',
+			get_theme_file_uri( 'assets/js/hero.js' ),
+			array(),
+			ATLAS_RELICS_VERSION,
+			array(
+				'strategy'  => 'defer',
+				'in_footer' => true,
+			)
+		);
+	}
+}
+add_action( 'wp_enqueue_scripts', 'atlas_relics_enqueue_hero_script' );
+
 add_action( 'wp_enqueue_scripts', 'atlas_relics_enqueue_assets' );
 
 /**
