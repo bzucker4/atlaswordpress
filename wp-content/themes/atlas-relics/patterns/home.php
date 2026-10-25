@@ -317,6 +317,18 @@ $atlas_etsy_tools = array(
 	<h2 class="wp-block-heading has-ivory-50-color has-text-color"><?php echo esc_html__( 'Books for slower reading.', 'atlas-relics' ); ?></h2>
 	<!-- /wp:heading -->
 
+	<!-- wp:html -->
+	<a class="atlas-bundle" href="<?php echo esc_url( $atlas_buy . 'RlcwC' . $atlas_utm . '-bundle' ); ?>">
+		<span class="atlas-bundle-stack" aria-hidden="true"><i></i><i></i><i></i></span>
+		<span class="atlas-bundle-copy">
+			<span class="atlas-bundle-eyebrow"><?php echo esc_html__( 'The bundle', 'atlas-relics' ); ?></span>
+			<h3><?php echo esc_html__( 'The Universal Laws Bundle', 'atlas-relics' ); ?></h3>
+			<span class="atlas-bundle-body"><?php echo esc_html__( 'The Great Shift, Laws of the Universe and The Ageless Truths together. $29.99 instead of $46.09, a saving of $16.10.', 'atlas-relics' ); ?></span>
+		</span>
+		<span class="atlas-bundle-buy"><span class="atlas-bundle-price">$29.99</span><span class="atlas-bundle-go"><?php echo esc_html__( 'Get the bundle', 'atlas-relics' ); ?></span></span>
+	</a>
+	<!-- /wp:html -->
+
 	<!-- wp:group {"className":"atlas-book-grid","layout":{"type":"grid","columnCount":3,"minimumColumnWidth":"15rem"}} -->
 	<div class="wp-block-group atlas-book-grid">
 		<?php foreach ( $atlas_books as $atlas_book ) : ?>
