@@ -109,17 +109,7 @@ $atlas_tools = array(
 <!-- wp:group {"tagName":"section","className":"atlas-hero atlas-hero--v2","layout":{"type":"constrained","contentSize":"1200px"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|50","right":"var:preset|spacing|50"}}},"textColor":"ivory-50"} -->
 <section class="wp-block-group atlas-hero atlas-hero--v2 has-ivory-50-color has-text-color" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--50)">
 <!-- wp:html -->
-<div class="atlas-sky" aria-hidden="true"><canvas></canvas><div class="atlas-haze"></div><svg class="atlas-ribbons" viewBox="0 0 600 900" preserveAspectRatio="xMidYMid slice" focusable="false"><defs><linearGradient id="atlasRibbon" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c9b6f7" stop-opacity="0"/><stop offset="0.45" stop-color="#c9b6f7" stop-opacity="0.95"/><stop offset="1" stop-color="#7a3fd6" stop-opacity="0"/></linearGradient></defs><g class="atlas-ribbon-group">
-<path class="r r0" style="--d:0.1s;--w:0.6" d="M 310 -20 C 260 170, 410 330, 350 520 S 290 780, 340 940" />
-<path class="r r1" style="--d:0.25s;--w:0.8" d="M 332 -20 C 272 170, 442 330, 372 520 S 302 780, 362 940" />
-<path class="r r2" style="--d:0.4s;--w:0.7" d="M 354 -20 C 284 170, 474 330, 394 520 S 314 780, 384 940" />
-<path class="r r3" style="--d:0.55s;--w:1.1" d="M 372 -20 C 294 170, 500 330, 412 520 S 324 780, 402 940" />
-<path class="r r4" style="--d:0.7s;--w:1.4" d="M 388 -20 C 298 170, 528 330, 428 520 S 328 780, 418 940" />
-<path class="r r5" style="--d:0.85s;--w:0.9" d="M 406 -20 C 302 170, 560 330, 446 520 S 332 780, 436 940" />
-<path class="r r6" style="--d:1.0s;--w:0.7" d="M 426 -20 C 310 170, 592 330, 466 520 S 340 780, 456 940" />
-<path class="r r7" style="--d:1.15s;--w:0.6" d="M 450 -20 C 320 170, 630 330, 490 520 S 350 780, 480 940" />
-<path class="r r8" style="--d:1.3s;--w:0.5" d="M 476 -20 C 334 170, 668 330, 516 520 S 364 780, 506 940" />
-</g></svg><span class="atlas-descent"></span></div>
+<div class="atlas-sky" aria-hidden="true"><canvas class="stars"></canvas><canvas class="flow"></canvas><div class="atlas-haze"></div><div class="atlas-cursor"></div><div class="atlas-portal"><i></i><i></i><i></i><i></i><i></i><i></i><span class="disc"></span><span class="core"></span></div><span class="atlas-descent"></span></div>
 <!-- /wp:html -->
 
 <!-- wp:group {"className":"atlas-hero-body","layout":{"type":"default"}} -->
@@ -130,7 +120,7 @@ $atlas_tools = array(
 <p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.2em;text-transform:uppercase"><?php echo esc_html__( 'Atlas Relics', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":1,"textColor":"ivory-50"} -->
-<h1 class="wp-block-heading has-ivory-50-color has-text-color"><?php echo esc_html__( 'Some questions need reflection. Others need a descent.', 'atlas-relics' ); ?></h1>
+<h1 class="wp-block-heading has-ivory-50-color has-text-color"><?php echo esc_html__( 'Some questions need reflection. Others need a', 'atlas-relics' ); ?> <span class="atlas-shimmer"><?php echo esc_html__( 'descent.', 'atlas-relics' ); ?></span></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"fontSize":"medium","textColor":"mist-400"} -->
 <p class="has-mist-400-color has-text-color has-medium-font-size"><?php echo esc_html__( 'Guided caves, courses and essays for examining the inner world. Find the sentence that snags and start there.', 'atlas-relics' ); ?></p>
