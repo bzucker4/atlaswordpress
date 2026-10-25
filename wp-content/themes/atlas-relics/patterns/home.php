@@ -411,7 +411,7 @@ $atlas_etsy_tools = array(
 	<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 	<div class="wp-block-buttons">
 		<!-- wp:button {"backgroundColor":"violet-500","textColor":"ivory-50"} -->
-		<div class="wp-block-button"><a class="wp-block-button__link has-ivory-50-color has-violet-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( home_url( '/caves/' ) ); ?>"><?php echo esc_html__( 'See the four caves', 'atlas-relics' ); ?></a></div>
+		<div class="wp-block-button"><a class="wp-block-button__link has-ivory-50-color has-violet-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( home_url( '/caves/' ) ); ?>"><?php echo esc_html__( 'See all eight caves', 'atlas-relics' ); ?></a></div>
 		<!-- /wp:button -->
 	</div>
 	<!-- /wp:buttons -->
@@ -424,14 +424,34 @@ $atlas_etsy_tools = array(
 <p class="has-lilac-300-color has-text-color has-small-font-size" style="letter-spacing:0.15em;text-transform:uppercase"><?php echo esc_html__( 'The store', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":2} -->
-<h2 class="wp-block-heading"><?php echo esc_html__( 'Five doors. Take the one that snags.', 'atlas-relics' ); ?></h2>
+<h2 class="wp-block-heading"><?php echo esc_html__( 'Ten doors. Take the one that snags.', 'atlas-relics' ); ?></h2>
 <!-- /wp:heading -->
 <!-- wp:group {"className":"atlas-list","layout":{"type":"default"}} -->
 <div class="wp-block-group atlas-list">
 <!-- wp:group {"className":"atlas-row"} -->
 <div class="wp-block-group atlas-row">
 <!-- wp:paragraph {"className":"atlas-row-head"} -->
-<p class="atlas-row-head"><span class="atlas-num">01</span> <a href="<?php echo esc_url( home_url( '/caves/#control' ) ); ?>"><?php echo esc_html__( 'Control', 'atlas-relics' ); ?></a> <span class="atlas-price">$7.77</span></p>
+<p class="atlas-row-head"><span class="atlas-num">01</span> <a href="<?php echo esc_url( home_url( '/caves/#complete' ) ); ?>"><?php echo esc_html__( 'The Complete Descent', 'atlas-relics' ); ?></a> <span class="atlas-price">$27.77</span></p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
+<p class="has-mist-400-color has-text-color has-small-font-size"><?php echo esc_html__( 'All eight caves, the Integration Journal and The Ascent. $84.70 bought apart.', 'atlas-relics' ); ?></p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"atlas-row"} -->
+<div class="wp-block-group atlas-row">
+<!-- wp:paragraph {"className":"atlas-row-head"} -->
+<p class="atlas-row-head"><span class="atlas-num">02</span> <a href="<?php echo esc_url( home_url( '/caves/#descent' ) ); ?>"><?php echo esc_html__( 'The First Descent', 'atlas-relics' ); ?></a> <span class="atlas-price">$17.77</span></p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
+<p class="has-mist-400-color has-text-color has-small-font-size"><?php echo esc_html__( 'Control, Desire and Identity in one passage. Cheaper than buying them apart.', 'atlas-relics' ); ?></p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"atlas-row"} -->
+<div class="wp-block-group atlas-row">
+<!-- wp:paragraph {"className":"atlas-row-head"} -->
+<p class="atlas-row-head"><span class="atlas-num">03</span> <a href="<?php echo esc_url( home_url( '/caves/#control' ) ); ?>"><?php echo esc_html__( 'Control', 'atlas-relics' ); ?></a> <span class="atlas-price">$7.77</span></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
 <p class="has-mist-400-color has-text-color has-small-font-size"><?php echo esc_html__( 'What if the need to control your life is quietly preventing you from experiencing it?', 'atlas-relics' ); ?></p>
@@ -441,7 +461,7 @@ $atlas_etsy_tools = array(
 <!-- wp:group {"className":"atlas-row"} -->
 <div class="wp-block-group atlas-row">
 <!-- wp:paragraph {"className":"atlas-row-head"} -->
-<p class="atlas-row-head"><span class="atlas-num">02</span> <a href="<?php echo esc_url( home_url( '/caves/#desire' ) ); ?>"><?php echo esc_html__( 'Desire', 'atlas-relics' ); ?></a> <span class="atlas-price">$7.77</span></p>
+<p class="atlas-row-head"><span class="atlas-num">04</span> <a href="<?php echo esc_url( home_url( '/caves/#desire' ) ); ?>"><?php echo esc_html__( 'Desire', 'atlas-relics' ); ?></a> <span class="atlas-price">$7.77</span></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
 <p class="has-mist-400-color has-text-color has-small-font-size"><?php echo esc_html__( 'What if the thing you want is not actually what you are searching for?', 'atlas-relics' ); ?></p>
@@ -451,7 +471,7 @@ $atlas_etsy_tools = array(
 <!-- wp:group {"className":"atlas-row"} -->
 <div class="wp-block-group atlas-row">
 <!-- wp:paragraph {"className":"atlas-row-head"} -->
-<p class="atlas-row-head"><span class="atlas-num">03</span> <a href="<?php echo esc_url( home_url( '/caves/#identity' ) ); ?>"><?php echo esc_html__( 'Identity', 'atlas-relics' ); ?></a> <span class="atlas-price">$7.77</span></p>
+<p class="atlas-row-head"><span class="atlas-num">05</span> <a href="<?php echo esc_url( home_url( '/caves/#identity' ) ); ?>"><?php echo esc_html__( 'Identity', 'atlas-relics' ); ?></a> <span class="atlas-price">$7.77</span></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
 <p class="has-mist-400-color has-text-color has-small-font-size"><?php echo esc_html__( 'Who are you when you are no longer required to stay recognizable?', 'atlas-relics' ); ?></p>
@@ -461,7 +481,7 @@ $atlas_etsy_tools = array(
 <!-- wp:group {"className":"atlas-row"} -->
 <div class="wp-block-group atlas-row">
 <!-- wp:paragraph {"className":"atlas-row-head"} -->
-<p class="atlas-row-head"><span class="atlas-num">04</span> <a href="<?php echo esc_url( home_url( '/caves/#silence' ) ); ?>"><?php echo esc_html__( 'Silence', 'atlas-relics' ); ?></a> <span class="atlas-price">$7.77</span></p>
+<p class="atlas-row-head"><span class="atlas-num">06</span> <a href="<?php echo esc_url( home_url( '/caves/#silence' ) ); ?>"><?php echo esc_html__( 'Silence', 'atlas-relics' ); ?></a> <span class="atlas-price">$7.77</span></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
 <p class="has-mist-400-color has-text-color has-small-font-size"><?php echo esc_html__( 'What remains when the noise stops?', 'atlas-relics' ); ?></p>
@@ -471,15 +491,48 @@ $atlas_etsy_tools = array(
 <!-- wp:group {"className":"atlas-row"} -->
 <div class="wp-block-group atlas-row">
 <!-- wp:paragraph {"className":"atlas-row-head"} -->
-<p class="atlas-row-head"><span class="atlas-num">05</span> <a href="<?php echo esc_url( home_url( '/caves/#descent' ) ); ?>"><?php echo esc_html__( 'The First Descent', 'atlas-relics' ); ?></a> <span class="atlas-price">$17.77</span></p>
+<p class="atlas-row-head"><span class="atlas-num">07</span> <a href="<?php echo esc_url( home_url( '/caves/#fear' ) ); ?>"><?php echo esc_html__( 'Fear', 'atlas-relics' ); ?></a> <span class="atlas-price">$7.77</span></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
-<p class="has-mist-400-color has-text-color has-small-font-size"><?php echo esc_html__( 'All three caves in one. Cheaper than buying them apart.', 'atlas-relics' ); ?></p>
+<p class="has-mist-400-color has-text-color has-small-font-size"><?php echo esc_html__( 'What if your fear is not trying to stop you, but trying to show you what you love?', 'atlas-relics' ); ?></p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"atlas-row"} -->
+<div class="wp-block-group atlas-row">
+<!-- wp:paragraph {"className":"atlas-row-head"} -->
+<p class="atlas-row-head"><span class="atlas-num">08</span> <a href="<?php echo esc_url( home_url( '/caves/#grief' ) ); ?>"><?php echo esc_html__( 'Grief', 'atlas-relics' ); ?></a> <span class="atlas-price">$7.77</span></p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
+<p class="has-mist-400-color has-text-color has-small-font-size"><?php echo esc_html__( 'What if grief is not something to get over, but the shape your love takes when it outlives its object?', 'atlas-relics' ); ?></p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"atlas-row"} -->
+<div class="wp-block-group atlas-row">
+<!-- wp:paragraph {"className":"atlas-row-head"} -->
+<p class="atlas-row-head"><span class="atlas-num">09</span> <a href="<?php echo esc_url( home_url( '/caves/#shame' ) ); ?>"><?php echo esc_html__( 'Shame', 'atlas-relics' ); ?></a> <span class="atlas-price">$7.77</span></p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
+<p class="has-mist-400-color has-text-color has-small-font-size"><?php echo esc_html__( 'What if the part of you that you hide most carefully is holding something you need?', 'atlas-relics' ); ?></p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"atlas-row"} -->
+<div class="wp-block-group atlas-row">
+<!-- wp:paragraph {"className":"atlas-row-head"} -->
+<p class="atlas-row-head"><span class="atlas-num">10</span> <a href="<?php echo esc_url( home_url( '/caves/#attachment' ) ); ?>"><?php echo esc_html__( 'Attachment', 'atlas-relics' ); ?></a> <span class="atlas-price">$7.77</span></p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
+<p class="has-mist-400-color has-text-color has-small-font-size"><?php echo esc_html__( 'What if the tighter you grip something, the less of it you are actually able to feel?', 'atlas-relics' ); ?></p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
 </div>
 <!-- /wp:group -->
+<!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
+<p class="has-mist-400-color has-text-color has-small-font-size"><?php echo esc_html__( 'Not sure where to start?', 'atlas-relics' ); ?> <a href="https://atlas-relics.com/b/ORl6W?utm_source=atlasrelics-site&amp;utm_medium=referral&amp;utm_campaign=home-quiz"><?php echo esc_html__( 'Get the free guide, Which Cave Are You In?', 'atlas-relics' ); ?></a></p>
+<!-- /wp:paragraph -->
 </section>
 <!-- /wp:group -->
 
@@ -535,21 +588,21 @@ $atlas_etsy_tools = array(
 	<!-- /wp:paragraph -->
 
 	<!-- wp:heading {"level":2} -->
-	<h2 class="wp-block-heading"><?php echo esc_html__( 'The First Descent', 'atlas-relics' ); ?></h2>
+	<h2 class="wp-block-heading"><?php echo esc_html__( 'The Complete Descent', 'atlas-relics' ); ?></h2>
 	<!-- /wp:heading -->
 
 	<!-- wp:paragraph -->
-	<p><?php echo esc_html__( 'The three caves in one purchase: Control, Desire and Identity. $17.77, instead of $23.31 separately.', 'atlas-relics' ); ?></p>
+	<p><?php echo esc_html__( 'All eight caves, the Integration Journal and The Ascent in one purchase. $27.77, instead of $84.70 separately. Prefer a smaller start? The First Descent covers Control, Desire and Identity for $17.77.', 'atlas-relics' ); ?></p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:buttons -->
 	<div class="wp-block-buttons">
 		<!-- wp:button {"backgroundColor":"violet-500","textColor":"ivory-50"} -->
-		<div class="wp-block-button"><a class="wp-block-button__link has-ivory-50-color has-violet-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( $atlas_buy . 'f3DGy' . $atlas_utm . '-descent' ); ?>"><?php echo esc_html__( 'Begin the descent', 'atlas-relics' ); ?></a></div>
+		<div class="wp-block-button"><a class="wp-block-button__link has-ivory-50-color has-violet-500-background-color has-text-color has-background wp-element-button" href="<?php echo esc_url( $atlas_buy . 'hyYON' . $atlas_utm . '-complete' ); ?>"><?php echo esc_html__( 'Begin the descent', 'atlas-relics' ); ?></a></div>
 		<!-- /wp:button -->
 
 		<!-- wp:button {"className":"is-style-outline","textColor":"ivory-50"} -->
-		<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-ivory-50-color has-text-color wp-element-button" href="<?php echo esc_url( home_url( '/caves/#descent' ) ); ?>"><?php echo esc_html__( 'See what is inside', 'atlas-relics' ); ?></a></div>
+		<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-ivory-50-color has-text-color wp-element-button" href="<?php echo esc_url( home_url( '/caves/#complete' ) ); ?>"><?php echo esc_html__( 'See what is inside', 'atlas-relics' ); ?></a></div>
 		<!-- /wp:button -->
 	</div>
 	<!-- /wp:buttons -->
