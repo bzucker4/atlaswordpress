@@ -22,7 +22,7 @@ class Atlas_Relics_Core_Redirects {
 	 * @var array
 	 */
 	private static $map = array(
-		'store'            => '/caves/',
+		'store'            => '/shop/',
 		'begin-here'       => '/begin/',
 		'start-here'       => '/begin/',
 		'conscious-mirror' => '/conscious-mirror-course/',

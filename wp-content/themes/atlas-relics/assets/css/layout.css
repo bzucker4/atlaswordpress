@@ -1081,3 +1081,22 @@ section.atlas-subhero.atlas-subhero {
 	.atlas-bundle, .atlas-bundle-stack i { transition: none; }
 	.atlas-bundle:hover { transform: none; }
 }
+
+/* Shop page */
+.atlas-chips { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.75rem; }
+.atlas-chips a {
+	padding: 0.45rem 1rem;
+	border: 1px solid rgba(201, 182, 247, 0.35);
+	border-radius: 999px;
+	color: #f7f3e9;
+	font-size: 0.9rem;
+	text-decoration: none;
+	transition: background-color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.atlas-chips a:hover { background: rgba(122, 63, 214, 0.35); border-color: #c9b6f7; box-shadow: 0 0 20px -4px rgba(122, 63, 214, 0.8); }
+.atlas-shop-section { scroll-margin-top: 5rem; }
+.atlas-shop-section .atlas-tool-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+@media (max-width: 1000px) { .atlas-shop-section .atlas-tool-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
+@media (max-width: 560px) { .atlas-shop-section .atlas-tool-grid { grid-template-columns: minmax(0, 1fr) !important; } }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .atlas-chips a { transition: none; } }

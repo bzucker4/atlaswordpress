@@ -34,6 +34,7 @@ class Atlas_Relics_Core_Pages {
 		'conscious-mirror-course' => array( 'The Conscious Mirror', 'atlas-relics/conscious-mirror-course' ),
 		'vedic-life-advisor'      => array( 'Vedic Life Advisor', 'atlas-relics/vedic-life-advisor' ),
 		'about'                   => array( 'About', 'atlas-relics/about' ),
+		'shop'                    => array( 'Shop', 'atlas-relics/shop' ),
 	);
 
 	/**
@@ -97,6 +98,23 @@ class Atlas_Relics_Core_Pages {
 				'menu-item-status'    => 'publish',
 			)
 		);
+	}
+
+	/**
+	 * Create any default page that is missing, once per plugin version.
+	 * Used after a one-click update, which does not re-run activation.
+	 * Menus and reading settings are left alone.
+	 */
+	public static function ensure_pages() {
+		if ( get_option( 'atlas_relics_core_pages_version' ) === ATLAS_RELICS_CORE_VERSION ) {
+			return;
+		}
+
+		foreach ( self::$pages as $slug => $definition ) {
+			self::get_or_create_page( $slug, $definition[0], $definition[1] );
+		}
+
+		update_option( 'atlas_relics_core_pages_version', ATLAS_RELICS_CORE_VERSION );
 	}
 
 	/**

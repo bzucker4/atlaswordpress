@@ -3,7 +3,7 @@
  * Plugin Name: Atlas Relics Core
  * Plugin URI: https://atlasrelics.com
  * Description: Companion plugin for the Atlas Relics theme. Security hardening, storefront scaffolding (bundles, Beacons import, MailerLite signup), Tally-driven fulfillment automation, migration tooling, and the Atlas Relics Ops dashboard.
- * Version: 0.4.1
+ * Version: 0.4.2
  * Requires at least: 6.5
  * Requires PHP: 8.1
  * Requires Plugins: woocommerce
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'ATLAS_RELICS_CORE_VERSION', '0.4.1' );
+define( 'ATLAS_RELICS_CORE_VERSION', '0.4.2' );
 define( 'ATLAS_RELICS_CORE_PATH', plugin_dir_path( __FILE__ ) );
 define( 'ATLAS_RELICS_CORE_URL', plugin_dir_url( __FILE__ ) );
 define( 'ATLAS_RELICS_CORE_FILE', __FILE__ );
@@ -51,6 +51,7 @@ function atlas_relics_core_boot() {
 	Atlas_Relics_Core::instance();
 }
 add_action( 'plugins_loaded', 'atlas_relics_core_boot' );
+add_action( 'init', array( 'Atlas_Relics_Core_Pages', 'ensure_pages' ), 20 );
 
 register_activation_hook( __FILE__, array( 'Atlas_Relics_Core', 'activate' ) );
 register_deactivation_hook( __FILE__, array( 'Atlas_Relics_Core', 'deactivate' ) );
