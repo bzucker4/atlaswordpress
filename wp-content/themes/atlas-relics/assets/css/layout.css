@@ -1100,3 +1100,12 @@ section.atlas-subhero.atlas-subhero {
 @media (max-width: 560px) { .atlas-shop-section .atlas-tool-grid { grid-template-columns: minmax(0, 1fr) !important; } }
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .atlas-chips a { transition: none; } }
+
+/* Email sign-up card */
+.atlas-signup-card { text-align: center; padding: 2.5rem 1.75rem; border: 1px solid rgba(201, 182, 247, 0.3); border-radius: 18px; background: radial-gradient(ellipse at 50% 0%, rgba(122, 63, 214, 0.28), rgba(26, 12, 46, 0.4) 70%); box-shadow: 0 0 60px -20px rgba(122, 63, 214, 0.7); }
+.atlas-signup-tag { display: inline-block; padding: 0.2rem 0.8rem; border-radius: 999px; background: rgba(201, 182, 247, 0.16); color: #c9b6f7; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; }
+.atlas-signup-card h2 { margin: 1rem 0 0.6rem; color: #f7f3e9; }
+.atlas-signup-card p { max-width: 52ch; margin: 0 auto 1.5rem; color: #d9cfee; }
+.atlas-signup-btn { display: inline-block; padding: 0.85rem 1.8rem; border-radius: 999px; background: #7a3fd6; color: #f7f3e9 !important; font-weight: 600; text-decoration: none; box-shadow: 0 0 28px -4px rgba(122, 63, 214, 0.9); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.atlas-signup-btn:hover { transform: translateY(-2px); box-shadow: 0 0 40px -2px rgba(160, 110, 240, 1); }
+@media (prefers-reduced-motion: reduce) { .atlas-signup-btn { transition: none; } .atlas-signup-btn:hover { transform: none; } }

@@ -353,6 +353,19 @@ $atlas_descent_link = 'https://atlas-relics.com/b/f3DGy?utm_source=atlasrelics-s
 <!-- /wp:details -->
 </section>
 <!-- /wp:group -->
+<!-- wp:group {"tagName":"section","className":"atlas-signup","layout":{"type":"constrained","contentSize":"760px"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"backgroundColor":"plum-900","textColor":"ivory-50"} -->
+<section class="wp-block-group atlas-signup has-ivory-50-color has-plum-900-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+<!-- wp:html -->
+<div class="atlas-signup-card">
+	<span class="atlas-signup-tag"><?php echo esc_html__( 'Free', 'atlas-relics' ); ?></span>
+	<h2><?php echo esc_html__( 'Get the free Master Numbers guide.', 'atlas-relics' ); ?></h2>
+	<p><?php echo esc_html__( 'Put your email in on the next page and it arrives in your inbox. After that you get the Atlas Relics letter, and you can leave whenever you like.', 'atlas-relics' ); ?></p>
+	<a class="atlas-signup-btn" href="https://atlasrelics.kit.com/master-numbers" target="_blank" rel="noopener"><?php echo esc_html__( 'Send me the guide', 'atlas-relics' ); ?></a>
+</div>
+<!-- /wp:html -->
+</section>
+<!-- /wp:group -->
+
 <!-- wp:group {"tagName":"section","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}}} -->
 <section class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
 <!-- wp:heading {"level":2} -->
