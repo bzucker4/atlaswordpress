@@ -1129,3 +1129,12 @@ html { scroll-behavior: smooth; }
 .atlas-tool-img--bundle { display: grid; grid-template-columns: repeat(3, 1fr); aspect-ratio: 3 / 1; }
 .atlas-tool-img--bundle img { aspect-ratio: 1 / 1; }
 .atlas-tool:hover .atlas-tool-img { border-color: rgba(201, 182, 247, 0.55); }
+
+/* Smaller product pictures */
+.atlas-books .atlas-cover { max-width: 190px; }
+.atlas-books .atlas-book > * { max-width: 300px; }
+.atlas-deck-card { width: 62%; margin-left: auto; margin-right: auto; }
+.atlas-tool-img--book { width: 48%; margin-left: auto; margin-right: auto; }
+.atlas-tool-img--deck { width: 40%; }
+.atlas-tool-img--bundle { width: 62%; margin-left: auto; margin-right: auto; }
+.atlas-bundle-stack { transform: scale(0.85); transform-origin: left center; }
