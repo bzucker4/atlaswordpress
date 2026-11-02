@@ -123,19 +123,32 @@ $atlas_shop = array(
 	$atlas_href = $atlas_item[6] ? home_url( $atlas_item[4] ) : $atlas_item[4];
 	$atlas_ext  = $atlas_item[6] ? '' : ' target="_blank" rel="noopener"';
 	?>
-	<a class="atlas-tool" href="<?php echo esc_url( $atlas_href ); ?>"<?php echo $atlas_ext; // phpcs:ignore WordPress.Security.EscapeOutput ?>>
-		<?php if ( ! empty( $atlas_item[7] ) ) : ?>
-		<?php $atlas_imgs = (array) $atlas_item[7]; $atlas_kind = ( 0 === strpos( $atlas_imgs[0], 'decks/' ) ) ? 'deck' : ( count( $atlas_imgs ) > 1 ? 'bundle' : 'book' ); ?>
-		<span class="atlas-tool-img atlas-tool-img--<?php echo esc_attr( $atlas_kind ); ?>" aria-hidden="true">
-			<?php foreach ( $atlas_imgs as $atlas_img ) : ?>
+	<?php
+	$atlas_imgs = ! empty( $atlas_item[7] ) ? (array) $atlas_item[7] : array();
+	$atlas_kind = 'art';
+	if ( $atlas_imgs ) {
+		$atlas_kind = ( 0 === strpos( $atlas_imgs[0], 'decks/' ) ) ? 'deck' : ( count( $atlas_imgs ) > 1 ? 'bundle' : 'book' );
+	}
+	$atlas_art = ( '' === $atlas_item[2] ? 'link' : ( 'Free' === $atlas_item[2] ? 'free' : $atlas_group['id'] ) );
+	?>
+	<a class="atlas-tool atlas-tool--<?php echo esc_attr( $atlas_kind ); ?>" href="<?php echo esc_url( $atlas_href ); ?>"<?php echo $atlas_ext; // phpcs:ignore WordPress.Security.EscapeOutput ?>>
+		<span class="atlas-tool-img atlas-tool-img--<?php echo esc_attr( $atlas_kind ); ?> atlas-art--<?php echo esc_attr( $atlas_art ); ?>" aria-hidden="true">
+			<?php if ( $atlas_imgs ) : ?>
+				<?php foreach ( $atlas_imgs as $atlas_img ) : ?>
 			<img src="<?php echo esc_url( get_theme_file_uri( 'assets/img/' . $atlas_img . '.jpg' ) ); ?>" alt="" loading="lazy" width="480" height="480">
-			<?php endforeach; ?>
+				<?php endforeach; ?>
+			<?php else : ?>
+			<span class="atlas-art-rings"><i></i><i></i><i></i></span>
+			<span class="atlas-art-label"><?php echo esc_html( $atlas_item[0] ); ?></span>
+			<?php endif; ?>
+			<?php if ( '' !== $atlas_item[2] ) : ?>
+			<span class="atlas-tool-badge"><?php echo esc_html( $atlas_item[2] ); ?></span>
+			<?php endif; ?>
 		</span>
-		<?php endif; ?>
 		<span class="atlas-tool-type"><?php echo esc_html( $atlas_item[0] ); ?></span>
 		<h3><?php echo esc_html( $atlas_item[1] ); ?></h3>
 		<span class="atlas-tool-body"><?php echo esc_html( $atlas_item[3] ); ?></span>
-		<span class="atlas-tool-foot"><span class="atlas-tool-price"><?php echo esc_html( $atlas_item[2] ); ?></span><span class="atlas-tool-go"><?php echo esc_html( $atlas_item[5] ); ?></span></span>
+		<span class="atlas-tool-foot"><span class="atlas-tool-go"><?php echo esc_html( $atlas_item[5] ); ?></span></span>
 	</a>
 	<?php endforeach; ?>
 </div>
