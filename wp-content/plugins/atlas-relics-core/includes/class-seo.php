@@ -66,6 +66,7 @@ class Atlas_Relics_Core_SEO {
 
 		if ( $image ) {
 			printf( '<meta property="og:image" content="%s" />' . "\n", esc_url( $image ) );
+			printf( '<meta name="twitter:image" content="%s" />' . "\n", esc_url( $image ) );
 			echo '<meta name="twitter:card" content="summary_large_image" />' . "\n";
 		} else {
 			echo '<meta name="twitter:card" content="summary" />' . "\n";
@@ -125,6 +126,12 @@ class Atlas_Relics_Core_SEO {
 		if ( is_singular() && has_post_thumbnail() ) {
 			$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
 			return $image ? $image[0] : '';
+		}
+
+		// Fallback share image supplied by the theme.
+		$path = get_theme_file_path( 'assets/img/share.png' );
+		if ( file_exists( $path ) ) {
+			return get_theme_file_uri( 'assets/img/share.png' );
 		}
 
 		return '';

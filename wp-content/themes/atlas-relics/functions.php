@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'ATLAS_RELICS_VERSION', '0.13.0' );
+define( 'ATLAS_RELICS_VERSION', '0.13.1' );
 
 /**
  * Register theme support and navigation menus.
@@ -165,3 +165,18 @@ add_filter(
 	20,
 	3
 );
+
+/**
+ * Print favicon and home screen icons unless a Site Icon is set in the Customizer.
+ */
+function atlas_relics_icons() {
+	if ( has_site_icon() ) {
+		return;
+	}
+	$base = get_theme_file_uri( 'assets/img/' );
+	printf( '<link rel="icon" href="%s" sizes="any" />' . "\n", esc_url( $base . 'favicon.ico' ) );
+	printf( '<link rel="icon" type="image/png" sizes="48x48" href="%s" />' . "\n", esc_url( $base . 'favicon-48.png' ) );
+	printf( '<link rel="icon" type="image/png" sizes="192x192" href="%s" />' . "\n", esc_url( $base . 'icon-192.png' ) );
+	printf( '<link rel="apple-touch-icon" href="%s" />' . "\n", esc_url( $base . 'apple-touch-icon.png' ) );
+}
+add_action( 'wp_head', 'atlas_relics_icons', 2 );
