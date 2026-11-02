@@ -319,7 +319,7 @@ $atlas_etsy_tools = array(
 
 	<!-- wp:html -->
 	<a class="atlas-bundle" href="<?php echo esc_url( $atlas_buy . 'RlcwC' . $atlas_utm . '-bundle' ); ?>">
-		<span class="atlas-bundle-stack" aria-hidden="true"><i></i><i></i><i></i></span>
+		<span class="atlas-bundle-stack" aria-hidden="true"><i><img src="<?php echo esc_url( get_theme_file_uri( 'assets/img/books/a.jpg' ) ); ?>" alt="" loading="lazy" width="480" height="480"></i><i><img src="<?php echo esc_url( get_theme_file_uri( 'assets/img/books/b.jpg' ) ); ?>" alt="" loading="lazy" width="480" height="480"></i><i><img src="<?php echo esc_url( get_theme_file_uri( 'assets/img/books/c.jpg' ) ); ?>" alt="" loading="lazy" width="480" height="480"></i></span>
 		<span class="atlas-bundle-copy">
 			<span class="atlas-bundle-eyebrow"><?php echo esc_html__( 'The bundle', 'atlas-relics' ); ?></span>
 			<h3><?php echo esc_html__( 'The Universal Laws Bundle', 'atlas-relics' ); ?></h3>
@@ -336,7 +336,7 @@ $atlas_etsy_tools = array(
 		<!-- wp:group {"className":"atlas-book","layout":{"type":"default"}} -->
 		<div class="wp-block-group atlas-book">
 			<!-- wp:html -->
-			<a class="atlas-cover atlas-cover--<?php echo esc_attr( $atlas_book['key'] ); ?>" href="<?php echo esc_url( $atlas_book_url ); ?>"><span class="atlas-cover-mark" aria-hidden="true"></span><h3><?php echo esc_html( $atlas_book['name'] ); ?></h3><span class="atlas-cover-author"><?php echo esc_html__( 'Atlas Reed', 'atlas-relics' ); ?></span></a>
+			<a class="atlas-cover atlas-cover--img atlas-cover--<?php echo esc_attr( $atlas_book['key'] ); ?>" href="<?php echo esc_url( $atlas_book_url ); ?>"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/img/books/' . $atlas_book['key'] . '.jpg' ) ); ?>" alt="<?php echo esc_attr( $atlas_book['name'] ); ?>" loading="lazy" width="480" height="480"></a>
 			<!-- /wp:html -->
 
 			<!-- wp:paragraph {"className":"atlas-book-price","textColor":"lilac-300"} -->

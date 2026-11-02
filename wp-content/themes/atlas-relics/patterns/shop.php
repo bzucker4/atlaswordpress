@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // One list for the whole shop. Add a product by adding a line to its group.
-// Fields: type, name, price, body, url, button label, internal (true for pages on this site).
+// Fields: type, name, price, body, url, button label, internal (true for pages on this site), optional image path(s) under assets/img without .jpg.
 $atlas_shop = array(
 	array(
 		'id'    => 'courses',
@@ -46,10 +46,10 @@ $atlas_shop = array(
 		'sub'   => 'Designed by Atlas Reed and printed by Make Playing Cards.',
 		'alt'   => false,
 		'items' => array(
-			array( '78 cards', 'Dark Horror Tarot', '', 'A gothic 78-card tarot with a dark, haunted edge.', 'https://www.makeplayingcards.com/sell/marketplace/dark-horror-tarot.html', 'View the deck', false ),
-			array( '78 cards', 'Beginner Tarot With Keywords', '', 'Keywords for zodiac, numerology and the elements on every card.', 'https://www.makeplayingcards.com/sell/marketplace/beginner-tarot-with-keywords.html', 'View the deck', false ),
-			array( 'Oracle deck', 'Japanese Zen Oracle', '', 'An oracle deck of ink, blossom and stillness.', 'https://www.makeplayingcards.com/sell/marketplace/japanese-zen-oracle.html', 'View the deck', false ),
-			array( 'Oracle deck', 'ShroomOracle Cards', '', 'An oracle deck drawn from the forest floor.', 'https://www.makeplayingcards.com/sell/marketplace/shroomoracle-cards.html', 'View the deck', false ),
+			array( '78 cards', 'Dark Horror Tarot', '', 'A gothic 78-card tarot with a dark, haunted edge.', 'https://www.makeplayingcards.com/sell/marketplace/dark-horror-tarot.html', 'View the deck', false, 'decks/horror' ),
+			array( '78 cards', 'Beginner Tarot With Keywords', '', 'Keywords for zodiac, numerology and the elements on every card.', 'https://www.makeplayingcards.com/sell/marketplace/beginner-tarot-with-keywords.html', 'View the deck', false, 'decks/keywords' ),
+			array( 'Oracle deck', 'Japanese Zen Oracle', '', 'An oracle deck of ink, blossom and stillness.', 'https://www.makeplayingcards.com/sell/marketplace/japanese-zen-oracle.html', 'View the deck', false, 'decks/zen' ),
+			array( 'Oracle deck', 'ShroomOracle Cards', '', 'An oracle deck drawn from the forest floor.', 'https://www.makeplayingcards.com/sell/marketplace/shroomoracle-cards.html', 'View the deck', false, 'decks/shroom' ),
 		),
 	),
 	array(
@@ -58,10 +58,10 @@ $atlas_shop = array(
 		'sub'   => 'Slower reading.',
 		'alt'   => true,
 		'items' => array(
-			array( 'Bundle', 'The Universal Laws Bundle', '$29.99', 'The Great Shift, Laws of the Universe and The Ageless Truths together. $46.09 apart.', 'https://atlas-relics.com/b/RlcwC?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=shop', 'Buy now', false ),
-			array( 'Book', 'The Great Shift', '$19.99', 'A personal, forceful book on hidden structures and the awakening. Read it as one seer\'s map.', 'https://atlas-relics.com/b/gt6pG?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=shop', 'Buy now', false ),
-			array( 'Book', 'Laws of the Universe', '$14.99', 'The Twelve Universal Laws in plain language, checked against what psychology supports. It says where the evidence stops.', 'https://atlas-relics.com/b/Glyzs?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=shop', 'Buy now', false ),
-			array( 'Book', 'The Ageless Truths', '$11.11', 'A practical companion to slowing down: letting go, stillness, presence and change.', 'https://atlas-relics.com/b/fH5cW?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=shop', 'Buy now', false ),
+			array( 'Bundle', 'The Universal Laws Bundle', '$29.99', 'The Great Shift, Laws of the Universe and The Ageless Truths together. $46.09 apart.', 'https://atlas-relics.com/b/RlcwC?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=shop', 'Buy now', false, array( 'books/a', 'books/b', 'books/c' ) ),
+			array( 'Book', 'The Great Shift', '$19.99', 'A personal, forceful book on hidden structures and the awakening. Read it as one seer\'s map.', 'https://atlas-relics.com/b/gt6pG?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=shop', 'Buy now', false, 'books/c' ),
+			array( 'Book', 'Laws of the Universe', '$14.99', 'The Twelve Universal Laws in plain language, checked against what psychology supports. It says where the evidence stops.', 'https://atlas-relics.com/b/Glyzs?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=shop', 'Buy now', false, 'books/b' ),
+			array( 'Book', 'The Ageless Truths', '$11.11', 'A practical companion to slowing down: letting go, stillness, presence and change.', 'https://atlas-relics.com/b/fH5cW?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=shop', 'Buy now', false, 'books/a' ),
 		),
 	),
 	array(
@@ -124,6 +124,14 @@ $atlas_shop = array(
 	$atlas_ext  = $atlas_item[6] ? '' : ' target="_blank" rel="noopener"';
 	?>
 	<a class="atlas-tool" href="<?php echo esc_url( $atlas_href ); ?>"<?php echo $atlas_ext; // phpcs:ignore WordPress.Security.EscapeOutput ?>>
+		<?php if ( ! empty( $atlas_item[7] ) ) : ?>
+		<?php $atlas_imgs = (array) $atlas_item[7]; $atlas_kind = ( 0 === strpos( $atlas_imgs[0], 'decks/' ) ) ? 'deck' : ( count( $atlas_imgs ) > 1 ? 'bundle' : 'book' ); ?>
+		<span class="atlas-tool-img atlas-tool-img--<?php echo esc_attr( $atlas_kind ); ?>" aria-hidden="true">
+			<?php foreach ( $atlas_imgs as $atlas_img ) : ?>
+			<img src="<?php echo esc_url( get_theme_file_uri( 'assets/img/' . $atlas_img . '.jpg' ) ); ?>" alt="" loading="lazy" width="480" height="480">
+			<?php endforeach; ?>
+		</span>
+		<?php endif; ?>
 		<span class="atlas-tool-type"><?php echo esc_html( $atlas_item[0] ); ?></span>
 		<h3><?php echo esc_html( $atlas_item[1] ); ?></h3>
 		<span class="atlas-tool-body"><?php echo esc_html( $atlas_item[3] ); ?></span>
