@@ -380,7 +380,7 @@ $atlas_etsy_tools = array(
 	<div class="atlas-deck-grid">
 		<?php foreach ( $atlas_decks as $atlas_deck ) : ?>
 		<a class="atlas-deck atlas-deck--<?php echo esc_attr( $atlas_deck['key'] ); ?>" href="<?php echo esc_url( $atlas_deck['url'] ); ?>" target="_blank" rel="noopener">
-			<span class="atlas-deck-card" aria-hidden="true"><span class="atlas-deck-sigil"></span></span>
+			<span class="atlas-deck-card" aria-hidden="true"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/img/decks/' . $atlas_deck['key'] . '.jpg' ) ); ?>" alt="" loading="lazy" width="320" height="480"></span>
 			<span class="atlas-deck-type"><?php echo esc_html( $atlas_deck['type'] ); ?></span>
 			<h3><?php echo esc_html( $atlas_deck['name'] ); ?></h3>
 			<span class="atlas-deck-body"><?php echo esc_html( $atlas_deck['body'] ); ?></span>
