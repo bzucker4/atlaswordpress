@@ -1184,3 +1184,7 @@ html { scroll-behavior: smooth; }
 .atlas-proof-quotes blockquote { margin: 0 0 0.5rem; padding: 0; border: 0; font-size: 0.92rem; line-height: 1.5; color: #e9e3f4; }
 .atlas-proof-quotes figcaption { font-size: 0.78rem; color: #a9a7b8; }
 @media (max-width: 900px) { .atlas-proof-wrap { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; } .atlas-proof-quotes { grid-template-columns: minmax(0, 1fr); } }
+
+/* Square covers keep their shape (books, caves, bundle) */
+.atlas-shop-section .atlas-tool-img--book img { height: 84%; width: auto; max-width: none; aspect-ratio: 1 / 1; }
+.atlas-shop-section .atlas-tool-img--bundle img { width: 30%; height: auto; max-width: none; aspect-ratio: 1 / 1; }
