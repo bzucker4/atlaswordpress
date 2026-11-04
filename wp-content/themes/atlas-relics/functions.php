@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'ATLAS_RELICS_VERSION', '0.14.3' );
+define( 'ATLAS_RELICS_VERSION', '0.14.4' );
 
 /**
  * Register theme support and navigation menus.
