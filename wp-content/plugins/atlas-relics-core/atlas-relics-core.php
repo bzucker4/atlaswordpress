@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'ATLAS_RELICS_CORE_VERSION', '0.4.3' );
+define( 'ATLAS_RELICS_CORE_VERSION', '0.5.0' );
 define( 'ATLAS_RELICS_CORE_PATH', plugin_dir_path( __FILE__ ) );
 define( 'ATLAS_RELICS_CORE_URL', plugin_dir_url( __FILE__ ) );
 define( 'ATLAS_RELICS_CORE_FILE', __FILE__ );
@@ -31,6 +31,7 @@ require_once ATLAS_RELICS_CORE_PATH . 'includes/class-setup.php';
 require_once ATLAS_RELICS_CORE_PATH . 'includes/class-pages.php';
 require_once ATLAS_RELICS_CORE_PATH . 'includes/class-settings.php';
 require_once ATLAS_RELICS_CORE_PATH . 'includes/class-seo.php';
+require_once ATLAS_RELICS_CORE_PATH . 'includes/class-medium.php';
 require_once ATLAS_RELICS_CORE_PATH . 'includes/class-mailerlite.php';
 require_once ATLAS_RELICS_CORE_PATH . 'includes/class-newsletter.php';
 require_once ATLAS_RELICS_CORE_PATH . 'includes/class-bundles.php';

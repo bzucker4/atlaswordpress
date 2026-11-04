@@ -22,12 +22,31 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Atlas_Relics_Core_SEO {
 
 	/**
+	 * Hand written meta descriptions. Pages are built from patterns, so their
+	 * stored content is only a pattern reference and cannot be summarised.
+	 *
+	 * @var array
+	 */
+	private static $descriptions = array(
+		'home'                   => 'Guided caves, courses, books and tools for examining the inner world, by Atlas Reed. Find the sentence that snags and start there.',
+		'begin'                  => 'Not sure where to start? Write a few honest sentences and find the Atlas Relics cave, course or tool that fits what you are carrying.',
+		'caves'                  => 'Eight guided caves of 20 to 30 minutes each: control, desire, identity, silence, fear, grief, shame and attachment. Take one, or take them together.',
+		'courses'                => 'Two self-paced courses from Atlas Relics: The Four Stages of Consciousness and The Conscious Mirror. Learn to notice how you think, react and choose.',
+		'four-stages'            => 'The Four Stages of Consciousness is a six module course on moving from To Me to By Me, Through Me and As Me.',
+		'conscious-mirror-course' => 'The Conscious Mirror is a self-paced course for seeing your own patterns. Nothing is graded and nothing is diagnosed.',
+		'vedic-life-advisor'     => 'Enter your birth details, see your Vedic chart and ask one question. A tool from Atlas Relics.',
+		'about'                  => 'Atlas Relics is the work of Atlas Reed: guided caves, books, decks and courses for people who like to look under the surface.',
+		'products'               => 'Every Atlas Relics product in one place: courses, caves, books, printed decks and tools, with the best value first.',
+	);
+
+	/**
 	 * Register hooks.
 	 */
 	public function __construct() {
 		// This class prints its own canonical; drop core's so singular pages don't get two.
 		remove_action( 'wp_head', 'rel_canonical' );
 		add_action( 'wp_head', array( $this, 'output_meta_tags' ), 1 );
+		add_action( 'wp_head', array( $this, 'output_schema' ), 3 );
 	}
 
 	/**
@@ -78,11 +97,60 @@ class Atlas_Relics_Core_SEO {
 	}
 
 	/**
+	 * Print Organization and WebSite structured data on the front page.
+	 */
+	public function output_schema() {
+		if ( is_admin() || ! is_front_page() ) {
+			return;
+		}
+
+		$data = array(
+			'@context' => 'https://schema.org',
+			'@graph'   => array(
+				array(
+					'@type'  => 'Organization',
+					'@id'    => home_url( '/#organization' ),
+					'name'   => 'Atlas Relics',
+					'url'    => home_url( '/' ),
+					'logo'   => function_exists( 'get_theme_file_uri' ) ? get_theme_file_uri( 'assets/img/icon-512.png' ) : '',
+					'sameAs' => array(
+						'https://www.instagram.com/atlasrelics',
+						'https://www.threads.net/@atlasrelics',
+						'https://www.tiktok.com/@atlasrelics444',
+						'https://www.etsy.com/shop/AtlasRelicsShop',
+						'https://medium.com/the-conscious-path',
+					),
+				),
+				array(
+					'@type'     => 'WebSite',
+					'@id'       => home_url( '/#website' ),
+					'url'       => home_url( '/' ),
+					'name'      => 'Atlas Relics',
+					'publisher' => array( '@id' => home_url( '/#organization' ) ),
+				),
+			),
+		);
+
+		echo '<script type="application/ld+json">' . wp_json_encode( $data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) . '</script>' . "\n";
+	}
+
+	/**
 	 * Resolve a meta description for the current request.
 	 *
 	 * @return string
 	 */
 	private function get_description() {
+		if ( is_front_page() ) {
+			return self::$descriptions['home'];
+		}
+
+		if ( is_page() ) {
+			$slug = get_post_field( 'post_name', get_queried_object_id() );
+			if ( isset( self::$descriptions[ $slug ] ) ) {
+				return self::$descriptions[ $slug ];
+			}
+		}
+
 		if ( is_singular() ) {
 			$post = get_queried_object();
 

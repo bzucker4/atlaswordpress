@@ -34,7 +34,7 @@ class Atlas_Relics_Core_Pages {
 		'conscious-mirror-course' => array( 'The Conscious Mirror', 'atlas-relics/conscious-mirror-course' ),
 		'vedic-life-advisor'      => array( 'Vedic Life Advisor', 'atlas-relics/vedic-life-advisor' ),
 		'about'                   => array( 'About', 'atlas-relics/about' ),
-		'shop'                    => array( 'Shop', 'atlas-relics/shop' ),
+		'products'                => array( 'Shop', 'atlas-relics/shop' ),
 	);
 
 	/**

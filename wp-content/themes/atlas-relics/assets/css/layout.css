@@ -1172,3 +1172,15 @@ html { scroll-behavior: smooth; }
 
 .atlas-shop-section .atlas-tool--art .atlas-tool-img { aspect-ratio: 16 / 6.5 !important; }
 .atlas-art-label { display: none; }
+
+/* Proof strip */
+.atlas-proof-wrap { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2.5rem; align-items: center; }
+.atlas-proof-stats { display: flex; gap: 2rem; }
+.atlas-proof-stats div { display: flex; flex-direction: column; gap: 0.2rem; }
+.atlas-proof-stats strong { font-size: 2.6rem; line-height: 1; color: #f7f3e9; text-shadow: 0 0 24px rgba(150, 100, 235, 0.7); }
+.atlas-proof-stats span { font-size: 0.85rem; color: #c9b6f7; max-width: 11rem; }
+.atlas-proof-quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+.atlas-proof-quotes figure { margin: 0; padding: 1rem 1.1rem; border-left: 2px solid #7a3fd6; background: rgba(122, 63, 214, 0.08); border-radius: 0 8px 8px 0; }
+.atlas-proof-quotes blockquote { margin: 0 0 0.5rem; padding: 0; border: 0; font-size: 0.92rem; line-height: 1.5; color: #e9e3f4; }
+.atlas-proof-quotes figcaption { font-size: 0.78rem; color: #a9a7b8; }
+@media (max-width: 900px) { .atlas-proof-wrap { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; } .atlas-proof-quotes { grid-template-columns: minmax(0, 1fr); } }

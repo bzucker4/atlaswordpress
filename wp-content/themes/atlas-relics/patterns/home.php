@@ -38,6 +38,21 @@ $atlas_caves = array(
 	),
 );
 
+// Live Medium posts when the feed answers; otherwise the list below is used.
+$atlas_live = function_exists( 'atlas_relics_core_medium_posts' ) ? atlas_relics_core_medium_posts( 4 ) : array();
+
+// Etsy proof. Update these when the shop numbers change. Quotes are verbatim from public Etsy reviews.
+$atlas_proof = array(
+	'sales'   => '264',
+	'rating'  => '4.8',
+	'reviews' => '70',
+	'quotes'  => array(
+		array( 'text' => 'Beautiful hand carved runes in real bone! They have great strong energy with good weight to them!', 'who' => 'Etsy buyer', 'item' => 'Elder Futhark Runes Set' ),
+		array( 'text' => 'super happy with this! had to get a new deck because I used it so much', 'who' => 'Undertaker', 'item' => 'Dark Wood Tarot Deck' ),
+		array( 'text' => 'Very nice item. Quickly shipped', 'who' => 'Aaron', 'item' => 'Etsy shop order' ),
+	),
+);
+
 $atlas_essays = array(
 	array(
 		'date'  => __( '1 Oct 2026', 'atlas-relics' ),
@@ -153,6 +168,27 @@ $atlas_etsy_tools = array(
 <!-- /wp:group -->
 </div>
 <!-- /wp:group -->
+</section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","className":"atlas-proof","layout":{"type":"constrained","contentSize":"1200px"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"backgroundColor":"plum-900","textColor":"ivory-50"} -->
+<section class="wp-block-group atlas-proof has-ivory-50-color has-plum-900-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
+	<!-- wp:html -->
+	<div class="atlas-proof-wrap">
+		<div class="atlas-proof-stats">
+			<div><strong><?php echo esc_html( $atlas_proof['rating'] ); ?></strong><span><?php echo esc_html( sprintf( /* translators: %s: review count */ __( 'average from %s Etsy reviews', 'atlas-relics' ), $atlas_proof['reviews'] ) ); ?></span></div>
+			<div><strong><?php echo esc_html( $atlas_proof['sales'] ); ?></strong><span><?php echo esc_html__( 'Etsy sales', 'atlas-relics' ); ?></span></div>
+		</div>
+		<div class="atlas-proof-quotes">
+			<?php foreach ( $atlas_proof['quotes'] as $atlas_q ) : ?>
+			<figure>
+				<blockquote><?php echo esc_html( $atlas_q['text'] ); ?></blockquote>
+				<figcaption><?php echo esc_html( $atlas_q['who'] . ', ' . $atlas_q['item'] ); ?></figcaption>
+			</figure>
+			<?php endforeach; ?>
+		</div>
+	</div>
+	<!-- /wp:html -->
 </section>
 <!-- /wp:group -->
 
@@ -560,6 +596,25 @@ $atlas_etsy_tools = array(
 
 	<!-- wp:group {"className":"atlas-essay-grid","layout":{"type":"grid","columnCount":2,"minimumColumnWidth":"18rem"}} -->
 	<div class="wp-block-group atlas-essay-grid">
+		<?php if ( $atlas_live ) : ?>
+		<?php foreach ( $atlas_live as $atlas_post ) : ?>
+		<!-- wp:group {"className":"atlas-card atlas-card-link","layout":{"type":"default"}} -->
+		<div class="wp-block-group atlas-card atlas-card-link">
+			<!-- wp:paragraph {"fontSize":"small","textColor":"mist-400"} -->
+			<p class="has-mist-400-color has-text-color has-small-font-size"><?php echo esc_html( $atlas_post['date'] ); ?></p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:heading {"level":3,"fontSize":"medium"} -->
+			<h3 class="wp-block-heading has-medium-font-size"><?php echo esc_html( $atlas_post['title'] ); ?></h3>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph {"fontSize":"small","textColor":"lilac-300"} -->
+			<p class="has-lilac-300-color has-text-color has-small-font-size"><a href="<?php echo esc_url( $atlas_post['url'] ); ?>" target="_blank" rel="noopener"><?php echo esc_html__( 'Read on Medium', 'atlas-relics' ); ?> &rarr;</a></p>
+			<!-- /wp:paragraph -->
+		</div>
+		<!-- /wp:group -->
+		<?php endforeach; ?>
+		<?php else : ?>
 		<?php foreach ( $atlas_essays as $atlas_essay ) : ?>
 		<?php
 		$atlas_dest = 'descent' === $atlas_essay['cave'] ? __( 'The First Descent', 'atlas-relics' ) : sprintf( /* translators: %s: cave name */ __( 'the Cave of %s', 'atlas-relics' ), ucfirst( $atlas_essay['cave'] ) );
@@ -580,6 +635,7 @@ $atlas_etsy_tools = array(
 		</div>
 		<!-- /wp:group -->
 		<?php endforeach; ?>
+		<?php endif; ?>
 	</div>
 	<!-- /wp:group -->
 

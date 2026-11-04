@@ -119,3 +119,42 @@ The bare `atlas-relics.com` stays with the store (`/b/` and `/collection/` links
 - [ ] Add the host's subdomain to the site, then change the `home` DNS record to the host's
       value. Keep the old record's value written down so the change can be reversed.
 - [ ] Confirm HTTPS works and click through every page, button and legacy redirect.
+
+
+## 7. Atlas Relics site launch checklist (home.atlas-relics.com cutover)
+
+Done in the code already: favicon and share image, per-page meta descriptions, Organization data,
+Etsy proof strip, Medium essays that update themselves (cached 6 hours, with a hand written
+fallback), one product list on /products/.
+
+### Before launch day (on new.atlas-relics.com)
+
+- [ ] Settings > Reading: "Discourage search engines" is OFF. A test site often has it on, and
+      leaving it on after launch keeps the site out of Google.
+- [ ] Update from GitHub, purge the SG cache, hard refresh.
+- [ ] Open each page on a real phone: home, /caves/, /courses/, /begin/, /products/, /about/.
+- [ ] Click every Buy button once in a private window. Payhip links look like
+      https://atlas-relics.com/b/CODE. Confirm the bundle (RlcwC) is purchasable.
+- [ ] Check the Etsy, Make Playing Cards, Beacons (Shadow Ledger), Medium and Kit links.
+- [ ] Vedic Life Advisor and the Conscious Mirror course unlock page load.
+- [ ] Share a page link in a message and confirm the AR share image appears.
+- [ ] Page speed: run https://pagespeed.web.dev on the home page. Aim for green on mobile.
+- [ ] Look for the Shop slug clash: WooCommerce makes its own "Shop" page at /shop/. Atlas uses
+      /products/ on purpose. Do not rename it to shop.
+
+### Launch day
+
+- [ ] Keep the old DNS value for `home` written down for rollback.
+- [ ] SiteGround: add home.atlas-relics.com as a parked domain on this site.
+- [ ] GoDaddy DNS: point the `home` record at SiteGround. Do NOT change nameservers. The bare
+      domain stays on Payhip.
+- [ ] SiteGround: issue the free SSL certificate for the new domain and enforce HTTPS.
+- [ ] wp-config.php: change WP_HOME and WP_SITEURL from new.atlas-relics.com to the home domain.
+- [ ] Settings > Permalinks: Save once. Purge the SG cache.
+- [ ] Re-check the share image, favicon and the sitemap at /wp-sitemap.xml.
+
+### After launch
+
+- [ ] Add the property in Google Search Console, submit /wp-sitemap.xml.
+- [ ] Request indexing for the home page, /caves/, /courses/ and /products/.
+- [ ] Rollback: set the `home` DNS record back to the old value.
