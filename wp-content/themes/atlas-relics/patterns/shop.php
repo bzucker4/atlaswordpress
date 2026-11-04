@@ -70,17 +70,17 @@ $atlas_shop = array(
 		'sub'   => 'Guided experiences of 20 to 30 minutes each. Take one, or take them together.',
 		'alt'   => false,
 		'items' => array(
-			array( 'Bundle', 'The First Descent', '$17.77', 'Control, Desire and Identity in one passage. Cheaper than buying them apart.', 'https://atlas-relics.com/b/f3DGy?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=shop', 'Buy now', false ),
+			array( 'Bundle', 'The First Descent', '$17.77', 'Control, Desire and Identity in one passage. Cheaper than buying them apart.', 'https://atlas-relics.com/b/f3DGy?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=shop', 'Buy now', false, 'https://payhip.com/cdn-cgi/image/format=auto,width=640/https://pe56d.s3.amazonaws.com/o_1k3vgk20p1am018j4dgg154drql7.png' ),
 			array( 'Seven days', 'The Ascent', '$12.77', 'A seven day return: one short teaching, one practice and a few written questions each day.', 'https://atlas-relics.com/b/0jsYS?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=shop', 'Buy now', false ),
 			array( 'Printable', 'The Integration Journal', '$9.77', 'A 20-page companion with Before, After and Carry pages for each cave.', 'https://atlas-relics.com/b/JcYMK?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=shop', 'Buy now', false ),
 			array( 'Cave', 'The Cave of Control', '$7.77', 'A guided descent into the part of you that plans, manages and braces.', 'https://atlas-relics.com/b/sUMGE?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=shop', 'Buy now', false, 'caves/control' ),
 			array( 'Cave', 'The Cave of Desire', '$7.77', 'What if the thing you want is not actually what you are searching for?', 'https://atlas-relics.com/b/dMk6W?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=shop', 'Buy now', false, 'caves/desire' ),
 			array( 'Cave', 'The Cave of Identity', '$7.77', 'Who are you when you are no longer required to stay recognizable?', 'https://atlas-relics.com/b/OPpd2?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=shop', 'Buy now', false, 'caves/identity' ),
-			array( 'Cave', 'The Cave of Silence', '$7.77', 'What remains when the noise stops?', 'https://atlas-relics.com/b/Tqz97?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=shop', 'Buy now', false ),
-			array( 'Cave', 'The Cave of Fear', '$7.77', 'What if your fear is not trying to stop you, but trying to show you what you love?', 'https://atlas-relics.com/b/o97q8?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=shop', 'Buy now', false ),
-			array( 'Cave', 'The Cave of Grief', '$7.77', 'What if grief is not something to get over, but the shape your love takes when it outlives its object?', 'https://atlas-relics.com/b/qRYtP?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=shop', 'Buy now', false ),
-			array( 'Cave', 'The Cave of Shame', '$7.77', 'What if the part of you that you hide most carefully is holding something you need?', 'https://atlas-relics.com/b/qsX76?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=shop', 'Buy now', false ),
-			array( 'Cave', 'The Cave of Attachment', '$7.77', 'What if the tighter you grip something, the less of it you are actually able to feel?', 'https://atlas-relics.com/b/E6FaA?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=shop', 'Buy now', false ),
+			array( 'Cave', 'The Cave of Silence', '$7.77', 'What remains when the noise stops?', 'https://atlas-relics.com/b/Tqz97?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=shop', 'Buy now', false, 'https://payhip.com/cdn-cgi/image/format=auto,width=640/https://pe56d.s3.amazonaws.com/o_1k0ts9vrc1bl28991u6d1p7lhn15.png' ),
+			array( 'Cave', 'The Cave of Fear', '$7.77', 'What if your fear is not trying to stop you, but trying to show you what you love?', 'https://atlas-relics.com/b/o97q8?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=shop', 'Buy now', false, 'https://payhip.com/cdn-cgi/image/format=auto,width=640/https://pe56d.s3.amazonaws.com/o_1k4kdba8c18rt1r3l1cmll7515s31a.png' ),
+			array( 'Cave', 'The Cave of Grief', '$7.77', 'What if grief is not something to get over, but the shape your love takes when it outlives its object?', 'https://atlas-relics.com/b/qRYtP?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=shop', 'Buy now', false, 'https://payhip.com/cdn-cgi/image/format=auto,width=640/https://pe56d.s3.amazonaws.com/o_1k4kdddo24ph1faj3qr1fna1ra217.png' ),
+			array( 'Cave', 'The Cave of Shame', '$7.77', 'What if the part of you that you hide most carefully is holding something you need?', 'https://atlas-relics.com/b/qsX76?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=shop', 'Buy now', false, 'https://payhip.com/cdn-cgi/image/format=auto,width=640/https://pe56d.s3.amazonaws.com/o_1k4kdff35pf11fhq5fhlklh0p1a.png' ),
+			array( 'Cave', 'The Cave of Attachment', '$7.77', 'What if the tighter you grip something, the less of it you are actually able to feel?', 'https://atlas-relics.com/b/E6FaA?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=shop', 'Buy now', false, 'https://payhip.com/cdn-cgi/image/format=auto,width=640/https://pe56d.s3.amazonaws.com/o_1k4kdgkh01hql1iae1tunnkk1d0817.png' ),
 			array( 'Free guide', 'Which Cave Are You In?', 'Free', 'Twelve short questions that point you to the cave you may be drawn to now.', 'https://atlas-relics.com/b/ORl6W?utm_source=atlasrelics-site&utm_medium=referral&utm_campaign=shop', 'Get the free guide', false ),
 		),
 	),
@@ -135,7 +135,7 @@ $atlas_shop = array(
 		<span class="atlas-tool-img atlas-tool-img--<?php echo esc_attr( $atlas_kind ); ?> atlas-art--<?php echo esc_attr( $atlas_art ); ?>" aria-hidden="true">
 			<?php if ( $atlas_imgs ) : ?>
 				<?php foreach ( $atlas_imgs as $atlas_img ) : ?>
-			<img src="<?php echo esc_url( get_theme_file_uri( 'assets/img/' . $atlas_img . '.jpg' ) ); ?>" alt="" loading="lazy" width="480" height="480">
+			<img src="<?php echo esc_url( 0 === strpos( $atlas_img, 'http' ) ? $atlas_img : get_theme_file_uri( 'assets/img/' . $atlas_img . '.jpg' ) ); ?>" alt="" loading="lazy" width="480" height="480">
 				<?php endforeach; ?>
 			<?php else : ?>
 			<span class="atlas-art-rings"><i></i><i></i><i></i></span>
